@@ -177,3 +177,13 @@ Dependance of Id on Vds in pinch-off region
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d82b73b5-fe52-422a-8835-e56203b716fe)
 
 Here, λ is the channel length modulation
+
+###### Introduction to SPICE 
+
+Spice software , its an engine, that has predefined models and we have to feed correct values of inputs and spice netlist and derive waveforms.
+The spice waveforms can be used to calculate the delay of a cell. These delays are very close to the practical delays observed used for STA.
+
+
+
+
+
