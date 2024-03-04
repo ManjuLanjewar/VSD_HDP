@@ -203,7 +203,7 @@ The snap shot of SPICE netlist of the above NMOS
           * The method to identify nodes is to identify the SPICE netlist for the device and all the wires connecting different components
             have one node on them.
 
-       M1 vdd n1 0 0 nmos W=1.8u L=1.2u 
+    <pre>M1 vdd n1 0 0 nmos W=1.8u L=1.2u 
            Here , M1= MXX= MOSFETXX (M stands for MOSFET and XX can be any number. Here it is 1) 
                   vdd- Drain
                    n1- Gate
@@ -211,7 +211,8 @@ The snap shot of SPICE netlist of the above NMOS
                    0 - substrate
                 nmos- MOSFET name in Technology File.
                   W - Width of channel
-                  L- Length of Channel
+                  L- Length of Channel </pre> 
+                  
    -  Method to save SPICE model
 
     - Method to write code for SPICE simulation
