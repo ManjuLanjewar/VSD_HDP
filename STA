@@ -13,3 +13,23 @@ match it with delay table value.
 To verify static timing analysis is correct? delay values, slack values in STA are correct or not? 
 Source of delay table comes from SPICE. 
 Spice simulation involves characterisation of PMOS and NMOS transistors into details or any CMOS logic int odetails.
+
+NMOS transistors and their characteristics. 
+
+NMOS is n-channel Metal Oxide Semiconductor built on p-substrate 
+It is a four terminal device.
+It consists of a P-substrate body
+It has 2 isolation regions, differentiating between two transistors. 
+It has 2 n+ diffusion region is present near the SiO2 layer.
+It has a Gate oxide layer
+A Poly-Si (metal gate) layer is placed on top of the gate oxide layer and this form Gate terminal, which drive NMOS.
+4 terminals mainly G - Gate, S - Source, D - Drain, B- Body or Bulk 
+Terminal B in NMOS is grounded but important to understand threshold voltage charactersitics of NMOS. 
+
+
+PMOS is just an inverted NMOS (p+ on n-substrate) but all other characteristics are common.
+   
+  
+    
+   
+   
