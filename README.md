@@ -142,6 +142,7 @@ above is snapshot of top view of the MOSFET showing the channel width 'W'
 
 Here focus is on the drift current, Id, (velocity of charge) that is flowing over the channel width.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/ab3230a8-cbac-4e2f-8727-e8629ddaf894)
 
 
 
