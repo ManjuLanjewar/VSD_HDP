@@ -1,4 +1,4 @@
-Cicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
+l gaCicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
 Spice Simulation: This particular Circuit has to be fed in with some waveforms to identify output charactristics and simulate using spice.
 Simulated waveforms decides delays of particular cell. Based on value of delay, tune W and L ratio of particular transistor. 
@@ -30,16 +30,38 @@ Terminal B in NMOS is grounded but important to understand threshold voltage cha
 
 PMOS is just an inverted NMOS (p+ on n-substrate) but all other characteristics are common.
 
-Threshold Voltage (Vt)
+- Threshold Voltage (Vt)
 
-The threshold voltage accurate describes the transistor. 
-For an NMOS, 
-Vgs=0, and drain, source and bulk connected to ground. 
+The threshold voltage accurately describes the transistor. 
+For an NMOS, when Vgs=0, and drain, source and bulk connected to ground. 
 So, substrate Drain (B-D) and Substare Source (B-S) forms p-n junction diodes connected back to back. 
-Both junctions are off due to 0V bias. Hence S-D resistance is high 
-Now if we apply a +Vgs, a negatively charged region (depletion region) forms between n+ regions. 
-Now if we keep increasing Vgs until Vgs=threshold voltage=Vto (Vsb=0 here, and Vto is a function of process manufacturing), 
-we get strong surface inversion. If we keep increasing Vgs now, a continuous channel is created between n+ (gate attracts negative n+ as no p+ 
-are left to repel, they are all depleted) -> cutoff region. 
-  
+Both junctions are off due to 0V bias. Hence S-D resistance is high.
+In p substarte, majority charges are positive charges and minority are negative charges. 
+Now if we apply a small +Vgs, metal gate is positively charged, this gate terminal area form oxide capacitance 
+and repel all positively charges present in p substrate, leaves behind negative charges.
+so, a negatively charged region (depletion region) forms between n+ regions. 
+Now if we keep increasing Vgs until Vgs = threshold voltage = Vto (Vsb=0 here, and Vto is a function of process manufacturing), 
+we get strong surface inversion.
+
+• Threshold Voltage (Vt)
+
+    The 'Vgs' voltage at which 'Strong Inversion' occurs is known as Threshold Voltage (Vt)
+
+• Concept of Strong Inversion
+
+    The phenomenon at which a part of the P-substrate becomes N-substrate (due to the high Vgs value) is called 'Strong Inversion'
+
+Further increase in Vgs, there is no change in depletion region width. Electrons from heavily doped n+ source region are drawn in region under Gate 'G'.
+Continuous n-channel formation from S-D, whose conductiivty is modulated by Vgs.
+
+If we keep increasing Vgs now, a continuous channel is created between n+ (gate attracts negative n+ as no p+ are left to repel, they are all depleted) -> cutoff region. 
+
+• Impact of Source-to-bulk Voltage (Vsb)
+
+    In presence of substrate bias voltage 'Vsb', an additional potential is required for strong inversion to occur.
+
+If Vsb is positive (with D grounded and Vgs small voltage to form depletion region), the depletion layer width increases near S),
+now as Vgs increases in this case, depletion layer width increases, but in this case (unlock above case where Vsb=0) the negative charges formed due to depletion are attracted towards the S terminal which is connected to positive node of voltage source, 
+this needs additional potential to achieve strong surface inversion whereby it happens for 
+Vgs=Vto+V1 (V1=lembdasqrt(abs(-2Phi+Vsb))-sqrt(abs(-2Phi)) and lambda=sqrt(2qNA*Epsilon_Si)/Cox).
    
