@@ -142,7 +142,19 @@ above is snapshot of top view of the MOSFET showing the channel width 'W'
 
 Here focus is on the drift current, Id, (velocity of charge) that is flowing over the channel width.
 
+• Drift current (Id) formula
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/ab3230a8-cbac-4e2f-8727-e8629ddaf894)
 
+    - The term µn.Cox is denoted by kn' and kn' is known as process transconductance
+    - kn'.(W/L) is denoted by kn and kn is also known as gain factor
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4c8892aa-6518-49a3-8a60-219c33f55b08)
+
+• Condition on Vds for the MOSFET to be in linear/resistive region or saturation/pinch-off region
+
+    * When Vds <= (Vgs-Vt), the MOSFET is in linear region of operation
+    * For this region, Id=kn.(Vgs-Vt).Vds as (Vds^2)/2 is a very small amount in this case
+    * Vds can be sweeped from 0V to (Vgs-Vt)V to make the device work in linear region of operation
 
 
+    
