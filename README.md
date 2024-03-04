@@ -154,7 +154,26 @@ Here focus is on the drift current, Id, (velocity of charge) that is flowing ove
 
     * When Vds <= (Vgs-Vt), the MOSFET is in linear region of operation
     * For this region, Id=kn.(Vgs-Vt).Vds as (Vds^2)/2 is a very small amount in this case
-    * Vds can be sweeped from 0V to (Vgs-Vt)V to make the device work in linear region of operation
+    * Vds can be sweeped from 0V to (Vgs-Vt) to make the device work in linear region of operation
 
+Spice Simulation is used to calculate Id for different values of 'Vgs' and at every value of Vgs, sweep Vds till (Vgs-Vt) using linear equation for Id. 
 
-    
+Dependance of Id on Vds in pinch-off region
+
+   - The chanel voltage is denoted with Vgs-Vds
+   - Pinch-off condition is when Vgs-Vds=Vt
+   - When the Pinch-off phenomenon is started, the channel begins to disappea. Basically, the channel starts to disappear only from the Drain side           acquiring a triangular shape.
+   - When Vgs-Vds<=Vt, there is no channel present near the Drain terminal
+     
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/49b9df56-f87d-4a38-9215-27a9e7721216)
+
+   - Id becomes (kn/2).(Vgs-Vt)^2
+   - It looks like a perfect current source i.e current is constant. It is not true because effective conductive channel length is
+     modulated by applied Vds.
+   - As Vds increases, the depletion region at the drain terminal increases and hence, the effective channel length decreases.
+
+    Now the Drain current equation becomes:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d82b73b5-fe52-422a-8835-e56203b716fe)
+
+Here, λ is the channel length modulation
