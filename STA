@@ -1,1 +1,15 @@
-jjlk
+Cicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
+they perform required functionality of that particular respective gate. 
+Spice Simulation: This particular Circuit has to be fed in with some waveforms to identify output charactristics and simulate using spice.
+Simulated waveforms decides delays of particular cell. Based on value of delay, tune W and L ratio of particular transistor. 
+W/L ratio is factor that decides the value of output current which eventually decides waveform shape, which decide delays of particular cell. 
+To tune delay, how to tune W/L ration, is basically obtain using Spice simulation. 
+Why do we need simulation? 
+In physical design flow,  whatever we are doing in clock tree, timimg, crosstalk they are built on spice. 
+If no SPICE, then there is no term delay. If no delay then clock tree, timimg , crosstalk doesn't make any sense. 
+From where delay of cell comes from? 
+To check Delay models are accurate? supply same input slew and output load in SPICE simulation and get delay value from SPICE and 
+match it with delay table value. 
+To verify static timing analysis is correct? delay values, slack values in STA are correct or not? 
+Source of delay table comes from SPICE. 
+Spice simulation involves characterisation of PMOS and NMOS transistors into details or any CMOS logic int odetails.
