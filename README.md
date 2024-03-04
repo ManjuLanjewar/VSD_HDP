@@ -222,7 +222,36 @@ The snap shot of SPICE netlist of the above NMOS
                   2.5 - Volatge Source value
            Vin in 0 2.5
              Here Vin between in and 0 and value is 2.5</pre> 
-                  
+
+- Define Technology Parameters
+     Vt, Id (Saturation region), Id (Linear Region) are Model of NMOS.
+     To evaluate these models, model parameters are needed.
+
+Before writing a netlist, we need to define names for the nodes in the circuit.
+
+To include a technology file then define a resistor, transistor, voltage source, and a capacitor use the syntax below:
+
+     <pre>.LIB "<name: xxx>.mod" CMOS_MODELS
+     R<name> <1st node> <second node> <value>
+     M<name> <drain> <gate> <source> <bulk> <name in tech file> w=<value> L=<value>
+     V<name> <1st node> <second node> <value>
+     C<name> <1st node> <second node> <value> </pre>
+
+Technology file (xxx.mod) of NMOS and PMOS should have the following syntax: 
+
+<pre>.lib cmos_models
+.Model <name that should match in netlist> NMOS (TOX = .. VTH0 = .. U0 = .. GAMMA1 = ..)
+.Model <name that should match in netlist> PMOS (TOX = .. VTH0 = .. U0 = .. GAMMA1 = ..)
+.endl</pre>
+
+To simulate a spice netlist with sweeping (left side will be sweeped for each value on the right side), use the following syntax in the netlist:
+
+<pre>.<mode: dc> <voltage node to sweep: Vin> <start value: 0> <end value: 2.5> <steps: 0.1> <voltage node to sweep: Vdd> <start value: 0> <end value: 2.5> <steps: 2.5></pre> 
+
+To use ngspice for plotting, use the following commands:
+<pre>ngspice <spice file name>
+plot -<name node></pre> 
+
    -  Method to save SPICE model
 
     - Method to write code for SPICE simulation
