@@ -26,13 +26,20 @@ A Poly-Si (metal gate) layer is placed on top of the gate oxide layer and this f
 4 terminals mainly G - Gate, S - Source, D - Drain, B- Body or Bulk 
 Terminal B in NMOS is grounded but important to understand threshold voltage charactersitics of NMOS. 
 
-
+![image](https://github.com/ManjuLanjewar/vsd-hdp/assets/157192602/ebe16b5a-bcf0-4f76-a3c9-1a47c2e44c21)
 
 PMOS is just an inverted NMOS (p+ on n-substrate) but all other characteristics are common.
-   
-  
-    
 
+Threshold Voltage (Vt)
 
+The threshold voltage accurate describes the transistor. 
+For an NMOS, 
+Vgs=0, and drain, source and bulk connected to ground. 
+So, substrate Drain (B-D) and Substare Source (B-S) forms p-n junction diodes connected back to back. 
+Both junctions are off due to 0V bias. Hence S-D resistance is high 
+Now if we apply a +Vgs, a negatively charged region (depletion region) forms between n+ regions. 
+Now if we keep increasing Vgs until Vgs=threshold voltage=Vto (Vsb=0 here, and Vto is a function of process manufacturing), 
+we get strong surface inversion. If we keep increasing Vgs now, a continuous channel is created between n+ (gate attracts negative n+ as no p+ 
+are left to repel, they are all depleted) -> cutoff region. 
   
    
