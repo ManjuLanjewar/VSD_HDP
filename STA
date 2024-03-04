@@ -1,9 +1,13 @@
-l gaCicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
+##### Introduction to Circuit Design and SPICE simulations
+
+Cicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
+
 Spice Simulation: This particular Circuit has to be fed in with some waveforms to identify output charactristics and simulate using spice.
 Simulated waveforms decides delays of particular cell. Based on value of delay, tune W and L ratio of particular transistor. 
 W/L ratio is factor that decides the value of output current which eventually decides waveform shape, which decide delays of particular cell. 
 To tune delay, how to tune W/L ration, is basically obtain using Spice simulation. 
+
 Why do we need simulation? 
 In physical design flow,  whatever we are doing in clock tree, timimg, crosstalk they are built on spice. 
 If no SPICE, then there is no term delay. If no delay then clock tree, timimg , crosstalk doesn't make any sense. 
@@ -14,7 +18,7 @@ To verify static timing analysis is correct? delay values, slack values in STA a
 Source of delay table comes from SPICE. 
 Spice simulation involves characterisation of PMOS and NMOS transistors into details or any CMOS logic int odetails.
 
-NMOS transistors and their characteristics. 
+**** NMOS transistors and their characteristics. 
 
 NMOS is n-channel Metal Oxide Semiconductor built on p-substrate 
 It is a four terminal device.
@@ -74,8 +78,7 @@ Now, if Vgs increases again, inversion gets delayed. This needs additional poten
 
 • Threshold Voltage Equation
 
-Screenshot of equation 
-
+Screenshot of equation (Day1 -L4)
 
 where
 
@@ -83,7 +86,26 @@ where
     ϒ is the body effect coefficient and it expresses the impact of changes in body bias 'Vsb' (unit of ϒ is V^0.5)
     фf is the Fermi Potential
 
+• Body Effect Coefficient expression
 
+screenshot of equation (Day1 -L4)
+
+where
+
+    εsi is the relative permitivity of silicon (=11.7)
+    NA is the doping concentration
+    q is the charge of an electron
+    Cox is the oxide capacitance
+
+• Fermi Potential Equation
+
+screenshot of equation (Day1 -L4)
+
+where
+
+    ni is the intrinsic doping parameter for the substrate
+
+###### NMOS Resistive region and Saturation region of operatio
 
 
 
