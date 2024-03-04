@@ -125,5 +125,23 @@ where
     - Effective channel volatge or gate-to-channel voltage on application of Vgs will be Vgs-V(x).
     - At every point in channel, volatge will vary. This lead to current flows from source to drain. Drain current drive delay of cell. 
     - Therefore, in the channel, induced charge at any point 'x' Qi(x) α - ((Vgs-V(x))-Vt)
-hgjghj
+    - First order analysis
+![Screenshot from 2024-03-04 23-27-52](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/87d3f155-1e12-4691-950d-5ad42b9e34dd)
+
+tox is oxide thickness, i.e. gate oxide present between gate and P-substrate which is constant. 
+
+From device point of view, there are two kinds of current: Drift current and Diffusion current
+
+    * Drift current is the current due to the potential difference
+    * Diffusion current is the current due to difference in carrier concentration
+
+• The drift current (Id) = (velocity of charge carriers * available charge) over the channel width
+
+![Screenshot from 2024-03-04 23-44-06](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5be22502-3001-49a0-8d3b-cef70aad5343)
+above is snapshot of top view of the MOSFET showing the channel width 'W'
+
+Here focus is on the drift current, Id, (velocity of charge) that is flowing over the channel width.
+
+
+
 
