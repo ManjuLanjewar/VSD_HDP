@@ -125,5 +125,5 @@ where
     - Effective channel volatge or gate-to-channel voltage on application of Vgs will be Vgs-V(x).
     - At every point in channel, volatge will vary. This lead to current flows from source to drain. Drain current drive delay of cell. 
     - Therefore, in the channel, induced charge at any point 'x' Qi(x) α - ((Vgs-V(x))-Vt)
-
+hgjghj
 
