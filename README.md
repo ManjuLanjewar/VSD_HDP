@@ -180,10 +180,40 @@ Here, λ is the channel length modulation
 
 ###### Introduction to SPICE 
 
-Spice software , its an engine, that has predefined models and we have to feed correct values of inputs and spice netlist and derive waveforms.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/0bac5469-a87c-4598-8ae0-2ed9dfce57e1)
+
+in above snapshot, yellow highlighted are called Spice model parameters which are constants. 
+First check is to identify weather model parameters coming from correct technology node or not? 
+Spice model parameter + Spice netlist when feed to Spice Engine then we get desired output waveforms.
 The spice waveforms can be used to calculate the delay of a cell. These delays are very close to the practical delays observed used for STA.
 
+Spice Netlist
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8b0530f7-a056-46e5-90b5-38536a09b317)
 
+The snap shot of SPICE netlist of the above NMOS
+
+   - R1 is protection resistance is added as it is not desired that the current from Vin would be directly fed to the gate of M1.
+   - Source and substrate connected to ground.
+   - SPICE syntax
+     Identify nodes. In above snapshot, blue dots shows nodes. Then names nodes. Here nodes are name as in, n1, vdd, 0.
+       - Definition of nodes and the method to identify them
+          * A node is can be defined as a point connecting two termials. If two terminals of a single device are short circuited then the node
+            is said to be in between these two terminals. But most of the times a node connects two different devices.
+          * The method to identify nodes is to identify the SPICE netlist for the device and all the wires connecting different components
+            have one node on them.
+
+       M1 vdd n1 0 0 nmos W=1.8u L=1.2u 
+           Here , M1= MXX= MOSFETXX (M stands for MOSFET and XX can be any number. Here it is 1) 
+                  vdd- Drain
+                   n1- Gate
+                   0- Source
+                   0 - substrate
+                nmos- MOSFET name in Technology File.
+                  W - Width of channel
+                  L- Length of Channel
+   -  Method to save SPICE model
+
+    - Method to write code for SPICE simulation
 
 
