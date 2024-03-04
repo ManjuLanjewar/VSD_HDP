@@ -34,18 +34,19 @@ Terminal B in NMOS is grounded but important to understand threshold voltage cha
 
 PMOS is just an inverted NMOS (p+ on n-substrate) but all other characteristics are common.
 
+Basically there are 3 modes of operation. Cutoff, Resistive and saturation 
+
 - Threshold Voltage (Vt)
 
-The threshold voltage accurately describes the transistor. 
-For an NMOS, when Vgs=0, and drain, source and bulk connected to ground. 
-So, substrate Drain (B-D) and Substare Source (B-S) forms p-n junction diodes connected back to back. 
-Both junctions are off due to 0V bias. Hence S-D resistance is high.
-In p substarte, majority charges are positive charges and minority are negative charges. 
-Now if we apply a small +Vgs, metal gate is positively charged, this gate terminal area form oxide capacitance 
-and repel all positively charges present in p substrate, leaves behind negative charges.
-so, a negatively charged region (depletion region) forms between n+ regions. 
-Now if we keep increasing Vgs until Vgs = threshold voltage = Vto (Vsb=0 here, and Vto is a function of process manufacturing), 
-we get strong surface inversion.
+    - The threshold voltage accurately describes the transistor. 
+    - For an NMOS, when Vgs=0, and drain, source and bulk connected to ground. 
+      So, substrate Drain (B-D) and Substare Source (B-S) forms p-n junction diodes connected back to back. 
+    - Both junctions are off due to 0V bias. Hence S-D resistance is high.
+    - In p substarte, majority charges are positive charges and minority are negative charges. 
+    - Now if we apply a small +Vgs, metal gate is positively charged, this gate terminal area form oxide capacitance 
+      and repel all positively charges present in p substrate, leaves behind negative charges. so, a negatively charged region (depletion region) forms        between n+ regions. 
+    - Now if we keep increasing Vgs until Vgs = threshold voltage = Vto (Vsb=0 here, and Vto is a function of process manufacturing), 
+      we get strong surface inversion.
 
 • Threshold Voltage (Vt)
 
@@ -56,7 +57,7 @@ we get strong surface inversion.
     The phenomenon at which a part of the P-substrate becomes N-substrate (due to the high Vgs value) is called 'Strong Inversion'
 
 Further increase in Vgs, there is no change in depletion region width. Electrons from heavily doped n+ source region are drawn in region under Gate 'G'.
-Continuous n-channel formation from S-D, whose conductiivty is modulated by Vgs.
+Continuous n-channel formation from S-D, whose conductivity is modulated by Vgs.
 
 If we keep increasing Vgs now, a continuous channel is created between n+ (gate attracts negative n+ as no p+ are left to repel, they are all depleted) -> cutoff region. 
 
@@ -78,24 +79,23 @@ Now, if Vgs increases again, inversion gets delayed. This needs additional poten
 
 • Threshold Voltage Equation
 
-Screenshot of equation (Day1 -L4)
+Screenshot of equation (Day1 - L4)
 
 where
 
-    Vto is the Threshold Voltage when Vsb = 0 and is a function of manufacturing process
-    ϒ is the body effect coefficient and it expresses the impact of changes in body bias 'Vsb' (unit of ϒ is V^0.5)
-    фf is the Fermi Potential
+    - Vto is the Threshold Voltage when Vsb = 0 and is a function of manufacturing process
+    - ϒ is the body effect coefficient and it expresses the impact of changes in body bias 'Vsb' (unit of ϒ is V^0.5)
+    - фf is the Fermi Potential
 
 • Body Effect Coefficient expression
 
-screenshot of equation (Day1 -L4)
+screenshot of equation (Day1-L4)
 
 where
-
-    εsi is the relative permitivity of silicon (=11.7)
-    NA is the doping concentration
-    q is the charge of an electron
-    Cox is the oxide capacitance
+    - εsi is the relative permitivity of silicon (=11.7)
+    - NA is the doping concentration
+    - q is the charge of an electron
+    - Cox is the oxide capacitance
 
 • Fermi Potential Equation
 
@@ -107,8 +107,23 @@ where
 
 ###### NMOS Resistive region and Saturation region of operation
 
+- Resistive region
 
+    - It is also known as the Linear Region of operation
+    - Since, Vgs=Vt, let us observe what happens at different voltages of 'Vgs>Vt'.
+    - As Vgs increases, channel width increases. Means induced charges because of gate voltage is proportional (Vgs-Vt) which is potential needed to
+      turn on transistor i.e. Induced charge (Qi) α (Vgs-Vt)
+    - The analysis is performed at Vgs=1V and a small Vds (Say 0.05V). Assume Vt(NMOS) = 0.45V
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2a0a281f-e6ab-411f-8bc3-a9287613e8d6)
 
+    - In absence of Vds, the voltage across the n-channel was constant but with application of Vds it is no more constant.
+    - Let the effective channel length be L and 'x' axis represent the channel length and 'y' axis represent width perpendicular to the channel length
+    - Let V(x) be the voltage at any point 'x' along the channel.
+    - In absence of Vds, every point on channel had got Vgs voltage. With the application of Vds, every point on channel will have volatge of Vgs-Vx.
+      V(x) is differnet at every point 'x' along the channel.
+    - Effective channel volatge or gate-to-channel voltage on application of Vgs will be Vgs-V(x).
+    - At every point in channel, volatge will vary. This lead to current flows from source to drain. Drain current drive delay of cell. 
+    - Therefore, in the channel, induced charge at any point 'x' Qi(x) α - ((Vgs-V(x))-Vt)
 
 
