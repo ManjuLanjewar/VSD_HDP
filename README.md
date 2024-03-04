@@ -246,7 +246,9 @@ Technology file (xxx.mod) of NMOS and PMOS should have the following syntax:
 
 To simulate a spice netlist with sweeping (left side will be sweeped for each value on the right side), use the following syntax in the netlist:
 
-<pre>.<mode: dc> <voltage node to sweep: Vin> <start value: 0> <end value: 2.5> <steps: 0.1> <voltage node to sweep: Vdd> <start value: 0> <end value: 2.5> <steps: 2.5></pre> 
+.<mode: dc> <voltage node to sweep: Vin> <start value: 0> <end value: 2.5> <steps: 0.1> <voltage node to sweep: Vdd> <start value: 0> <end value: 2.5> <steps: 2.5> 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/949a8d75-dbb5-441e-91bc-620ec375fb09)
 
 To use ngspice for plotting, use the following commands:
 <pre>ngspice <spice file name>
