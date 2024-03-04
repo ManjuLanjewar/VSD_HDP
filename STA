@@ -60,8 +60,34 @@ If we keep increasing Vgs now, a continuous channel is created between n+ (gate 
 
     In presence of substrate bias voltage 'Vsb', an additional potential is required for strong inversion to occur.
 
-If Vsb is positive (with D grounded and Vgs small voltage to form depletion region), the depletion layer width increases near S),
-now as Vgs increases in this case, depletion layer width increases, but in this case (unlock above case where Vsb=0) the negative charges formed due to depletion are attracted towards the S terminal which is connected to positive node of voltage source, 
-this needs additional potential to achieve strong surface inversion whereby it happens for 
-Vgs=Vto+V1 (V1=lembdasqrt(abs(-2Phi+Vsb))-sqrt(abs(-2Phi)) and lambda=sqrt(2qNA*Epsilon_Si)/Cox).
-   
+If Vsb is positive (with D grounded and 'Vgs' small voltage to form depletion region),the depletion layer width increases near S due to reverse bias between Source 'S' and substrate (or Bulk) 'B'
+
+Now as Vgs increases in this case, the negative charges formed due to depletion are attracted towards the S terminal which is connected to positive node of voltage source. 
+
+When Vsb = 0, Semiconductor surface inverts to n-type material at voltage Vgs = Vto.
+
+When Vsb is positive value , Semiconductor surface inverts to n-type material at voltage Vgs = Vto + V1
+
+In presence of substrate bias 'Vsb', additional potential is required for strong inversion. 
+
+Now, if Vgs increases again, inversion gets delayed. This needs additional potential to achieve strong surface inversion whereby it happens for 
+
+• Threshold Voltage Equation
+
+Screenshot of equation 
+
+
+where
+
+    Vto is the Threshold Voltage when Vsb = 0 and is a function of manufacturing process
+    ϒ is the body effect coefficient and it expresses the impact of changes in body bias 'Vsb' (unit of ϒ is V^0.5)
+    фf is the Fermi Potential
+
+
+
+
+
+
+
+
+
