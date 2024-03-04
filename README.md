@@ -258,4 +258,4 @@ plot -<name node></pre>
 
     - Method to write code for SPICE simulation
 
-hkh
+hkhf
