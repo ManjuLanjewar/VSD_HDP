@@ -27,6 +27,7 @@ A Poly-Si (metal gate) layer is placed on top of the gate oxide layer and this f
 Terminal B in NMOS is grounded but important to understand threshold voltage charactersitics of NMOS. 
 
 
+
 PMOS is just an inverted NMOS (p+ on n-substrate) but all other characteristics are common.
    
   
