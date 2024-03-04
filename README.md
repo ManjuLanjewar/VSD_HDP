@@ -211,7 +211,17 @@ The snap shot of SPICE netlist of the above NMOS
                    0 - substrate
                 nmos- MOSFET name in Technology File.
                   W - Width of channel
-                  L- Length of Channel </pre> 
+                  L- Length of Channel 
+                  
+           R1 in n1 55
+             Here, RXX= ResistorXX=R1
+                   R1 is in between in (first terminal) and n1 (second terminal and value of R1 is 55ohms
+           Vdd vdd 0 2.5
+            Here, VXX- Volatge Source XX - Vdd
+                  Vdd between vdd and 0 
+                  2.5 - Volatge Source value
+           Vin in 0 2.5
+             Here Vin between in and 0 and value is 2.5</pre> 
                   
    -  Method to save SPICE model
 
