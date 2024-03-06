@@ -307,17 +307,24 @@ Vdsat is a technology parameter saturation voltage i.e voltage at which device v
 
 The various modes when the value of Vmin is different
 
-    > When Vgt is the minimum of Vgt, Vds, Vdsat, then Vds and Vdsat at huch higher volatage and  the device is in saturation region.
+    - When Vgt is the minimum of Vgt, Vds, Vdsat, then Vds and Vdsat at huch higher volatage and  the device is in saturation region.
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/089571be-7777-447b-aa4e-7877f6a06132)
 
-    > When Vds is the minimum of Vgt, Vds, Vdsat, then device is in resistive region.
+    - When Vds is the minimum of Vgt, Vds, Vdsat, then device is in resistive region.
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/59f4442d-bf9a-4f7a-add2-f7ad21b954e5)
 
-    > When Vdsat is the minimum of Vgt, Vds, Vdsat the device is in velocity saturation region.
+    - When Vdsat is the minimum of Vgt, Vds, Vdsat the device is in velocity saturation region.
+![Screenshot from 2024-03-06 15-29-48](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8cb97131-d8f1-4b4a-8cdb-5044a65823e7)
 
-    
-    It looks like current should increase at lower nodes.
+    - It looks like current should increase at lower nodes.
 
+- When move from higher device to lower, Velocity Saturation causes device to saturate early and as result of that peak current for same W/L is differenet in two differnet cases. 
 
+#### CMOS VTC
+
+ - CMOS VTC defines the delays of cell.
+ - A CMOS acts like a switch. 
+       o device is off (With infinite 'Off' resistance) and no current flows from source to drain when |Vgs|<|Vt|  
+       o device is ON (with finite 'On' resistance) when |Vgs|>|Vt|
 
 
