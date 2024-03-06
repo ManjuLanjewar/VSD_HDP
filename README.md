@@ -374,6 +374,18 @@ superimposed load curve of NMOS and load curve of PMOS as shown
 
  VTC has 5 regions: 1-) PMOS linear, NMOS off, 2-) PMOS linear, NMOS saturation, 3-) PMOS and NMOS in saturation, 4-) PMOS saturation, NMOS linear, and 5-) PMOS off, NMOS linear as shown in third picture (1, 3, and 5 regions are of importance).
 
+##### Day 3: CMOS switching threshold and dynamic simulations
+how to simulate a CMOS circuit using spice in order to obtain the VTC and evaluate the static behavior. Spice deck needed to write a netlist: component connectivity, component values, identify nodes and name them. The switching voltage Vm is that where Vin=Vout (nmos and pmos in saturation), and it defines the robustness of the CMOS.
+
+    o Voltage transfer characteristics and SPICE simulations
+
+
+
+
+
+
+
+
 
 
 
