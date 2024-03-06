@@ -344,10 +344,15 @@ The snap shot of the circuit diagram of CMOS inverter
 
 - By observation:
     - For the NMOS, voltage equations (Vss =0)
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/7ef5daa7-0ed0-403a-a90d-284e5572a41b)
+
     - For the PMOS, voltage equations
+    
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/bd366836-d29f-485d-913d-e32e07eb87ab)
+
     - For the relationship between the currents
+    
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/27924e75-24e1-4886-a7dc-9266529a4128)
 
 
