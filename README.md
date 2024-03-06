@@ -379,10 +379,16 @@ how to simulate a CMOS circuit using spice in order to obtain the VTC and evalua
 
     o Voltage transfer characteristics and SPICE simulations
 
+        - The various components of a SPICE deck:
+
+            * Component connectivity
+            * Component values
+            * Identification of 'nodes'
+            * Naming 'nodes'
 
 
 
-
+The snap shot of the SPICE netlist considered
 
 
 
