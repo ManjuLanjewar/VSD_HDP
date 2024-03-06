@@ -279,8 +279,6 @@ The snap shot of various regions of operation of NMOS on graph plotted between I
 * Short channel effect
   
     When W/L is constant, drain current Id is constant at any node (At any Node means W and L increase or decrease) but practically this will not happen. When W and L (from long channel to short channel device) have decreased in value, we stop seeing quadratic dependance of Ids on Vgs after a certain Vgs value, and we see linear dependance, and also peak current decreases from long channel case due to velocity saturation effect.
-For long channel (L>250nm) has 3 modes of operation: cutoff, resistive, and saturation
-For lower nodes/channel (L<250nm), there are 4 regions of operations. Cut-off, Linear, Saturation and Valocity Saturation.
 
 * Velocity Saturation effect
   
@@ -293,13 +291,32 @@ For lower nodes/channel (L<250nm), there are 4 regions of operations. Cut-off, L
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/82ecb560-4840-4ee1-a130-72eb65dd18de)
  The snap shot of the graph of velocity saturation effect
-εc = 2 Vsat /![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b0e13720-f742-4a2b-8a93-bca104abafc9)
- 
+εc = 2 Vsat / µn
+
+- There is region of opertion for higher values of Vgs, called Velocity Saturation. 
+- For long channel (L>250nm) has 3 modes of operation: cutoff, resistive, and saturation
+- For lower nodes/channel (L<250nm), there are 4 regions of operations. Cut-off, Linear, Saturation and Valocity Saturation.
+- Let's call (Vgs-Vt)=Vgt
+- For both channel in cut-off mode, Id=0 for Vgs<Vt
+- for all other modes, the equation of Id for long channel and short channel devices
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/f9a5da17-e8ff-40e7-8ce5-dad4b57c520b)
+
+Vdsat is a technology parameter saturation voltage i.e voltage at which device velocity saturates and is independent of Vgs or Vds
 
 
+The various modes when the value of Vmin is different
 
+    > When Vgt is the minimum of Vgt, Vds, Vdsat, then Vds and Vdsat at huch higher volatage and  the device is in saturation region.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/089571be-7777-447b-aa4e-7877f6a06132)
 
+    > When Vds is the minimum of Vgt, Vds, Vdsat, then device is in resistive region.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/59f4442d-bf9a-4f7a-add2-f7ad21b954e5)
 
+    > When Vdsat is the minimum of Vgt, Vds, Vdsat the device is in velocity saturation region.
+
+    
+    It looks like current should increase at lower nodes.
 
 
 
