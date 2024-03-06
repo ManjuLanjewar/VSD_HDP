@@ -645,5 +645,61 @@ The snap shot of the Noise induced bump characteristics at different noise margi
     - If the height of the bump lies in between Vih and Voh then it will definitely be considered as logic '1'. These kinds of glitches are the glitches       that need to be fixed.
     - The noise margins of the inverter at different values of Wp/Lp were observed and they were as follows:
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/ee7cf26c-bc71-4882-bd73-33f1bfbe61c2)
 
+A few conclusions can be inferred from the above table: 
+    - When (Wp/Lp) = 2.(Wn/Ln) there is a rise at the NMh because PMOS is responsible for holding the charges on the capacitance. When the size of PMOS is increased, a low-resistance path from supply to the capacitance is formed and as a result of that, the capacitance is able to retain the charge for a longer amount of time resulting in an increased NMh. 
+    - When (Wp/Lp) = 4.(Wn/Ln) there is a drop at the NMl because the NMOS has now become weaker than the PMOS - When (Wp/Lp) = 5.(Wn/Ln) the NMh almost comes to a static point.
+    - In the above table, NMl is not affected much but NMh has increased by 120mV but this range is still acceptable and this proves the CMOS inverter robustness with respect to the Noise Margin.
+    
+Finally, the areas that can be used for digital and analog applications are stated in the figure below:
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/9c3a5d1e-ee7f-4d3b-b71b-6ed9b38b0dc5)
+
+The snap shot of the Vout versus Vin curve showing the areas that can be used for digital and analog applications
+
+Note: Lab Activity pending 
+
+<pre>*Model Description
+.param temp=27
+
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*Netlist Description
+
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*simulation commands
+
+.op
+
+.dc Vin 0 1.8 0.01
+
+.control
+run
+setplot dc1
+display
+.endc
+
+.end
+</pre>
+
+Method to calculate the Noise Margins from the plot:
+
+    - Run the ngspice command and open the plot
+    - left click on the point towards the top of the graph where the curvature seems to be '-1'
+    - In this case it was x0 = 0.766667, y0 = 1.71351
+    - Now, left click on the point towards the bottom of the graph where the curvature seems to be '-1'
+    - In this case it was x0 = 0.977333, y0 = 0.110811. Let's consider these points as x1 and y1 thus making the coordinates x1 = 0.977333, y1 = 0.110811
+    - For noise margin high we need Voh-Vih and in this case VoH=y0 and ViH=x1
+    - For noise margin low we need Vil-Vol and in this case ViL=x0 and VoL=y1
+    - Therefore, we get NMh = 0.736177 and NMl = 0.655856
+
+    
