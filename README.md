@@ -501,9 +501,6 @@ Note :The snap shot of the output window for performing the transient analysis i
         * Similarly, get the point at (Vdd/2) for rising edge of the input curve.
         * The difference between the x-coordinate of the falling edge of the output curve and the rising edge of the input curve is the fall delay.
 
-To define a pulse, use the syntax as defined in the picture below:   
-
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/89073e28-1431-45f4-8712-81646a4b2381)
 
 #### Static Behavior Evaluation - CMOS Inverter Robustness: Switching threshold
 
@@ -574,6 +571,10 @@ Here,
     - Vm is the switching threshold voltage
     - Vt is the threshold voltage
     - Vdd is the supply voltage
+    
+To define a pulse, use the syntax as defined in the picture below:   
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/89073e28-1431-45f4-8712-81646a4b2381)
 
 - We experimented with the sizes of the PMOS with respect to the sizes of NMOS and came up with the following conclusions
 
