@@ -601,7 +601,7 @@ Noise margin, which is another characteristic that defines static behavior of th
 
 The ideal and actual Input-Output characteristics of an inverter were observed
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/678ab1a9-5772-42a6-9d26-f511e1e1a0b3)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2f262800-a322-4f6f-9875-478ce101b647)
 
     - In the above diagram, the terms stated are explained as follows:
 
@@ -615,5 +615,35 @@ The ideal and actual Input-Output characteristics of an inverter were observed
           -- Any output voltage level between 0 and VoL will be treated as logic '0'
 
 - Actual Input-Output characteristics on an inverter were observed and they were plotted on a scale
+  
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/52c8484e-32a9-4074-9bb3-a4405a8b2899)
+
+- In the above diagram, the terms stated are explained as follows:
+
+    * NMh is the Noise Margin High
+       - Any voltage level in "NMh" range will be detected as logic '1'
+    * NMl is the Noise Margin Low
+       - Any voltage level in "NMl" range will be detected as logic '0'
+    * Undefined region
+       - Any signal in "Undefined region" will be an indefinite logic level
+
+- Noise Margins are the tolerance levels of the noise
+- The equations for NMh and NMl are as follows:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/96ca3a44-de57-4b19-8a1f-cf3bf811dc4a)
+
+* Now with the voltage levels plotted in the noise margin scale, we have prepared a chart that will give the summary of the noise margin:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e05ef4d8-5acb-4feb-9b67-65453f81eb5f)
+
+The snap shot of the Noise induced bump characteristics at different noise margin levels
+
+    - For any signal to be considered as logic '0' and logic '1', it should be in the NMl and NMh ranges, respectively.
+    - If the height of the bump lies in between Vol and Vil then it's not hazardous because it still lies in the range of logic '0'. Any glitch that           occurs in this region is a safe glitch because it will still be considered as logic '0'.
+    - If the height of the bump lies in the "undefined region" then it is potentially hazardous because it can acquire logic '1' which can be fatal. 
+      Any glitch in this region is unsafe because it is unclear if it will go to logic '1' or fall to logic '0'. 
+    - If the height of the bump lies in between Vih and Voh then it will definitely be considered as logic '1'. These kinds of glitches are the glitches       that need to be fixed.
+    - The noise margins of the inverter at different values of Wp/Lp were observed and they were as follows:
+
 
 
