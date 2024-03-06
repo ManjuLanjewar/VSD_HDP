@@ -277,12 +277,24 @@ The snap shot of various regions of operation of NMOS on graph plotted between I
         * Cut-off region is a region where the device has been cut-off or it is 'OFF'
 
 * Short channel effect
-    When W/L is constant, drain current Id is constant at any node (At any Node means W and L increase or decrease) but practically this will not happen. When W and L (from long channel to short channel device) have decreased in value, we stop seeing quadratic dependance of Ids on Vgs after a certain Vgs value, and we see linear dependance, and also peak current decreases from long channel case due to velocity saturation effect. 
+  
+    When W/L is constant, drain current Id is constant at any node (At any Node means W and L increase or decrease) but practically this will not happen. When W and L (from long channel to short channel device) have decreased in value, we stop seeing quadratic dependance of Ids on Vgs after a certain Vgs value, and we see linear dependance, and also peak current decreases from long channel case due to velocity saturation effect.
+For long channel (L>250nm) has 3 modes of operation: cutoff, resistive, and saturation
+For lower nodes/channel (L<250nm), there are 4 regions of operations. Cut-off, Linear, Saturation and Valocity Saturation.
 
+* Velocity Saturation effect
+  
+  - For the lower values of electric field, the velocity tends to be a linear function of the electric field. But, after a certain point (cut-off) the
+    velocity just saturates. This point of saturation is represented by εc (critical electric field)
+  - Vn(m/S) = linear for ε<=εc
+  - Vn(m/S) = constant for ε>=εc
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/81366930-3e43-47a5-acf3-4ac6ac4bfc0f)
 
-
-
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/82ecb560-4840-4ee1-a130-72eb65dd18de)
+ The snap shot of the graph of velocity saturation effect
+εc = 2 Vsat /![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b0e13720-f742-4a2b-8a93-bca104abafc9)
+ 
 
 
 
