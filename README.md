@@ -258,9 +258,11 @@ plot -<name node></pre>
 
     - Method to write code for SPICE simulation
     
-<detail>####Day2
-<summary>velocity saturation and the basics of CMOS inverter Voltage Transfer Characteristics (VTC)</summary>
-
+<detail>
+     ####Day2
+<summary>velocity saturation and the basics of CMOS inverter Voltage Transfer Characteristics (VTC)
+</summary>
+</detail>
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/28c8ee57-f423-437a-8a4e-9c6f22be7568)
 
 The snap shot of various regions of operation of NMOS on graph plotted between Ids and Vds.
