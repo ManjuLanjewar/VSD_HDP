@@ -459,7 +459,7 @@ Note : The snap shot of the output window for plotting the Vtc characteristics o
   - Since we are finding Vm, therefore x0 ~ y0 and hence x0=y0=Vm.
 
 For performing the transient analysis, the following code is required:
-*Model Description
+<pre>*Model Description
 .param temp=27
 
 *Including sky130 library files
@@ -483,7 +483,7 @@ Vin in 0 PULSE(0V 1.8V 0 0.1ns 0.1ns 2ns 4ns)
 run
 .endc
 
-.end
+.end</pre>
 
 Note: The snap shot of the terminal window for performing the transient analysis is pending
 Note :The snap shot of the output window for performing the transient analysis is pending 
@@ -501,4 +501,8 @@ Note :The snap shot of the output window for performing the transient analysis i
         * Similarly, get the point at (Vdd/2) for rising edge of the input curve.
         * The difference between the x-coordinate of the falling edge of the output curve and the rising edge of the input curve is the fall delay.
 
+To define a pulse, use the syntax as defined in the picture below:   
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/89073e28-1431-45f4-8712-81646a4b2381)
+
+#### Static Behavior Evaluation - CMOS Inverter Robustness: Switching threshold
