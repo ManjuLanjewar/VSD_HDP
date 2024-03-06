@@ -506,3 +506,79 @@ To define a pulse, use the syntax as defined in the picture below:
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/89073e28-1431-45f4-8712-81646a4b2381)
 
 #### Static Behavior Evaluation - CMOS Inverter Robustness: Switching threshold
+
+- CMOS inverter is a robust device because the shape of it's input versus output curve remains the same for all different values of (W/L) ratios.
+
+- Static Behavior Evaluation: CMOS Inverter Robustness
+
+    * Switching Threshold
+    * Noise Margin
+    * Power Supply Variation
+    * Device Variation
+
+- Switching Threshold (Vm)
+
+    * It is the point where Vin = Vout
+
+    * Graphical method to find Vm is to draw a line across the graph of output voltage to input voltage of a CMOS inverter starting at the origin
+      and ending at the opposite diagonal of the plot (basically a line with a 45 degree inclination with the x-axis). Now, the x-coordinate of the            point of intersection of this line and the curve is the switching threshold.
+
+    * Vm when (Wp/Lp) is 1.5 is approximately equal to 0.98V and when (Wp/Lp) is 3.75 it is approximately equal to 1.2V
+
+    * Wp and Lp in the above section are Width of PMOS channel and Length of PMOS channel
+
+    * At Vm, both PMOS and NMOS are turned 'ON' because Vgs almost crossed the threshold region for both of them.
+
+    * A few observations can be made from the information stated above,
+
+          1) Vgs = Vds
+
+          2) IdsP = - IdsN which means that IdsP + IdsN = 0
+
+    We know the equations for IdsN and IdsP which are as stated below:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e431539d-eafe-4560-b983-fc33b2234858)
+
+We ignore the 1+λVds because the term is very small and it makes the equations very difficult for hand calculations.
+
+Since, IdsP + IdsN = 0
+
+Therefore, the equations can be re-written as:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d690c63d-dae5-4db9-b996-3ba143086752)
+
+Let's consider this as equation 1
+
+Solving the above equation for Vm,
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/0fb1bef2-8020-4990-ad21-4d982282bf55)
+
+
+* Alternatively, the required ratio of PMOS versus NMOS transistor size can be derived such that Vm is set.
+
+   Equation 1 must be taken in the form IdsN = - IdsP
+
+Therefore,
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d79c060c-3697-4698-b6e0-7e7389fe76a1)
+
+Here,
+    - Wp is the width of the channel in PMOS
+    - Lp is the length of the channel in PMOS
+    - Wn is the width of the channel in NMOS
+    - Ln is the length of the channel in NMOS
+    - kn' is the process transconductance of the NMOS
+    - kp' is the process transconductance of the PMOS
+    - Vdsatn is the Vdsat of the NMOS
+    - Vdsatp is the Vdsat of the PMOS
+    - Vm is the switching threshold voltage
+    - Vt is the threshold voltage
+    - Vdd is the supply voltage
+
+- We experimented with the sizes of the PMOS with respect to the sizes of NMOS and came up with the following conclusions
+
+
+
+
+
+
