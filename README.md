@@ -257,5 +257,22 @@ plot -<name node></pre>
    -  Method to save SPICE model
 
     - Method to write code for SPICE simulation
+    
 
-hkhf
+<summary>velocity saturation and the basics of CMOS inverter Voltage Transfer Characteristics (VTC)</summary>
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/28c8ee57-f423-437a-8a4e-9c6f22be7568)
+
+The snap shot of various regions of operation of NMOS on graph plotted between Ids and Vds.
+
+- The distribution of various regions of operation of NMOS over the graph plotted between Ids and Vds.
+- From the I-V charachteristic of an NMOS, when Vgs>=Vt, then we see two regions, one with linear increase of current when Vds<=Vgs-vt and
+  one with saturated current when Vds>Vgs-Vt. 
+- The plot overlapping with the 'x' axis is at Vgs=0V and that is because there is 0 drain current at that point of time and the reason is that when
+  Vgs=0V the nmos is not turned 'ON' so, there is no channel present.
+- cut-off region of NMOS.
+        * When Vgs<Vt the region of operation of the NMOS is said to be the cut-off region
+        * Cut-off region is a region where the device has been cut-off or it is 'OFF'
+
+
+
