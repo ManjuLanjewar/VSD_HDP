@@ -799,7 +799,6 @@ The snap shot of the output window to observe the power supply variation
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c563df91-8a7d-4771-a7a2-361d115951a6)
 
-
    2) In layout of the CMOS inverter we have:
         - P-diffusion region which is indicated by green color.
         - Poly-silicon area which is indicated by red color.
@@ -824,11 +823,17 @@ Above is snap shot of the inverter chain
     1) Inverter Chain:
         - When inverters are connected back-to-back they are collectively called as "Inverter Chain".
         - In an inverter chain, the gates in the middle have same structures on both sides. So, it's very likely that this particular gate structure               will have a repeated distortion because they are exposed to same kind of structures.
-        - In an inverter chain, gates in the middle will have a structure which is different from the gates at the ends because they might be connected            to different devices that will impact the gates
+        - In an inverter chain, gates in the middle will have a structure which is different from the gates at the ends because they might be connected            to different devices that will impact the gates.
+        - Variation in L and W takes place because of non-ideal mask, which in turn impacts the drain current. 
+        
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/06406461-7d6d-41c5-83a3-3a46a157902f)
 
     2) Oxide Thickness:
         - In an ideal oxidation process, the gate oxide thickness will be constant throughout the process.
         - In real oxidation process, the gate oxide thickness will not be constant along the gate length.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/3517788b-8d33-4d7f-a3da-45806dfd098e)
+
         - In an inverter chain, the gate oxide thickness can vary for each transistor.
         - Oxide thickness directly affects the Id equation because Cox is dependant on it.
 
@@ -840,6 +845,8 @@ Above is snap shot of the inverter chain
         - NMOS with high resistance (possibly highest resistance if the size chosen is the least size possible)
         - NMOS is small in size (possibly smallest NMOS available)
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/424a4bac-6a0c-4ae1-bcfb-be09843ea3e4)
+
     5) Strong NMOS:
         - NMOS with less resistance (possibly least resistance if the size chosen is the greatest size possible)
         - NMOS is wider in size (possibly widest NMOS available)
@@ -848,23 +855,33 @@ Above is snap shot of the inverter chain
         - PMOS with high resistance (possibly highest resistance if the size chosen is the least size possible)
         - PMOS is small in size (possibly smallest PMOS available)
 
-    * With the variation from Weak PMOS - Strong NMOS to Strong PMOS - Weak NMOS, the switching threshold varies from roughly 0.7V to 1.4V which is 
-      fairly acceptable because behavior of the inverter is intact
-
-
-
-
-
-
-      
-
-    * We can plot the variation if we move from Weak PMOS - Strong NMOS to Strong PMOS - Weak NMOS using SPICE simulation and the plot is given below:
-
+** We can plot the variation if we move from Weak PMOS - Strong NMOS to Strong PMOS - Weak NMOS using SPICE simulation and the plot is given below:
+    
     From the plot given above, we can make the following conclusions:
-        Variation in Noise Margin high (NMh) is roughly from 2.5V to 2.1V which is a variation of 400mV which is good enough to filter out high voltage variations
-        Variation in Noise Margin low (NMl) is roughly from 0V to 0.3V which is a variation of 300mV which is good enough to filter out low voltage variations
-        Overall, variation in the Noise margins is low and this leaves the operation of the gate intact.
+    
+       - With the variation from Weak PMOS - Strong NMOS to Strong PMOS - Weak NMOS, the switching threshold varies from roughly 0.7V to 1.4V which is 
+         fairly acceptable because behavior of the inverter is intact
 
+  ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/57b73d09-acb9-4779-99f2-77b848dbbaae)
+
+      - Variation in Noise Margin high (NMh) is roughly from 2.5V to 2.1V which is a variation of 400mV which is good enough to filter
+        out high voltage variations
+      - Variation in Noise Margin low (NMl) is roughly from 0V to 0.3V which is a variation of 300mV which is good enough to filter out 
+        low voltage variations
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/6037a72a-5fc7-4c32-8422-07d7bef31661)
+ 
+      - Overall, variation in the Noise margins is low and this leaves the operation of the gate intact.
+
+Note : Lab Activity: is pending 
+
+- Since the pfet width is very huge as compared to the nfet width, the plot is shifted towards right
+    * To find the value of the switching threshold:
+        1) Zoom in on the plot where Vin ~ Vout by right clicking and dragging the cursor to select the area
+        2) Zoom until the value of switching threshold becomes almost certain
+        3) Left click on the point where Vin is roughly equal to Vout
+        4) A point x0 = 0.988209, y0 = 0.988191 is obtained
+        5) Since x0 ~ y0. Therefore, Switching Threshold Voltage = Vm = x0 = y0 = 0.988V
 
 
 
