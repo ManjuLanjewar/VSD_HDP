@@ -329,17 +329,25 @@ The various modes when the value of Vmin is different
        o device is ON (with finite 'On' resistance) when |Vgs|>|Vt|
        
 - Working of CMOS Inverter
-  
-    o  when Vin is ‘high’ and equal to ‘vdd’, PMOS turns 'OFF'and NMOS turns 'ON' and Vout is 0 (open switch).
-    o  when Vin is ‘low’ and equal to ‘0V’, PMOS turns 'ON' and NMOS turns 'OFF' and Vout is Vdd (closed switch).
+      o  when Vin is ‘high’ and equal to ‘vdd’, PMOS turns 'OFF'and NMOS turns 'ON' and Vout is 0 (open switch).
+      o  when Vin is ‘low’ and equal to ‘0V’, PMOS turns 'ON' and NMOS turns 'OFF' and Vout is Vdd (closed switch).
+  - The flow of current when Vin is ‘high’ and when Vin is ‘low’
+- When Vin=Vdd
+    o Direct path exists between Vout and Vss resulting in Vout=0V
+- When Vin=0V
+    o Direct path exists between Vdd and Vout, resulting in Vout=Vdd
+In either case, there is a resistance with the switch which represents the equivalent resistance of the nmos (Rn) and pmos (Rp) respectively as shown in the picture below.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/81422057-7b82-4f6a-ba66-e2da754a0227)
+The snap shot of the circuit diagram of CMOS inverter
 
-
-
-
-
-
-
+- By observation:
+    For the NMOS, voltage equations (Vss =0)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/7ef5daa7-0ed0-403a-a90d-284e5572a41b)
+    For the PMOS, voltage equations
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/bd366836-d29f-485d-913d-e32e07eb87ab)
+    For the relationship between the currents
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/27924e75-24e1-4886-a7dc-9266529a4128)
 
 
 
