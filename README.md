@@ -578,13 +578,18 @@ To define a pulse, use the syntax as defined in the picture below:
 
 - We experimented with the sizes of the PMOS with respect to the sizes of NMOS and came up with the following conclusions
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/055f7258-ecc0-414a-8505-31beb34c421d)
 
-(Wp/Lp) 	x.(Wn/Ln) 	Rise Delay 	Fall Delay 	Vm
-(Wp/Lp) 	1.(Wn/Ln) 	148pS 	71pS 	0.99V
-(Wp/Lp) 	2.(Wn/Ln) 	80pS 	76pS 	1.2V
-(Wp/Lp) 	3.(Wn/Ln) 	57pS 	80pS 	1.25V
-(Wp/Lp) 	4.(Wn/Ln) 	45pS 	84pS 	1.35V
-(Wp/Lp) 	5.(Wn/Ln) 	37pS 	88pS 	1.4V
+    - We can make some conclusions from the above table:
+        * When (Wp/Lp) = 2.(Wn/Ln), there is an approximately equal rise-fall delay
+        * Due to the equal rise-fall delay, (Wp/Lp) = 2.(Wn/Ln) create typical characteristics for a clock inverter/buffer
+        * The conditions other than (Wp/Lp) = 2.(Wn/Ln) can still be used as regular inverters/buffers and these can be preferred for data path
+        * Switching Threshold for (Wp/Lp) = 2.(Wn/Ln) and (Wp/Lp) = 3.(Wn/Ln) is very small. Similarly, switching threshold for (Wp/Lp) = 4.(Wn/Ln) 
+          and (Wp/Lp) = 5.(Wn/Ln) is also very small
 
+    - When Wp/Lp is increased, the rise delay is significantly reduced because time required for the output capacitor to charge decreases significantly        and the reason is the availability of a bigger area to charge the capacitor.
 
+    - Ron(PMOS) ~ 2.5*Ron(NMOS)
+
+#### CMOS Noise Margin Robustness Evaluation
 
