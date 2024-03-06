@@ -322,9 +322,27 @@ The various modes when the value of Vmin is different
 
 #### CMOS VTC
 
- - CMOS VTC defines the delays of cell.
- - A CMOS acts like a switch. 
+- MOSFET as a Switch
+     - CMOS VTC defines the delays of cell.
+     - A CMOS acts like a switch. 
        o device is off (With infinite 'Off' resistance) and no current flows from source to drain when |Vgs|<|Vt|  
        o device is ON (with finite 'On' resistance) when |Vgs|>|Vt|
+       
+- Working of CMOS Inverter
+  
+    o  when Vin is ‘high’ and equal to ‘vdd’, PMOS turns 'OFF'and NMOS turns 'ON' and Vout is 0 (open switch).
+    o  when Vin is ‘low’ and equal to ‘0V’, PMOS turns 'ON' and NMOS turns 'OFF' and Vout is Vdd (closed switch).
+
+
+
+
+
+
+
+
+
+
+
+
 
 
