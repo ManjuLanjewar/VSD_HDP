@@ -711,9 +711,11 @@ Method to calculate the Noise Margins from the plot:
 
  #### CMOS Power supply and device variation robustness evaluation   
  
+ power supply scaling and device variation, where the effect of those on the CMOS is another characteristic that defines static behavior of the inverter (robustness).
+ 
 ##### Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Power Supply Variation
 
-power supply scaling and device variation, where the effect of those on the CMOS is another characteristic that defines static behavior of the inverter (robustness).
+
     - Whenever we move from 250nm nodes to lower nodes like 20nm or so on, we scale our supply voltage as well. For example, if things were working at 1V sometime back, now they will be operating at 0.7V
 
     - A CMOS inverter can be operated at 0.5V as well and it has it's own advantages and disadvantages:
@@ -785,6 +787,35 @@ The snap shot of the output window to observe the power supply variation
 
 ##### Part 2: Static Behavior Evaluation - CMOS Inverter Robustness: Device Variation
 
+    1) There are two sources for device variation:
+        - Etching Process Variation
+        - Oxide Thickness
+
+    * Etching Process Variation:
+        - The etching process will define the structures in the layout of the CMOS inverter.
+        - Etching is a very important fabrication step
+        - It is the process that defines the structure (width and the height)
+        - Based on the structures that get defined by the process, it directly impacts the delay
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c563df91-8a7d-4771-a7a2-361d115951a6)
+
+
+   2) In layout of the CMOS inverter we have:
+        - P-diffusion region which is indicated by green color.
+        - Poly-silicon area which is indicated by red color.
+        - Metal layer which is indicated by blue color.
+        - N-diffusion region indicated by yellow color.
+        - Contacts between two layers indicated by black crosses.
+
+   3) Thickness of poly-silicon layer is the gate length annd it defiens at which node we are (20nm, 30nm, 45nm, etc.).
+
+   4) Thickness of the P-diffusion layer is the width of the gate of the PMOS and the thickness of the N-diffusion layer is the width of the
+      gate of the NMOS.
+
+   5) Width identifies overlap area between the diffusion layer and the poly-silicon layer.
+
+   6) Fabrication is basically a lab where we have a lot of things like chemicals, water, gases, etc. running and due to these the ideal
+      structure is distorted.
 
 
 
