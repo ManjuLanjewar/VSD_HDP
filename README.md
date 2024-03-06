@@ -711,8 +711,88 @@ Method to calculate the Noise Margins from the plot:
 
  #### CMOS Power supply and device variation robustness evaluation   
  
-Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Power Supply Variation
+##### Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Power Supply Variation
+
+power supply scaling and device variation, where the effect of those on the CMOS is another characteristic that defines static behavior of the inverter (robustness).
+    - Whenever we move from 250nm nodes to lower nodes like 20nm or so on, we scale our supply voltage as well. For example, if things were working at 1V sometime back, now they will be operating at 0.7V
+
+    - A CMOS inverter can be operated at 0.5V as well and it has it's own advantages and disadvantages:
+        * Advantages of using 0.5V supply:
+            1) There is a significant increase in gain (close to 50% improvement)
+            2) There is a significant reduction in energy consumption (close to 90% improvement)
+        * Disadvantages of using 0.5V supply:
+            1) Performance impact (0.5V supply rising and falling edge is insufficient to completely charge or discharge the load capacitance)
+
+Note:  Lab activity is pending
+To perform the lab activity for power supply scaling, we need the following code:
+
+<pre>*Model Description
+.param temp=27
+
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*Netlist Description
+
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+.control
+
+let powersupply = 1.8
+alter Vdd = powersupply
+        let voltagesupplyvariation = 0
+        dowhile voltagesupplyvariation < 6
+        dc Vin 0 1.8 0.01
+        let powersupply = powersupply - 0.2
+        alter Vdd = powersupply
+        let voltagesupplyvariation = voltagesupplyvariation + 1
+      end
+
+plot dc1.out vs in dc2.out vs in dc3.out vs in dc4.out vs in dc5.out vs in dc6.out vs in xlabel "input voltage(V)" ylabel "output voltage(V)" title "Inveter dc characteristics as a function of supply voltage"
+
+.endc
+
+.end
+</pre>
+
+To define a loop in order to scale the power supply, use the syntax as defined in the picture below:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8082a119-38c4-4fb6-addd-c21e73f19b2e)
+
+Note : The snap shot of the terminal window to observe the power supply variation is pending 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/70452432-db4b-43ec-9184-51244c568239)
+
+The snap shot of the output window to observe the power supply variation
+
+    - To calculate the gain for the given plot:
+        1) Select the curve for which the gain is to be calculated (In this case, we chose the plot for 1.8V Vdd)
+        2) Left click on the point where the slope of the curve is almost changing toward the top of the plot
+        3) The point obtained was x0 = 0.766667, y0 = 1.71351
+        4) Now, left click on the point where the slope of the curve is almost changing toward the bottom of the plot
+        5) The point obtained was x0 = 0.982667, y0 = 0.1 but for our convenience let us consider the coordinates of the point to be x1, y1
+        6) Therefore, the point becomes x1 = 0.982667, y1 = 0.1
+        7) Subtract y1 from y0. So, y0 - y1 = 1.61351
+        8) Subtract x1 from x0. So, x0 - x1 = -0.216
+        9) Now, gain = (y0-y1)/(x0-x1)
+        Hence, Gain(g) = |(1.61351)/(-0.216)| = |-7.46995| = 7.46995
+
+##### Part 2: Static Behavior Evaluation - CMOS Inverter Robustness: Device Variation
 
 
 
- 
+
+
+
+
+
+
+
+
+
