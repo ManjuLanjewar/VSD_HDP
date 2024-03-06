@@ -387,9 +387,31 @@ how to simulate a CMOS circuit using spice in order to obtain the VTC and evalua
             * Naming 'nodes'
 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/34fe897a-7869-411a-84d6-7bf85b3a6a35)
 
 The snap shot of the SPICE netlist considered
 
+The used models of MOSFETs and netlists for simualtions are taken from <pre>https://github.com/kunalg123/sky130CircuitDesignWorkshop.git</pre>
+
+The SPICE code for the above netlist looks something like following:
+<pre>
+***MODEL Description***
+***NETLIST Description***
+M1 out in vdd vdd pmos W=0.375u L=0.25u
+M2 out in  0   0  nmos W=0.375u L=0.25u
+
+cload out 0 10f
+
+Vdd vdd 0 2.5
+Vin  in 0 2.5
+
+***SIMULATION Commands***
+.op
+.dc Vin 0 2.5 0.05
+
+***.include tsmc_025um_model.mod***
+.LIB "tsmc_025um_model.mod" CMOS_MODELS
+.end</pre>
 
 
 
