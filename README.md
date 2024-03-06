@@ -277,4 +277,3 @@ The snap shot of various regions of operation of NMOS on graph plotted between I
         * Cut-off region is a region where the device has been cut-off or it is 'OFF'
 
 
-
