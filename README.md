@@ -343,6 +343,7 @@ In either case, there is a resistance with the switch which represents the equiv
 The snap shot of the circuit diagram of CMOS inverter
 
 - By observation:
+  
     * For the NMOS, voltage equations (Vss =0)
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/7ef5daa7-0ed0-403a-a90d-284e5572a41b)
@@ -355,6 +356,20 @@ The snap shot of the circuit diagram of CMOS inverter
     
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/27924e75-24e1-4886-a7dc-9266529a4128)
 
+The VTC of a CMOS (Vout vs Vin) is derived by first plotting IdsN vs Vout for different values of VgsN = Vin (load curve for NMOS) as shown 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/046ae9b8-741f-4322-9466-cce9ecc6c598)
+
+Load curve for PMOS transistor in CMOS inverter
+
+Similarly,  IdsP vs Vout for different VgsP (load curve for PMOS) as shown 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/25dd7dcd-fa05-42f3-9604-8cb417946ae2)
+
+Load curve for NMOS transistor in CMOS inverter
+
+Finally, Superimposing the load curve of NMOS on the load curve of PMOS and plotting Vin vs Vout from the graph obtained.
+For intersection points between common Vin values gives us the common Vout value in the VTC. VTC has 5 regions: 1-) PMOS linear, NMOS off, 2-) PMOS linear, NMOS saturation, 3-) PMOS and NMOS in saturation, 4-) PMOS saturation, NMOS linear, and 5-) PMOS off, NMOS linear as shown in third picture (1, 3, and 5 regions are of importance).
 
 
 
