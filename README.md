@@ -654,6 +654,13 @@ A few conclusions can be inferred from the above table:
     
 Finally, the areas that can be used for digital and analog applications are stated in the figure below:
 
+Noise margin, which is another characteristic that defines static behavior of the inverter (robustness). 
+When Vin<=VIL (logic 0), Vout is expected to ber VOH, and when Vin>=VIH (logic 1), vout is expected to be VOL (note that the slope at VIL and VIH is -1). 
+The noise margin is defined as VIH-VIL (undefined region: voltage ranges at which the logic does not differentiate between 0 and 1).
+Noise margin high (interpereted as logic 1) = VOH-VIH and noise margin low (interpreted as logic 0) = VIL-VOL. 
+Ideally, we want a CMOS inverter to have a noise margin of 0. When the width of the pmos increases with respect to nmos width, noise margin high increases while noise margin low stays the same then drops as the pmos is responsible for the high value output. 
+Digital design relies on the areas of noise margin high and noise margin low.
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/9c3a5d1e-ee7f-4d3b-b71b-6ed9b38b0dc5)
 
 The snap shot of the Vout versus Vin curve showing the areas that can be used for digital and analog applications
@@ -702,4 +709,10 @@ Method to calculate the Noise Margins from the plot:
     - For noise margin low we need Vil-Vol and in this case ViL=x0 and VoL=y1
     - Therefore, we get NMh = 0.736177 and NMl = 0.655856
 
-    
+ #### CMOS Power supply and device variation robustness evaluation   
+ 
+Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Power Supply Variation
+
+
+
+ 
