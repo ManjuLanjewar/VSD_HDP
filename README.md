@@ -591,5 +591,29 @@ To define a pulse, use the syntax as defined in the picture below:
 
     - Ron(PMOS) ~ 2.5*Ron(NMOS)
 
+The effect of increasing the pmos width. When the pmos width is wider than that of nmos, the switching voltage of the VTC shifts to the right slightly (advantage). As width of pmos increases as an integer multiple of that of nmos (for same L), the rise delay and fall delay decreases rapidly (time to charge decreases as width is wider) and increases respectively. For one some sizing (factor of 2), we observe an equal rise and fall times (symmetric property which is a typical characteristic of a clock inverter/buffer where resistance of pmos is approximately equal to resistance of nmos in that case due to the W/L ratios). Other sizing for inverters is used to get regular inverter/buffer that would be preferred in the data path.
+
 #### CMOS Noise Margin Robustness Evaluation
+
+Noise margin, which is another characteristic that defines static behavior of the inverter (robustness).
+
+##### Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Noise Margin
+
+The ideal and actual Input-Output characteristics of an inverter were observed
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/678ab1a9-5772-42a6-9d26-f511e1e1a0b3)
+
+    - In the above diagram, the terms stated are explained as follows:
+
+        o ViL is Input Low Voltage (ViL could be Vdd/4)
+           -- Any input voltage level between 0 and ViL will be treated as logic '0'
+        o Voh is Output High Voltage (ViH < VoH <= Vdd)
+          --  Any output voltage level between VoH and Vdd will be treated as logic '1'
+        o ViH is Input High Voltage (ViH could be 3.Vdd/4)
+          --  Any input voltage level between ViH and Vdd will be treated as logic '1'
+        o VoL is Output Low Voltage (0 <= VoL < ViL)
+          -- Any output voltage level between 0 and VoL will be treated as logic '0'
+
+- Actual Input-Output characteristics on an inverter were observed and they were plotted on a scale
+
 
