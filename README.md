@@ -276,4 +276,19 @@ The snap shot of various regions of operation of NMOS on graph plotted between I
         * When Vgs<Vt the region of operation of the NMOS is said to be the cut-off region
         * Cut-off region is a region where the device has been cut-off or it is 'OFF'
 
+* Short channel effect
+    When W/L is constant, drain current Id is constant at any node (At any Node means W and L increase or decrease) but practically this will not happen. When W and L (from long channel to short channel device) have decreased in value, we stop seeing quadratic dependance of Ids on Vgs after a certain Vgs value, and we see linear dependance, and also peak current decreases from long channel case due to velocity saturation effect. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
