@@ -931,15 +931,16 @@ Consider a chip on an arduino board, it would contain the following components:-
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)!
 
-
-
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d702cf45-5f1f-468c-bea7-df340f4fad4e)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a58cb1c2-4f38-4a00-9055-31c1d4dc4cfd)
-
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d702cf45-5f1f-468c-bea7-df340f4fad4e)
 
 - Chip is at the center of a package. 
 - chip has PADs which allow signals to pass in and out of the chip (from core where the digital logic sits to outside or vice versa).
 - The die defines the size of the chip, which is manufactured on silicon wafers.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a58cb1c2-4f38-4a00-9055-31c1d4dc4cfd)
+
 - A typical core consists of a CPU SoC, ADCs/DACs, SPI, PLL, and SRAM. PLL, SRAM, and DAC/ADC are called as foundary IPs.
+- The core region contains Macros and Foundry IPs.
 - Foundary is a big factory that has machines where chips get manufactured.
 - We need an interface (some files) to communicate with the foundary.
 - IP is intellectual property (needs intelligence to be built blocks of core).
