@@ -740,9 +740,7 @@ Method to calculate the Noise Margins from the plot:
 </details>
 
 ##### Day 4
-
 <details>
-
     <summary>CMOS Power supply and device variation robustness evaluation</summary>    
  
  power supply scaling and device variation, where the effect of those on the CMOS is another characteristic that defines static behavior of the inverter (robustness).
@@ -917,13 +915,16 @@ Note : Lab Activity: is pending
         4) A point x0 = 0.988209, y0 = 0.988191 is obtained
         5) Since x0 ~ y0. Therefore, Switching Threshold Voltage = Vm = x0 = y0 = 0.988V
 
-      
 </details>
 
 
 Introduction to Chip, Pads, Core, Die and Ip's
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)!
+Consider a chip on an arduino board, it would contain the following components:-
+It has several protocols, an external memory unit (SDRAM), GPIOS, PWM etc. Now all (except memory external chip) of these are contained in a package as shown below.It represents a 7x7 [dimensions] QFN-48 [Quad Flat No leads; 48 pins].The chip is connected to the package with the help of wire bonds
+
+[image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)   ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
 
 
 
