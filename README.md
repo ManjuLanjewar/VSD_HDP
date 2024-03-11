@@ -398,8 +398,11 @@ superimposed load curve of NMOS and load curve of PMOS as shown
 
 </details>
 
-##### Day 3: CMOS switching threshold and dynamic simulations
-how to simulate a CMOS circuit using spice in order to obtain the VTC and evaluate the static behavior. Spice deck needed to write a netlist: component connectivity, component values, identify nodes and name them. The switching voltage Vm is that where Vin=Vout (nmos and pmos in saturation), and it defines the robustness of the CMOS.
+##### Day 3: 
+<details>
+    <summary>CMOS switching threshold and dynamic simulations</summary>
+
+    how to simulate a CMOS circuit using spice in order to obtain the VTC and evaluate the static behavior. Spice deck needed to write a netlist: component connectivity, component values, identify nodes and name them. The switching voltage Vm is that where Vin=Vout (nmos and pmos in saturation), and it defines the robustness of the CMOS.
 
     o Voltage transfer characteristics and SPICE simulations
 
@@ -617,6 +620,7 @@ To define a pulse, use the syntax as defined in the picture below:
 
 The effect of increasing the pmos width. When the pmos width is wider than that of nmos, the switching voltage of the VTC shifts to the right slightly (advantage). As width of pmos increases as an integer multiple of that of nmos (for same L), the rise delay and fall delay decreases rapidly (time to charge decreases as width is wider) and increases respectively. For one some sizing (factor of 2), we observe an equal rise and fall times (symmetric property which is a typical characteristic of a clock inverter/buffer where resistance of pmos is approximately equal to resistance of nmos in that case due to the W/L ratios). Other sizing for inverters is used to get regular inverter/buffer that would be preferred in the data path.
 
+
 #### CMOS Noise Margin Robustness Evaluation
 
 Noise margin, which is another characteristic that defines static behavior of the inverter (robustness).
@@ -732,8 +736,13 @@ Method to calculate the Noise Margins from the plot:
     - For noise margin high we need Voh-Vih and in this case VoH=y0 and ViH=x1
     - For noise margin low we need Vil-Vol and in this case ViL=x0 and VoL=y1
     - Therefore, we get NMh = 0.736177 and NMl = 0.655856
+    
+</details>
 
- #### CMOS Power supply and device variation robustness evaluation   
+##### Day 4
+<deatails>
+
+    <summary>CMOS Power supply and device variation robustness evaluation</summary>    
  
  power supply scaling and device variation, where the effect of those on the CMOS is another characteristic that defines static behavior of the inverter (robustness).
  
@@ -906,12 +915,22 @@ Note : Lab Activity: is pending
         3) Left click on the point where Vin is roughly equal to Vout
         4) A point x0 = 0.988209, y0 = 0.988191 is obtained
         5) Since x0 ~ y0. Therefore, Switching Threshold Voltage = Vm = x0 = y0 = 0.988V
+        6) 
+</details>
 
 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d702cf45-5f1f-468c-bea7-df340f4fad4e)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a58cb1c2-4f38-4a00-9055-31c1d4dc4cfd)
 
 
-
+- Chip is at the center of a package. 
+- chip has PADs which allow signals to pass in and out of the chip (from core where the digital logic sits to outside or vice versa).
+- The die defines the size of the chip, which is manufactured on silicon wafers.
+- A typical core consists of a CPU SoC, ADCs/DACs, SPI, PLL, and SRAM. PLL, SRAM, and DAC/ADC are called as foundary IPs.
+- Foundary is a big factory that has machines where chips get manufactured.
+- We need an interface (some files) to communicate with the foundary.
+- IP is intellectual property (needs intelligence to be built blocks of core).
+- SPI and CPU SoC are macros. Macros are pure digital logic.
 
 
 
