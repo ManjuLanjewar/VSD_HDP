@@ -984,4 +984,4 @@ The design of digital Application Specific Integrated Circuit (ASIC) requires th
 
   * Opensource RTL Designs: github, librecores, opencores
   * Opensource EDA tools: QFlow, OpenROAD, OpenLANE
-    Opensource PDK data: Google Skywater130 PDK
+  * Opensource PDK data: Google Skywater130 PDK
