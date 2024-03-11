@@ -12,8 +12,7 @@
 </nav>
 
 #### Day 1
- <div id="Day 1"> 
-        <h2>Day 1</h2>
+
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
 
