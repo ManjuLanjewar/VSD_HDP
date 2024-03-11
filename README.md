@@ -1,9 +1,9 @@
 <nav>
 
-    <a href="https://Day 1 " target="_self"> Day 1</a> 
+   <a href="/Day 1/">Day 1</a>
 
 </nav>
-<a href="/Day 1/">Day 1</a>
+
 <p><a href="Day 1/">Day 1</a></p>
 #### Day 1
 
