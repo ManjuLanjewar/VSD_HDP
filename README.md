@@ -1,8 +1,9 @@
 ###### Day 1
+
 <details>
-<summary>
-    ** Introduction to Circuit Design and SPICE simulations
-    ##### Cicuit Desgin</summary>
+<summary>Introduction to Circuit Design and SPICE simulations</summary>
+
+         ** Circuit Design 
 
 All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
@@ -10,7 +11,7 @@ they perform required functionality of that particular respective gate.
 Spice Simulation: This particular Circuit has to be fed in with some waveforms to identify output charactristics and simulate using spice.
 Simulated waveforms decides delays of particular cell. Based on value of delay, tune W and L ratio of particular transistor. 
 W/L ratio is factor that decides the value of output current which eventually decides waveform shape, which decide delays of particular cell. 
-To tune delay, how to tune W/L ration, is basically obtain using Spice simulation.</details> 
+To tune delay, how to tune W/L ration, is basically obtain using Spice simulation.
 
 Why do we need simulation? 
 In physical design flow,  whatever we are doing in clock tree, timimg, crosstalk they are built on spice. 
@@ -260,7 +261,7 @@ plot -<name node></pre>
 
    -  Method to save SPICE model
 
-    - Method to write code for SPICE simulation
+    - Method to write code for SPICE simulation</details> 
 
 
 #### Day 2
