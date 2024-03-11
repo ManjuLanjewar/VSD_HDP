@@ -11,7 +11,7 @@
 <p><a href="/Day 10">Day 10</a></p>
 
 </nav>
-<Day 1 id="Day 1">What is Lorem Ipsum?</h3>
+<h3><Day 1 id="Day 1">Day 1</h3>
 
 
 #### Day 1
