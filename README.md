@@ -1112,6 +1112,9 @@ Opensource EDA tools OpenLANE utilises a variety of opensource tools in the exec
     - Test Patterns Compaction
     - Fault Coverage
     - Fault Simulation
+      
+      ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/eae792db-4bf0-48da-90f9-a1fab803c839)
+
 15) Physical Implementation (Automatic PNR) --> OpenRoad
 
     - Floor/Power planning
