@@ -1,6 +1,6 @@
 <nav>
 <p><a href="/Day 1/">Day 1</a></p>
-
+<a href="# Day 1">Day 1</a>
 
 </nav>
     <p><a href="/Day 2/">Day 2</a></p>
@@ -15,7 +15,7 @@
 
 
 #### Day 1
-<a href="# Day 1">Go to Section 2</a>
+
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
 
