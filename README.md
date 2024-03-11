@@ -1062,16 +1062,64 @@ From conception to product, the ASIC design flow is an iterative process that is
 7) Post-Synthesis STA Analysis: Performs setup analysis on different path groups.
 
 8) Floorplanning – Goal is to plan the silicon area and create a robust power distribution network (PDN) to power each of the individual components of the synthesized netlist. In addition, macro placement and blockages must be defined before placement occurs to ensure a legalized GDS file. In power planning we create the ring which is connected to the pads which brings power around the edges of the chip. We also include power straps to bring power to the middle of the chip using higher metal layers which reduces IR drop and electro-migration problem.
+Initial Layout of the Design.
+   - Chip Partitioning --> divide the design into smaller blocks while maintaining functionality.
+   - Macro Partitioning --> dividing and placing macros, rows and pins.
+   - Power planning --> setting the VDD and GND layers. The top layers are used as they are wide and offer less resistance.
+the above steps involve Partitioning, Floor planning and Power planning.
 
-9) Placement – Place the standard cells on the floorplane rows, aligned with sites defined in the technology lef file. Placement is done in two steps: Global and Detailed. In Global placement tries to find optimal position for all cells but they may be overlapping and not aligned to rows, detailed placement takes the global placement and legalizes all of the placements trying to adhere to what the global placement wants.
+9) Placement – Place the standard cells on the floorplane rows, aligned with sites defined in the technology lef file.
+   Placement is done in two steps: Global and Detailed.
+   In Global placement tries to find optimal position for all cells but they may be overlapping and not aligned to rows,
+   In Detailed placement takes the global placement and legalizes all of the placements trying to adhere to what the global placement wants.
+   finalised layout of the modules, macros, pins and pads.
 
-10) CTS – Clock tree synteshsis is used to create the clock distribution network that is used to deliver the clock to all sequential elements. The main goal is to create a network with minimal skew across the chip. H-trees are a common network topology that is used to achieve this goal.
+11) CTS – Clock tree synteshsis is used to create the clock distribution network that is used to deliver the clock to all sequential elements.
+    The main goal is to create a network with minimal skew across the chip. H-trees are a common network topology that is used to achieve this goal.        * CTS alters the netlist. Functionality check is required before progressing
+    * Logical Equivalence Check (LEC) --> formally confirm that the function did not change after modifying netlist
+it is imperative to check functionality when the netlist is modified.
 
-11) Routing – Implements the interconnect system between standard cells using the remaining available metal layers after CTS and PDN generation. The routing is performed on routing grids to ensure minimal DRC errors.
+Note that DFT (design for testing) step is optional and facilitated by Fault tool. Note that we need to deal with antenna rules violations: when a metal wire segment is fabricated, it can act as an antenna which leads to damage some transistor gates during fabrication => two solutions: bridging and inserting antenna diodes. The two solutions are shown side-to-side below:
+
+Note: Fake antenna diode insertion --> Antenna violations may occur which cause damage to the transistors as reactive charges begin to accumulate (usually taken care by Routing). There are two methods to approach this issue.
+
+   ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8a67d7e8-5b0d-4252-814b-afdfda55a4d7)
+
+OpenLane adds fake antenna cells to all gates after placement --> if ant violation is detected it will replace the fake cell with a real one.
+OpenLane deals with those antenna violations and gives the user option to user either OpenLane or OpenRoad solution. The pdk directory inside the OpenLane directory has skywater-pdk which contains PDK files provided by foundry, open_pdks that contains scripts to setup pdks for opensource tools, and sky130A which contains sky130 PDK files.
+
+13) Routing –
+    * Implements the interconnect system between standard cells using the remaining available metal layers after CTS and PDN generation.
+    * The routing is performed on routing grids to ensure minimal DRC errors.
+    * The skywater pdk contains all the data ( location, size, thickness, pitch, vias ..etc) about the interconnect/metal layers.
+    * Metal tracks form a routing grid.
+      - Global Routing --> coarse grained grids used to generate routing guides
+      - Detailed Routing --> fine grained grids and routing guides to implement actual wiring.
+    * Physical Verification --> DRC and LVS.
+    * Timing Verification --> STA
+
+skywater130 pdk --> (1) lowest layer/local interconnect layer (Titanium Nitride) + 5 layers above (Aluminium) = (6)
+Note: OpenLANE --> produce clean (no DRC, LVS, timing violations) GDSII with no human intervention.
 
 Opensource EDA tools OpenLANE utilises a variety of opensource tools in the execution of the ASIC flow:
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/659653ee-5b0e-451b-8729-b592b5aa1167)
+
+14) DFT (Design for Testing)
+
+    - Scan insertion
+    - Automatic Test Pattern Generation (ATPG)
+    - Test Patterns Compaction
+    - Fault Coverage
+    - Fault Simulation
+15) Physical Implementation (Automatic PNR) --> OpenRoad
+
+    - Floor/Power planning
+    - End Decoupling capacitors and tap cell insertion
+    - Placement
+    - Post Placement Optimization
+    - CTS
+    - Routing
 
 OpenLANE design stages
 
@@ -1103,6 +1151,7 @@ OpenLANE design stages
         o Klayout - Performs DRC Checks
         o Netgen - Performs LVS Checks
         o CVC - Performs Circuit Validity Checks
+        
 
 OpenLANE Files: 
 The openLANE file structure looks something like this:
