@@ -967,7 +967,7 @@ For example, if the ISA used is of RISC-V, the code converted by the compiler sh
 Hence, one can say that ISA basically represents the Hardware at an intermediate stage.
 - There is one more interface betwwen Instruction and Hardware is HDL ( Hardware description Language)
   
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/78a3c1f7-d5c8-4744-a88c-6de2ad6e8755)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d61da171-b278-4269-ab18-14df4b1d34f2)
 
 - The Assembler converts the instructions into a bitstream that is fed to the Hardware. 
 - To obtain the hardware or final layout, a certain number of steps need to be followed.
