@@ -946,5 +946,22 @@ Consider a chip on an arduino board, it would contain the following components:-
 - IP is intellectual property (needs intelligence to be built blocks of core).
 - SPI and CPU SoC are macros. Macros are pure digital logic.
 
+**From Software Application to Hardware** 
 
+
+
+- The above image represents the Software to Hardware translation. 
+- The application software or apps are handled by the system software in order to run on the hardware. 
+- System software consists of the OS, Compiler and the assembler.
+- An OS performs low level system functions, handles IO operations, allocates memory.
+- It starts at the software application level which takes in an input. This input is now processed by the Operating System (OS).
+- It instigates the Compiler to convert high level abstract code of the software to Assembly/Low level machine instructions (ISA) according to hardware.
+- The assembler then converts the instructions (abstract ISA, or 'architecture' of computer) to respective binary that is eventually fed to the hardware.
+- The RTL implements the instructions (the ISA), then RTL is synthesized into netlist which is physically implemented in hardware.
+
+        Hardware description is written in HDL for respective ISA to follow PD flow.
+
+ISA is language of computer. 
+
+The Instruction Set Architecture (ISA) refers to the 'architecture' of the computer/processor. For example, if the ISA used is of RISC-V, the code converted by the compiler should give instructions suitable for RISC-V core. Hence, one can say that ISA basically represents the Hardware at an intermediate stage.
 
