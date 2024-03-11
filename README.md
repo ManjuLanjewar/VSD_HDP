@@ -1,10 +1,7 @@
 <nav>
-
-   <a href="/Day 1/">Day 1</a>
-
+<a href="/Day 1/">Day 1</a>
 </nav>
 
-<p><a href="Day 1/">Day 1</a></p>
 #### Day 1
 
 <details>
