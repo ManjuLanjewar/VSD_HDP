@@ -740,6 +740,7 @@ Method to calculate the Noise Margins from the plot:
 </details>
 
 ##### Day 4
+
 <deatails>
 
     <summary>CMOS Power supply and device variation robustness evaluation</summary>    
@@ -915,8 +916,14 @@ Note : Lab Activity: is pending
         3) Left click on the point where Vin is roughly equal to Vout
         4) A point x0 = 0.988209, y0 = 0.988191 is obtained
         5) Since x0 ~ y0. Therefore, Switching Threshold Voltage = Vm = x0 = y0 = 0.988V
-        6) 
+
+      
 </details>
+
+
+Introduction to Chip, Pads, Core, Die and Ip's
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)
 
 
 
