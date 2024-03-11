@@ -928,7 +928,7 @@ Consider a chip on an arduino board, it would contain the following components:-
 * It represents a 7x7 [dimensions] QFN-48 [Quad Flat No leads; 48 pins].
 * The chip is connected to the package with the help of wire bonds
 
-[image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73) ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
+[image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
 
 
 
