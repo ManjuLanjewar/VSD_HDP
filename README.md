@@ -995,7 +995,7 @@ The design of digital Application Specific Integrated Circuit (ASIC) requires th
 
 ASIC flow objective: RTL to GDSII also called Automated PnR and /or physical implementation 
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1e99bf1f-cb9c-4af9-a982-1e32b4643edd)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/643ddf49-1959-45ef-86c8-d4c14248dd45)
 
 Simplified RTL to GDSII Flow
 
@@ -1024,5 +1024,92 @@ Developing an open ASIC design flow is tough as there are worries in tool qualif
 
 **OpenLANE ASIC Flow**
 
+OpenLane is an open ASIC design flow (relies on multiple open-source tools).
+The main goal is produce a clean GDSII without human intervention. Clean means no LVS, DRC, STA violations. 
+OpenLane is tuned for skywater 130 open PDK. OpenLane can be used to produce GDSII for either macros and chips. 
+It has two modes of operation: autonomous (one click of button) or manual (step by step). 
+It provides a mean to sweep configurations allowing design space exploration, and has a large number of design examples available publicly.
 
+Below is the detailed ASIC design flow in OpenLane.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/99807f46-78de-42bf-8b48-c9d937e07626)
+
+OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLANE flow comprises a variety of tools such as Yosys, ABC, OpenSTA, Fault, OpenROAD app, Netgen and Magic which are used to harden chips and macros, i.e. generate final GDSII from the design RTL. The primary goal of OpenLANE is to produce clean GDSII with no human intervention. OpenLANE has been tuned to function for the Google-Skywater130 Opensource Process Design Kit.
+From conception to product, the ASIC design flow is an iterative process that is not static for every design. The details of the flow may change depending on ECO’s, IP requirements, DFT insertion, and SDC constraints, however the base concepts still remain. The flow can be broken down into 11 steps:
+
+1) Architectural Design – A system engineer will provide the VLSI engineer with specifications for the system that are determined through physical constraints. The VLSI engineer will be required to design a circuit that meets these constraints at a microarchitecture modeling level.
+
+2) RTL Design/Behavioral Modeling – RTL design and behavioral modeling are performed with a hardware description language (HDL). EDA tools will use the HDL to perform mapping of higher-level components to the transistor level needed for physical implementation. HDL modeling is normally performed using either Verilog or VHDL. One of two design methods may be employed while creating the HDL of a microarchitecture:
+   
+    a. RTL Design – Stands for Register Transfer Level. It provides an abstraction of the digital circuit using:
+
+* i. Combinational logic
+* ii. Registers
+* iii. Modules (IP’s or Soft Macros)
+
+    b. Behavioral Modeling – Allows the microarchitecture modeling to be performed with behavior-based modeling in HDL. This method bridges the gap between C and HDL allowing HDL design to be performed
+  
+3) RTL Verification - Behavioral verification of design
+4) DFT Insertion - Design-for-Test Circuit Insertion
+5) Logic Synthesis – Logic synthesis uses the RTL netlist to perform HDL technology mapping.
+   The synthesis process is normally performed in two major steps:
+    o GTECH Mapping – Consists of mapping the HDL netlist to generic gates what are used to perform logical optimization based on AIGERs and
+      other topologies created from the generic mapped netlist.
+    o Technology Mapping – Consists of mapping the post-optimized GTECH netlist to standard cells described in the PDK
+
+6) Sandard Cells – Standard cells are fixed height and a multiple of unit size width. This width is an integer multiple of the SITE size or the PR boundary. Each standard cell comes with SPICE, HDL, liberty, layout (detailed and abstract) files used by different tools at different stages in the RTL2GDS flow.
+
+7) Post-Synthesis STA Analysis: Performs setup analysis on different path groups.
+
+8) Floorplanning – Goal is to plan the silicon area and create a robust power distribution network (PDN) to power each of the individual components of the synthesized netlist. In addition, macro placement and blockages must be defined before placement occurs to ensure a legalized GDS file. In power planning we create the ring which is connected to the pads which brings power around the edges of the chip. We also include power straps to bring power to the middle of the chip using higher metal layers which reduces IR drop and electro-migration problem.
+
+9) Placement – Place the standard cells on the floorplane rows, aligned with sites defined in the technology lef file. Placement is done in two steps: Global and Detailed. In Global placement tries to find optimal position for all cells but they may be overlapping and not aligned to rows, detailed placement takes the global placement and legalizes all of the placements trying to adhere to what the global placement wants.
+
+10) CTS – Clock tree synteshsis is used to create the clock distribution network that is used to deliver the clock to all sequential elements. The main goal is to create a network with minimal skew across the chip. H-trees are a common network topology that is used to achieve this goal.
+
+11) Routing – Implements the interconnect system between standard cells using the remaining available metal layers after CTS and PDN generation. The routing is performed on routing grids to ensure minimal DRC errors.
+
+Opensource EDA tools OpenLANE utilises a variety of opensource tools in the execution of the ASIC flow:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/659653ee-5b0e-451b-8729-b592b5aa1167)
+
+OpenLANE design stages
+
+    1. Synthesis
+        o yosys - Performs RTL synthesis
+        o abc - Performs technology mapping
+        o OpenSTA - Performs static timing analysis on the resulting netlist to generate timing reports
+    2. Floorplan and PDN
+        o init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+        o ioplacer - Places the macro input and output ports
+        o pdn - Generates the power distribution network
+        o tapcell - Inserts welltap and decap cells in the floorplan
+    3. Placement
+        o RePLace - Performs global placement
+        o Resizer - Performs optional optimizations on the design
+        o OpenDP - Perfroms detailed placement to legalize the globally placed components
+    4. CTS
+        o TritonCTS - Synthesizes the clock distribution network (the clock tree)
+    5. Routing
+        o FastRoute - Performs global routing to generate a guide file for the detailed router
+        o CU-GR - Another option for performing global routing.
+        o TritonRoute - Performs detailed routing
+        o SPEF-Extractor - Performs SPEF extraction
+    6. GDSII Generation
+        o Magic - Streams out the final GDSII layout file from the routed def
+        o Klayout - Streams out the final GDSII layout file from the routed def as a back-up
+    7. Checks
+        o Magic - Performs DRC Checks & Antenna Checks
+        o Klayout - Performs DRC Checks
+        o Netgen - Performs LVS Checks
+        o CVC - Performs Circuit Validity Checks
+
+OpenLANE Files: 
+The openLANE file structure looks something like this:
+
+    * skywater-pdk: contains PDK files provided by foundry
+    * open_pdks: contains scripts to setup pdks for opensource tools
+    * sky130A: contains sky130 pdk files
+    * Invoking OpenLANE and Design Preparation
+    * Openlane can be invoked using docker command followed by opening an interactive session.
+      flow.tcl is a script that specifies details for openLANE flow.
