@@ -12,6 +12,11 @@
 
 </nav>
 
+<!-- Sections --> 
+<section id="Day 1"> 
+  <!-- Content for section 1 --> 
+</section> 
+
 #### Day 1
 
 <details>
