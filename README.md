@@ -1,5 +1,6 @@
 <nav>
 <a href="/Day 1/">Day 1</a>
+<p><a href="Day 1/">Day 1!</a></p>
 </nav>
 
 #### Day 1
