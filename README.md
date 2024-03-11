@@ -1,9 +1,12 @@
+<Day 1>
+
+
 #### Day 1
 
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
 
-        * Circuit Design 
+        **Circuit Design** 
 
 All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
