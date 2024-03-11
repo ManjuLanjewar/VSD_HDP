@@ -1,6 +1,10 @@
-##### Introduction to Circuit Design and SPICE simulations
-
-Cicuit Desgin : All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
+###### Day 1
+<details>
+<summary>
+    ** Introduction to Circuit Design and SPICE simulations
+         -- Cicuit Desgin</summary>
+</details>
+All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
 
 Spice Simulation: This particular Circuit has to be fed in with some waveforms to identify output charactristics and simulate using spice.
