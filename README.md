@@ -1,6 +1,7 @@
-<section>
-<header>Day1</header>
-</section>
+<nav>
+<a href="/html/">Day 1</a>
+</nav>
+
 #### Day 1
 
 <details>
