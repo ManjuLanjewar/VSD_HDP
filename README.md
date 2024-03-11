@@ -741,7 +741,7 @@ Method to calculate the Noise Margins from the plot:
 
 ##### Day 4
 
-<deatails>
+<details>
 
     <summary>CMOS Power supply and device variation robustness evaluation</summary>    
  
@@ -923,7 +923,9 @@ Note : Lab Activity: is pending
 
 Introduction to Chip, Pads, Core, Die and Ip's
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
+
+
 
 
 
