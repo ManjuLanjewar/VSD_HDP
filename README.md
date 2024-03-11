@@ -1,4 +1,4 @@
-###### Day 1
+#### Day 1
 
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
@@ -261,7 +261,9 @@ plot -<name node></pre>
 
    -  Method to save SPICE model
 
-    - Method to write code for SPICE simulation</details> 
+    - Method to write code for SPICE simulation
+
+</details> 
 
 
 #### Day 2
