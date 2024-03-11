@@ -1,6 +1,5 @@
 <nav>
-<p><a href="/Day 1/">Day 1</a>
-<h3 id="Day 1">Day 1</h3></p>
+<p><a href="/Day 1/">Day 1</a></p>
 <p><a href="/Day 2/">Day 2</a></p>
 <p><a href="/Day 3/">Day 3</a></p>
 <p><a href="/Day 4/">Day 4</a></p>
