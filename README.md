@@ -11,11 +11,8 @@
 <p><a href="/Day 10">Day 10</a></p>
 
 </nav>
+<Day 1 id="Day 1">What is Lorem Ipsum?</h3>
 
-<!-- Sections --> 
-<section id="Day 1">
-  <!-- Content for section 1 --> 
-</section> 
 
 #### Day 1
 
