@@ -979,9 +979,50 @@ The design of digital Application Specific Integrated Circuit (ASIC) requires th
 - Resistor Transistor Logic of Intellectual Property (RTL IPs),
 - Electronic Design Automation (EDA) Tools and
 - Process Design Kit (PDK) data.
+  
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/46712f8c-221f-4d89-b791-d372e03e8837)
-
 
   * Opensource RTL Designs: github, librecores, opencores
   * Opensource EDA tools: QFlow, OpenROAD, OpenLANE
   * Opensource PDK data: Google Skywater130 PDK
+
+**What is PDK?**
+
+- A PDK (Process Design Kit) is the iterface between the fabrication and design (which were separated in the past). 
+- It contains a collection of files used to model a fabrication process for the EDA tools used to design an IC.
+- PDK includes device models, process design rules(DRC, LVS, PEX), digital standard cell libraries, I/O libraries, etc.. 
+- Regular PDKs are distributed under NDAs (non disclosure agreements), but open PDKs (130nm, released by Google) do not require NDAs.
+
+ASIC flow objective: RTL to GDSII also called Automated PnR and /or physical implementation 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1e99bf1f-cb9c-4af9-a982-1e32b4643edd)
+
+Simplified RTL to GDSII Flow
+
+- Synthesis (takes RTL as input, output is gate-level netlist. Standard cells have regular layouts)
+    converts RTL to a circuit out of componnets from the Standard Cell Library(SCL).
+    Resultant circuit is described in HDL and referred as Gate Level Netlist.
+    Standard cells have regular layouts
+-  Floor & Power Planning: Planning of silicon area to ensure robust power distribution
+      Objective: Plan silicon are and create robust power distribution network to power circuit.  
+      Chip Floor Planning : Partition the chip die between different system building blocks and place I/O Pads.
+      Macro Floor Planning: Dimensions, Pin locations, rows defination
+      Power planning : power network constructed typically chip is powered by multiple VDD and GND pins.
+      power pins are connected to all componets through rings and  vertical and horizontal metal straps
+- Placement: Placing cells on floorplan rows aligned with sites
+    Usually done in 2 steps: Global and detailed placement.
+    Global Placement: for optimal position of cells
+    Detailed Placement: for legal positions
+- CTS (creating clock distribution network to route the clock)
+- Route (implementing the interconnect using metal layers)
+  Global and detailed routing takes place in divide and conquer approach
+- Sign off: Physical verifications (DRC, LVS) and Timing verifications (STA)
+  Output is GDSII
+
+The PDK is used in all these steps.
+Developing an open ASIC design flow is tough as there are worries in tool qualification, tool calibration, and missing tools.
+
+**OpenLANE ASIC Flow**
+
+
+
