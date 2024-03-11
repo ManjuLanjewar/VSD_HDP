@@ -973,4 +973,15 @@ Hence, one can say that ISA basically represents the Hardware at an intermediate
 - To obtain the hardware or final layout, a certain number of steps need to be followed.
 - The RTL implements the instructions (the ISA), then RTL is synthesized into netlist which is physically implemented in hardware.
  
- 
+**Components of opensource digital ASIC design**
+
+The design of digital Application Specific Integrated Circuit (ASIC) requires three enablers or elements
+- Resistor Transistor Logic of Intellectual Property (RTL IPs),
+- Electronic Design Automation (EDA) Tools and
+- Process Design Kit (PDK) data.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/46712f8c-221f-4d89-b791-d372e03e8837)
+
+
+  * Opensource RTL Designs: github, librecores, opencores
+  * Opensource EDA tools: QFlow, OpenROAD, OpenLANE
+    Opensource PDK data: Google Skywater130 PDK
