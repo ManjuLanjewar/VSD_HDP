@@ -1,5 +1,6 @@
 <nav>
-<p><a href="/Day 1/">Day 1</a></p>
+<p><a href="/Day 1/">Day 1</a>
+<section id="Day 1"></p>
 <p><a href="/Day 2/">Day 2</a></p>
 <p><a href="/Day 3/">Day 3</a></p>
 <p><a href="/Day 4/">Day 4</a></p>
@@ -13,7 +14,7 @@
 </nav>
 
 <!-- Sections --> 
-<section id="Day 1"> 
+
   <!-- Content for section 1 --> 
 </section> 
 
