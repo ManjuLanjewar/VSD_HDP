@@ -918,13 +918,17 @@ Note : Lab Activity: is pending
 </details>
 
 
-Introduction to Chip, Pads, Core, Die and Ip's
+#### Introduction to Chip, Pads, Core, Die and Ip's
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/652cf522-e255-4353-9b56-ee3e70ec00c9)!
-Consider a chip on an arduino board, it would contain the following components:-
-It has several protocols, an external memory unit (SDRAM), GPIOS, PWM etc. Now all (except memory external chip) of these are contained in a package as shown below.It represents a 7x7 [dimensions] QFN-48 [Quad Flat No leads; 48 pins].The chip is connected to the package with the help of wire bonds
 
-[image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73)   ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
+Consider a chip on an arduino board, it would contain the following components:-
+* It has several protocols, an external memory unit (SDRAM), GPIOS, PWM etc.
+* Now all (except memory external chip) of these are contained in a package as shown below.
+* It represents a 7x7 [dimensions] QFN-48 [Quad Flat No leads; 48 pins].
+* The chip is connected to the package with the help of wire bonds
+
+[image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/31c1a3b0-d101-44a5-9d9d-1f6b276f3c73) ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/da14e8a6-27e3-4ca3-8ea7-9ca990ae493e)
 
 
 
