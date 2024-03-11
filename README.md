@@ -948,7 +948,7 @@ Consider a chip on an arduino board, it would contain the following components:-
 
 **From Software Application to Hardware** 
 
-
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/fe55f1d8-006f-45e0-9476-7c0f52b560cf)
 
 - The above image represents the Software to Hardware translation. 
 - The application software or apps are handled by the system software in order to run on the hardware. 
@@ -957,11 +957,20 @@ Consider a chip on an arduino board, it would contain the following components:-
 - It starts at the software application level which takes in an input. This input is now processed by the Operating System (OS).
 - It instigates the Compiler to convert high level abstract code of the software to Assembly/Low level machine instructions (ISA) according to hardware.
 - The assembler then converts the instructions (abstract ISA, or 'architecture' of computer) to respective binary that is eventually fed to the hardware.
+- Hardware understands patterns and accordingly generates output. 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/664ddca0-242e-449e-8fb1-f3d6a177bf6c)
+
+- Instructions acts as Abstract Interface between C/C++/JAVA language and hardware.
+- Abstarct Interface is called The Instruction Set Architecture (ISA) which refers to the 'architecture' of the computer/processor. 
+For example, if the ISA used is of RISC-V, the code converted by the compiler should give instructions suitable for RISC-V core.
+Hence, one can say that ISA basically represents the Hardware at an intermediate stage.
+- There is one more interface betwwen Instruction and Hardware is HDL ( Hardware description Language)
+  
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/78a3c1f7-d5c8-4744-a88c-6de2ad6e8755)
+
+- The Assembler converts the instructions into a bitstream that is fed to the Hardware. 
+- To obtain the hardware or final layout, a certain number of steps need to be followed.
 - The RTL implements the instructions (the ISA), then RTL is synthesized into netlist which is physically implemented in hardware.
-
-        Hardware description is written in HDL for respective ISA to follow PD flow.
-
-ISA is language of computer. 
-
-The Instruction Set Architecture (ISA) refers to the 'architecture' of the computer/processor. For example, if the ISA used is of RISC-V, the code converted by the compiler should give instructions suitable for RISC-V core. Hence, one can say that ISA basically represents the Hardware at an intermediate stage.
-
+ 
+ 
