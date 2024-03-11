@@ -3,7 +3,7 @@
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
 
-         ** Circuit Design 
+        * Circuit Design 
 
 All logic gates are made-up of PMOS and NMOS transistors connected in very particuar fashion and once they are connected in that fashion ,
 they perform required functionality of that particular respective gate. 
@@ -267,8 +267,10 @@ plot -<name node></pre>
 
 
 #### Day 2
-<summary>velocity saturation and the basics of CMOS inverter Voltage Transfer Characteristics (VTC)
-</summary>
+
+<details>
+        
+<summary>velocity saturation and the basics of CMOS inverter Voltage Transfer Characteristics (VTC)</summary>
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/28c8ee57-f423-437a-8a4e-9c6f22be7568)
 
@@ -380,6 +382,8 @@ superimposed load curve of NMOS and load curve of PMOS as shown
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4a0bead9-6596-4d01-a6b1-2b95cca5c060)
 
  VTC has 5 regions: 1-) PMOS linear, NMOS off, 2-) PMOS linear, NMOS saturation, 3-) PMOS and NMOS in saturation, 4-) PMOS saturation, NMOS linear, and 5-) PMOS off, NMOS linear as shown in third picture (1, 3, and 5 regions are of importance).
+
+</details>
 
 ##### Day 3: CMOS switching threshold and dynamic simulations
 how to simulate a CMOS circuit using spice in order to obtain the VTC and evaluate the static behavior. Spice deck needed to write a netlist: component connectivity, component values, identify nodes and name them. The switching voltage Vm is that where Vin=Vout (nmos and pmos in saturation), and it defines the robustness of the CMOS.
