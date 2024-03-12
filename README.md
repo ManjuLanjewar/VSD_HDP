@@ -1,18 +1,18 @@
 <html>
 <body>
 
-<p><a href="#C1">Jump to Day 1</a></p>
-<p><a href="#C2">Jump to Day 2</a></p>
-<p><a href="#C3">Jump to Day 3</a></p>
-<p><a href="#C4">Jump to Day 4</a></p>
-<p><a href="#C5">Jump to Day 5</a></p>
-<p><a href="#C6">Jump to Day 6</a></p>
-<p><a href="#C7">Jump to Day 7</a></p>
-<p><a href="#C8">Jump to Day 8</a></p>
-<p><a href="#C9">Jump to Day 9</a></p>
-<p><a href="#C10">Jump to Day 10</a></p>
+<p><a href="#C1">Day 1</a></p>
+<p><a href="#C2">Day 2</a></p>
+<p><a href="#C3">Day 3</a></p>
+<p><a href="#C4">Day 4</a></p>
+<p><a href="#C5">Day 5</a></p>
+<p><a href="#C6">Day 6</a></p>
+<p><a href="#C7">Day 7</a></p>
+<p><a href="#C8">Day 8</a></p>
+<p><a href="#C9">Day 9</a></p>
+<p><a href="#C10">Day 10</a></p>
 
-<h2 id="C1">Day 1</h2>
+
 <h2 id="C2">Day 2</h2>
 <h2 id="C3">Day 3</h2>
 <h2 id="C4">Day 4</h2>
@@ -37,6 +37,8 @@
 <p><a href="/Day 9/">Day 9</a></p>
 <p><a href="/Day 10">Day 10</a></p>
 </nav> -->
+
+<h2 id="C1">Day 1</h2>
 
 #### Day 1
 
