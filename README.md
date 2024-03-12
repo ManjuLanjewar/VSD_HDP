@@ -917,8 +917,9 @@ Note : Lab Activity: is pending
 
 </details>
 
-
-#### Introduction to Chip, Pads, Core, Die and Ip's
+### Day 5
+<details>
+<summary>Introduction to Chip, Pads, Core, Die and Ip's</summary>
 
 Consider a chip on an arduino board, it would contain the following components:-
 
@@ -1204,10 +1205,12 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
     
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
+</details>
 
-### Day 2
+### Day 6
 
-#### Chip floor planning, Placement and Routing.
+<details>
+<summary>Chip floor planning, Placement and Routing</summary>
 
 **Utilization factor and Aspect ratio**
 
@@ -1260,3 +1263,11 @@ The arrangement of these IP's in a chip is referred as Floorplanning.
 Some example of IP's availale are Memory, Clock-gating cell, Comparator, Mux. All of them implemented once and can be instantiated multiple times on to netlist. This is part of top level netlist. They performs some functions, receive some inputs signals, they delivers some output signals but functionality of this particular cell implemented once. 
     
 **De-coupling Capacitors**
+
+Memories are often placed close to the input side. Memory units serve as pre-placed cells. Now connectivity with these units is done through the supply/power lines in the chip. They are connected with wires. The physical distance between the source and the cell will cause a drop in the voltage. In such a scenario, if the voltage reaching the cell is not sufficient to meet the Noise Margin specifications, it would cause an unpredictable output at the cell. The solution for it is to use de-coupling capacitors to provide a "backup supply" closer to the unit(zero to minimal voltage drop due to very short distance).
+
+How does a de-coupling capacitor work?
+lets take an AND gate. During switching from 0 to 1 state, if the voltage being supplied to the gate from the Power line drops below the required voltage, the capacitor Cd discharges and supplies power to the AND gate temporarily to ensure correct voltage is being supplied. When no switching is taking place the Cd is charged by the Power lines. Hence it ensures proper voltage is being supplied to the gate during switching operations.
+It also bypasses high frequency noise from other units and prevents crosstalk between closely placed cells.
+
+Third step in floop planning is to define the decoupling capacitances around the preplaced cells. Decoupling capacitances are used to decouple circuits from the main supply, and they are placed closer to the cell. The decoupling capacitances are important during the switching activity as it makes sure signal is delivered with attentuation that lies in the noise margin regions (as opposed to huge attentuation that can take place because the main supply is physically far away from the cells. The decoupling capacitances replenish their own charge when there is no switching activity.
