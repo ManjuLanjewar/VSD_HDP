@@ -1264,6 +1264,7 @@ Some example of IP's availale are Memory, Clock-gating cell, Comparator, Mux. Al
     
 **De-coupling Capacitors**
 
+Third step in floop planning is to define the decoupling capacitances around the preplaced cells. 
 Memories are often placed close to the input side. Memory units serve as pre-placed cells. Now connectivity with these units is done through the supply/power lines in the chip. They are connected with wires. The physical distance between the source and the cell will cause a drop in the voltage. In such a scenario, if the voltage reaching the cell is not sufficient to meet the Noise Margin specifications, it would cause an unpredictable output at the cell. The solution for it is to use de-coupling capacitors to provide a "backup supply" closer to the unit(zero to minimal voltage drop due to very short distance).
 
 How does a de-coupling capacitor work?
@@ -1272,4 +1273,33 @@ It also bypasses high frequency noise from other units and prevents crosstalk be
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b43af33c-c793-4803-8852-feec7c24f657)
 
-Third step in floop planning is to define the decoupling capacitances around the preplaced cells. Decoupling capacitances are used to decouple circuits from the main supply, and they are placed closer to the cell. The decoupling capacitances are important during the switching activity as it makes sure signal is delivered with attentuation that lies in the noise margin regions (as opposed to huge attentuation that can take place because the main supply is physically far away from the cells. The decoupling capacitances replenish their own charge when there is no switching activity.
+Decoupling capacitances are used to decouple circuits from the main supply, and they are placed closer to the cell. The decoupling capacitances are important during the switching activity as it makes sure signal is delivered with attentuation that lies in the noise margin regions (as opposed to huge attentuation that can take place because the main supply is physically far away from the cells. The decoupling capacitances replenish their own charge when there is no switching activity.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/136fd791-23ba-4c46-8370-5462514849aa)
+
+**Power Planning**
+
+The forth step is power planning. 
+Macro is a predefined and reuseable blocks of logic which can perform specific tasks. There are two types of macros, namely:
+
+    Hard macros --> non-flexible, PPA and timing is fixed, available as ICs, industry graded.
+    Soft macros --> flexible, PPA and timing is unpredictable, synthesizable RTL.
+
+The power fluctuation issue was stabilised for a local module using de-coupling capacitors. Now I will have to consider fluctuations between multiple such modules in the chip. 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4712a390-507d-4ae7-9083-a307bf6c9334)
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/cc8e7f26-40b1-4df3-8d9a-50201fb8be09)
+
+It is not feasible to have capacitors throughout the chip. However, if not considered it will lead to voltage drooping and ground bounce which will momentarily affect the working of the chip (it is bad for large designs). Voltage drooping is a condition in which multiple capacitors (of a bus) draw current from the same power line causing the source voltage to drop below the original value. Closely, ground bounce is a state when the ground value is slightly above zero because of many capacitors discharge current into a single ground line. These will definitely lead to uncertaintity in the internal functioning of the chip.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2e38c719-d8b5-4e2a-9da4-4bfa16297f55)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d2d0239e-0201-4028-987b-186a97c69108)
+
+This is used for global communication between the different macros as the receiving macro (load) should receive the same signal sent from the sending macro (driver). Using one power supply to feen in the signal can cause problems in ground bounce or supply droop if multiple decoupling transistors try to charge or discharge at the same time. The solution to this problem is to use multiple sources for the power supply, where each cell will take its power from the nearest supply. The problem of placing those multiple power supplies is called power planning (in OpenLane, this is done post placement). 
+The solution to this problem is the introduction of many other power lines in the form of a grid/mesh. Hence the capacitor closest to the power line can tap into whichever needed. VDD power lines are placed in vertically and horizontal layers with metal contacts. The GND lines are also placed similarly in the same level as VDD. However it is made sure that both these lines are isolated from each other. 
+
+
+
+
+
+
