@@ -1259,5 +1259,4 @@ IP's are preplaced cells as their arrangement is done by user-defined locations 
 The arrangement of these IP's in a chip is referred as Floorplanning. 
 Some example of IP's availale are Memory, Clock-gating cell, Comparator, Mux. All of them implemented once and can be instantiated multiple times on to netlist. This is part of top level netlist. They performs some functions, receive some inputs signals, they delivers some output signals but functionality of this particular cell implemented once. 
     
-
-
+**De-coupling Capacitors**
