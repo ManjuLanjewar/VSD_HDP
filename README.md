@@ -1165,3 +1165,45 @@ The openLANE file structure looks something like this:
     * Invoking OpenLANE and Design Preparation
     * Openlane can be invoked using docker command followed by opening an interactive session.
       flow.tcl is a script that specifies details for openLANE flow.
+
+### Tools used for physical Design
+
+#### Python Installation
+
+<pre>$ sudo apt install -y build-essential python3 python3-venv python3-pip</pre>
+
+#### Docker Installation
+
+<pre>$ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
+
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+    
+$ sudo mkdir -p /etc/apt/keyrings
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+$ sudo apt-get update
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+$ apt-cache madison docker-ce (copy the version string you want to install)
+
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin (paste the version string copies in place of <VERSION_STRING>)
+
+$ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)</pre>
+    
+
+    
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
+
+
