@@ -1205,7 +1205,9 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
 
-#### chip floor planning and placement and routing.
+### Day 2
+
+#### Chip floor planning, Placement and Routing.
 
 **Utilization factor and Aspect ratio**
 
