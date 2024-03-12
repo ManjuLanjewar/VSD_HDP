@@ -1244,8 +1244,20 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 - Here, Utilization factor = (2 unit x 2 unit) / (4 unit x 2 unit) = 0.5
   Aspect ratio = (2 unit ) / (4 unit) = 0.5
 
+**Concept of pre-placed cells**
 
+The second step of floor planning is defining the locations of preplaced cells. 
+lets consider a combo logic which consists of a massive number of gates (50,000). When implementing this on a single die the utilization factor will surely increase. Hence the gates are partitioned into smaller blocks with input and outputs between these blocks. 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d9d991ce-7e15-48b2-8546-47dcf9a4dcc1)
+
+We cut big logic cells into different blocks, we extended IO pins, black box the blocks, and then separate the black boxes and implemented as two different IPs or modules. IPs are implemented once and can be instantiated multiple times to aid in reuseability of the function in the design.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/77cf4791-574c-4fc9-a81c-54399132b710)
+
+IP's are preplaced cells as their arrangement is done by user-defined locations and hence placed in the chip before automated placement-and-routing. The automatic placement-and-routing will place the remaining logical cells in design onto chip. It is important to place the preplaced cells in locations that are relevant to the design as this lcoation won't change.
+The arrangement of these IP's in a chip is referred as Floorplanning. 
+Some example of IP's availale are Memory, Clock-gating cell, Comparator, Mux. All of them implemented once and can be instantiated multiple times on to netlist. This is part of top level netlist. They performs some functions, receive some inputs signals, they delivers some output signals but functionality of this particular cell implemented once. 
     
 
 
