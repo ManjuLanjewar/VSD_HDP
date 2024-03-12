@@ -1330,6 +1330,11 @@ In detailed placement, the tool changes the position of cells post global placem
 
 The first step in placement and routing is binding the netlist with physical cells. This means taking every component in the netlist and giving them a proper width and height. These widths and heights are taken from the library. The library has various options of widths and heights for the same cell (bigger is faster). 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8a4f5870-4bb1-4dd9-9b6d-b182262b6585)
+The above image shows a physical view of logic cells.
+These cells are placed onto the core space in the following manner. 
+The second step in placement and routing is placement. 
+In this step, the netlist is placed on the floor plan (which already has the preplaced cells by now). The placement is important as it affects the delays. 
 
 
-
+The third step is optimized placement To ensure that the timing is maintained. The respective cells are placed as close as possible to the related derivatives. The wire capacitances are estimated and the placement is optimized by adding buffers (repeaters that replicate the original signal) where needed to maintain the integrity of the signal. The distances for signals are calculated according to slew values and transition delay. Criss cross can occur when placing, and should be avoided. In case signal intergrity fails due to large distance between the cells, repeaters (buffers) are placed in the path to reproduce the signal and drive it to the respective cell. Hence Area is compromised for better timing and performance.
