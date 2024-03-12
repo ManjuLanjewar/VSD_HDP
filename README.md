@@ -1331,6 +1331,7 @@ In detailed placement, the tool changes the position of cells post global placem
 The first step in placement and routing is binding the netlist with physical cells. This means taking every component in the netlist and giving them a proper width and height. These widths and heights are taken from the library. The library has various options of widths and heights for the same cell (bigger is faster). 
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8a4f5870-4bb1-4dd9-9b6d-b182262b6585)
+
 The above image shows a physical view of logic cells.
 These cells are placed onto the core space in the following manner. 
 The second step in placement and routing is placement. 
