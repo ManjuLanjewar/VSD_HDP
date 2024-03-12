@@ -13,11 +13,8 @@
 <p><a href="#C10">Day 10</a></p>
 
 
-<h2 id="C2">Day 2</h2>
-<h2 id="C3">Day 3</h2>
-<h2 id="C4">Day 4</h2>
-<h2 id="C5">Day 5</h2>
-<h2 id="C6">Day 6</h2>
+
+
 <h2 id="C7">Day 7</h2>
 <h2 id="C8">Day 8</h2>
 <h2 id="C9">Day 9</h2>
@@ -25,22 +22,8 @@
 
 </body>
 </html>
-<!-- <nav>
-<p><a href="/Day 1/" target="_top">Day 1</a></p>
-<p><a href="/Day 2/">Day 2</a></p>
-<p><a href="/Day 3/">Day 3</a></p>
-<p><a href="/Day 4/">Day 4</a></p>
-<p><a href="/Day 5/">Day 5</a></p>
-<p><a href="/Day 6/">Day 6</a></p>
-<p><a href="/Day 7/">Day 7</a></p>
-<p><a href="/Day 8/">Day 8</a></p>
-<p><a href="/Day 9/">Day 9</a></p>
-<p><a href="/Day 10">Day 10</a></p>
-</nav> -->
 
 <h2 id="C1">Day 1</h2>
-
-#### Day 1
 
 <details>
 <summary>Introduction to Circuit Design and SPICE simulations</summary>
@@ -308,7 +291,7 @@ plot -<name node></pre>
 </details> 
 
 
-#### Day 2
+<h2 id="C2">Day 2</h2>
 
 <details>
         
@@ -427,7 +410,8 @@ superimposed load curve of NMOS and load curve of PMOS as shown
 
 </details>
 
-##### Day 3: 
+<h2 id="C3">Day 3</h2>
+
 <details>
     <summary>CMOS switching threshold and dynamic simulations</summary>
 
@@ -768,7 +752,8 @@ Method to calculate the Noise Margins from the plot:
     
 </details>
 
-##### Day 4
+<h2 id="C4">Day 4</h2>
+
 <details>
     <summary>CMOS Power supply and device variation robustness evaluation</summary>    
  
@@ -946,7 +931,8 @@ Note : Lab Activity: is pending
 
 </details>
 
-### Day 5
+<h2 id="C5">Day 5</h2>
+
 <details>
 <summary>Introduction to Chip, Pads, Core, Die and Ip's</summary>
 
@@ -1236,7 +1222,7 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
 </details>
 
-### Day 6
+<h2 id="C6">Day 6</h2>
 
 ##### Good Floor Plan Vs Bad Floor Plan and Introduction to Library Cells 
 
