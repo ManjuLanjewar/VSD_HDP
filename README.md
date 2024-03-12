@@ -1207,16 +1207,40 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 
 #### chip floor planning and placement and routing.
 
-First step of floor planning is defining height and width of the core. Recall that logic cells are placed inside the core. 
-Lets consider a basic example of a combo logic between capture and launch flops. Each cell and each flop will have dimensions (in this case lets take unit dimensions). Now to produce the components of the netlist (cell and flops) , it needs to be structured on the silicon wafer die. Hence I would need to place these components of the netlist in certain way such that it fits in the core to be placed on the die.
-Utilization factor of the core = Area (occupied by netlist)/Total area of the core. Ideally a 50-60% utilization (of cells only usually) is good. Aspect ratio = Height of core /width of core. 
+**Utilization factor and Aspect ratio**
 
-Utilization factor = Area of the netlist / Total area of the core ( < 1 usually 0.5/0.6 )
-Aspect ratio = Height / Width of the core ( if 1 --> square core; else --> rectangle core ) 
+- In physical design flow, first step of floor planning is defining height and width of the core and die. 
+- Recall that logic cells are placed inside the core. 
+- Lets consider a basic example of a basic netlist consist of combo logic between capture and launch flops. 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8bb9173f-e2b9-4495-94aa-7a0fdd0cb089)
 
+- Now to produce the components of the netlist (cell and flops) , it needs to be structured on the silicon wafer die. 
+  Hence I would need to place these components of the netlist in certain way such that it fits in the core to be placed on the die.
+- Here we are intrested in dimension of core and die. So in that case intrested in dimension of std. cells and not wires.
+- Each cell and each flop will have dimensions. In this case lets take unit dimensions. 
+- Let's dimension of std. cells are 1 unit X 1 unit. So area = 1 sq. unit
+  Let's dimension of F/F's are 1 unit X 1 unit. So area = 1 sq. unit
+  Let's calculate area occupied by netlist on silicon wafer.
+  Now remove wires and place all on single plate. Now length will be 2 unit and breadth will be 2 unit. So, area will be 4 sq.unit
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c63e4b09-a464-4916-9e5a-27130859c953)
 
+- silicon wafer on which all logic implemented. One section of wafer is die and inside die, there is core. Die encapsulate core.
+- Circuit is build in area of die so will exceed die area. Place all logical cells inside core. 
+
+- Utilization factor of the core = Area occupied by netlist / Total area of the core.
+  When netlist completely occupies core area then utilization factor is 100%. Then there will be no space to add any logic.
+  Ideally a 50-60% utilization (of cells only usually) is good and Utilization factor will be 0.5/0.6
+
+- Aspect ratio = Height of core / width of core. 
+  When Aspect ratio = 1, signifies chip is square shaped core;
+  When Aspect ratio is other than 1 signifies chip is rectangle shape core. 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/9258984e-b452-4e1f-aefb-be3ed6234fad)
+
+- Here, Utilization factor = (2 unit x 2 unit) / (4 unit x 2 unit) = 0.5
+  Aspect ratio = (2 unit ) / (4 unit) = 0.5
 
 
 
