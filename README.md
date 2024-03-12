@@ -1209,6 +1209,8 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 
 ### Day 6
 
+##### Good Floor Plan Vs Bad Floor Plan and Introduction to Library Cells 
+
 <details>
 <summary>Chip floor planning, Placement and Routing</summary>
 
@@ -1315,10 +1317,18 @@ The pins are optimized by fanout from a common point and are placed in a random 
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/12041dfd-ecdc-402a-8cc5-09ae0b6fc80a)
 
+The sixth step is logical cell placement blockage where a blockage is placed in die area outside core to present tools from placing cells in that area.
 
+#### Library Binding and Placement
 
+**Netlist Binding and initial place design**
 
+Placement involves the placing of standard cells onto the floorplan of the die/core. It occurs in 2 steps, that is, Global Placement and Detailed Placement.
+Global Placement is a coarse placement of cells which will consider initial timing constraints, congestion and multi-voltage variants. However they are not legalised (meaning the cells are placed such that they are not present on the standard cell rows, not appended with each other [incase of high frequency operations] and they overlap other cells --> in short they arent placed perfectly). In global placement, tool finds optimal position for all cells which may not be legal and cells may overlap. Optimization is done through reduction of half parameter wire length.
 
+In detailed placement, the tool changes the position of cells post global placement so as to legalise them. Legalisation occurs in Detailed Placement. This will give rise to new timing violations as the postions of cells will be minutely changed and hence the wire lengths (capacitances) will also change. This will have to be optimised to progress forward. 
+
+The first step in placement and routing is binding the netlist with physical cells. This means taking every component in the netlist and giving them a proper width and height. These widths and heights are taken from the library. The library has various options of widths and heights for the same cell (bigger is faster). 
 
 
 
