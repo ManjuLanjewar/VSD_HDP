@@ -1203,7 +1203,23 @@ $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING>
 $ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)</pre>
     
 
-    
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
+
+#### chip floor planning and placement and routing.
+
+First step of floor planning is defining height and width of the core. Recall that logic cells are placed inside the core. 
+Lets consider a basic example of a combo logic between capture and launch flops. Each cell and each flop will have dimensions (in this case lets take unit dimensions). Now to produce the components of the netlist (cell and flops) , it needs to be structured on the silicon wafer die. Hence I would need to place these components of the netlist in certain way such that it fits in the core to be placed on the die.
+Utilization factor of the core = Area (occupied by netlist)/Total area of the core. Ideally a 50-60% utilization (of cells only usually) is good. Aspect ratio = Height of core /width of core. 
+
+Utilization factor = Area of the netlist / Total area of the core ( < 1 usually 0.5/0.6 )
+Aspect ratio = Height / Width of the core ( if 1 --> square core; else --> rectangle core ) 
+
+
+
+
+
+
+
+    
 
 
