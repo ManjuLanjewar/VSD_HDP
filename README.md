@@ -1292,11 +1292,31 @@ The power fluctuation issue was stabilised for a local module using de-coupling 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/cc8e7f26-40b1-4df3-8d9a-50201fb8be09)
 
 It is not feasible to have capacitors throughout the chip. However, if not considered it will lead to voltage drooping and ground bounce which will momentarily affect the working of the chip (it is bad for large designs). Voltage drooping is a condition in which multiple capacitors (of a bus) draw current from the same power line causing the source voltage to drop below the original value. Closely, ground bounce is a state when the ground value is slightly above zero because of many capacitors discharge current into a single ground line. These will definitely lead to uncertaintity in the internal functioning of the chip.
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2e38c719-d8b5-4e2a-9da4-4bfa16297f55)
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d2d0239e-0201-4028-987b-186a97c69108)
 
 This is used for global communication between the different macros as the receiving macro (load) should receive the same signal sent from the sending macro (driver). Using one power supply to feen in the signal can cause problems in ground bounce or supply droop if multiple decoupling transistors try to charge or discharge at the same time. The solution to this problem is to use multiple sources for the power supply, where each cell will take its power from the nearest supply. The problem of placing those multiple power supplies is called power planning (in OpenLane, this is done post placement). 
 The solution to this problem is the introduction of many other power lines in the form of a grid/mesh. Hence the capacitor closest to the power line can tap into whichever needed. VDD power lines are placed in vertically and horizontal layers with metal contacts. The GND lines are also placed similarly in the same level as VDD. However it is made sure that both these lines are isolated from each other. 
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1e30f925-711c-4f12-80ad-495e6d6d8478)
+
+**Pin placement**
+
+The fifth step in floor planning is pin placement.
+The connectivity between the cells is defined in the netlist, and pin placement is the problem of placing those pins on the chip's die. Note that clock pins are bigger than other pins as this pin drives more cells. 
+
+A chip will have input as well as outputs and to tap into these values I will require pin placement on the chip. Once the design is complete, all the inputs and outputs are placed in a region specifically reserved for pins. This is done by adding a blockage element to that area to restrict the tool from placing cells. This is called as logical cell placement blockage.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/50f3b920-e729-46c1-af68-144c3094bdd4)
+
+The pins are optimized by fanout from a common point and are placed in a random order in the reserved area. Many parameters are considered while placing the pins such as connectivity, proximity, type of pins (eg i/o, clk, power/gnd),.. etc. Clock signal is used to facilitate all the flops and sequential elements in the chip. Hence, the clk pin is larger than the i/o pins so that it offers least resistance to the path.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/12041dfd-ecdc-402a-8cc5-09ae0b6fc80a)
+
+
+
 
 
 
