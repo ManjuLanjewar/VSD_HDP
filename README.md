@@ -1402,8 +1402,16 @@ It consists of 3 parts:-
     
 **Typical Characterization flow**
 
-Characterization Flow (GUNA)
+There are few problems of Standard Cells in polygon level format (GDSII). Some of them are:
 
+    * Extraction of functionality is complicated and unnecessary as it is known
+    * Functional/Delay simulation takes way too long
+    * Power extraction for a whole chip takes too long
+    * Automatic detection of timing constraints (e.g. Setup time) is difficult
+
+A solution to above problems is Cell Characterization. It is a simple model for delay, function, constraints and power on cell/gate level. 
+
+Characterization Flow (GUNA). 
     1. Read the SPICE Model file     
     2. Read extracted SPICE netlist
     3. Recognise the behavior of the circuit design*
@@ -1434,5 +1442,17 @@ The choice of the threshold definitions is important to get correct propagation 
 Propagation delay = time(out_thr) - time(in_thr). 
 Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr). 
 
+</details>
 
+<h2 id="C8">Day 8</h2>
+
+<details>
+
+   <summary>Design library cell using Magic Layout and ngspice characterization</summary>
+
+##### Labs for CMOS Inverter ngSpice Simulations
+
+* Spice Deck creation for CMOS Inverter
+
+To simulate the inverter, first its spice needs to be created. Recall that a spice deck includes component connectivity, component values, nodes. The netlist to simulate includes model description, netlist description, simulation type and parameters, and needed libraries. Recall that the switching threshold (Vm, used to evaluate static behavior) of a CMOS inverter is the point on the voltage transfer characteristic curve where input voltage equals output voltage: at which both PMOS and NMOS are in saturation region which gives rise to a leakage current.
 
