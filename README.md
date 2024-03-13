@@ -1484,7 +1484,13 @@ Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr).
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/0da6abab-c9b2-4442-8038-f294f75ebe35)
 
-5-) Lightly Doped Drain (LDD) formation: LDD is formed to prevent hot electron effect and short channel effect: P+, P-, P doping profile is needed for pmos and N+, N-, N profile is needed for nmos. Photolithography is applied, Phosphorous is doped to create N- implants on P-well side. The lithography is repeated for N-well side and we get P- implant after doping Boron. A thick Si3N4 or SiO2 is deposited on whole material and plasma anisotropic etching takes place to create the side-wall spacers where source and drain will be later affected in next step.
+5-) Lightly Doped Drain (LDD) formation: LDD is formed to prevent hot electron effect and short channel effect: P+, P-, P doping profile is needed for pmos and N+, N-, N profile is needed for nmos. Why need P- and N- ? Two Reasons Hot Electron Effect and short channel Effect
+In Hot Electron Effect, When device size reduces, electric field E = V/d increases, energy of electron and holes attains tremendous amount of energy which break si-si bonds leading to some more addition of electron and holes which we don't want because control doping profile very well. 
+Enegry might be so high that it crosses 3.2eV barrier between si conduction band and SiO2 conduction band. If it crosses this band it might enters into oxide layer which is present above substate which create issue.   
+Short channel effect, when device size reduces, drain field penetrate channel, difficult to Gate to control current.
+Photolithography is applied, Phosphorous is doped to create N- implants on P-well side. The lithography is repeated for N-well side and we get P- implant after doping Boron. A thick Si3N4 or SiO2 is deposited on whole material and plasma anisotropic etching takes place to create the side-wall spacers where source and drain will be later affected in next step.
+
+
 
 6-) Source and drain formation: think layer of screen oxide is added to avoid channelling during implantation. Then after photolithography, Aresenic implantation/doping takes place above P-well (below side-wall spacers). Then after photolithography, Boron implantation/doping takes place above N-well (below side-wall spacers). The material is put in high temperature furnace (called high temperature annealing).
 
