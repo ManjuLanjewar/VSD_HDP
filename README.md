@@ -1452,7 +1452,15 @@ Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr).
 
 ##### Labs for CMOS Inverter ngSpice Simulations
 
-* Spice Deck creation for CMOS Inverter
+**Spice Deck creation for CMOS Inverter**
 
-To simulate the inverter, first its spice needs to be created. Recall that a spice deck includes component connectivity, component values, nodes. The netlist to simulate includes model description, netlist description, simulation type and parameters, and needed libraries. Recall that the switching threshold (Vm, used to evaluate static behavior) of a CMOS inverter is the point on the voltage transfer characteristic curve where input voltage equals output voltage: at which both PMOS and NMOS are in saturation region which gives rise to a leakage current.
+  To simulate the inverter, first its spice deck needs to be created.
+  Recall that a spice deck includes component connectivity, component values, identify nodes, Name nodes. The netlist to simulate includes model  
+  description, netlist description, simulation type and parameters, and needed libraries.
+
+**Note: Spice Simulation Lab from ShonTaware**
+
+**Threshold Voltage Vm**
+
+  Recall that the switching threshold (Vm, used to evaluate static behavior) of a CMOS inverter is the point on the voltage transfer characteristic curve where input voltage equals output voltage: at which both PMOS and NMOS are in saturation region which gives rise to a leakage current.
 
