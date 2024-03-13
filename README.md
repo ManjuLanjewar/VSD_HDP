@@ -1464,21 +1464,25 @@ Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr).
 
   Recall that the switching threshold (Vm, used to evaluate static behavior) of a CMOS inverter is the point on the voltage transfer characteristic curve where input voltage equals output voltage: at which both PMOS and NMOS are in saturation region which gives rise to a leakage current.
 
-**Lab VSDcell gitclone**mariam
+**Lab VSDcell gitclone**mariam aashish
 
 
 #### Inception of Layout : A CMOS Fabrication Process
 
-16-mask CMOS process steps:
+**16-mask CMOS process steps**
 
 1-) Selecting a substrate: selecting body/substrate material (P-type substrate)
     High resistivity(5 ~ 50ohms),doping level(10 to power 15 / cm cube ), orientation(100)
 
-2-) Creating active region for transistors: First create isolation between active region pockets by SiO2, then perform ~40nm SiO2 on P-type substare and then ~80 nm Si3N4 deposition, then ~1nm photoresist deposition, and then apply photolithography (part of photoresist is covered by mask to protect it against UV light). Areas that are not protected against UV light are then washed out using developing solution and etching is done, then photoresist is chemically removed. Then we place CMOS in oxidation furnace,and field oxide is grown (process is called LOCOS or Local Oxidation of Silicon). After that, Si3N4 is stripped using hot phospheric acid.
+2-) Creating active region for transistors: First create isolation between active region pockets by SiO2, then perform ~40nm SiO2 on P-type substare and then ~80 nm Si3N4 deposition, then ~1nm photoresist deposition, and then apply photolithography (part of photoresist is covered by mask1 to protect it against UV light). Areas that are not protected against UV light are then washed out using developing solution and etching is done, then photoresist is chemically removed. Then we place CMOS in oxidation furnace,and field oxide is grown (process is called LOCOS or Local Oxidation of Silicon). After that, Si3N4 is stripped using hot phospheric acid.
 
-3-) N-well and P-well formation: Photoresist is deposited and mask is used to define the protected area. UV light reacts with exposed area, and then we wash the area which is unprotected. After that, the mask is removed (this is lithography). Ion implemention by Boron for P-well is then done, followed by ion implementation of Phosphorous for N-well formation (after photoresist, mask application, and wash out). Then the CMOS is put in a high temperature furnace for a high temperature for a long time, which will diffuse the N-well and P-well (the pockets). In N-well the pmos will be created and in P-well the nmos will be created.
+3-) N-well and P-well formation: Photoresist is deposited and mask2 is used to define the protected area. UV light reacts with exposed area, and then we wash the area which is unprotected. After that, the mask is removed (this is lithography). Ion implantation by Boron for P-well is then done, followed by ion implementation of Phosphorous for N-well formation (after photoresist, mask application, and wash out). Then the CMOS is put in a high temperature furnace for a high temperature for a long time, which will diffuse the N-well and P-well (the pockets). In N-well the pmos will be created and in P-well the nmos will be created.
 
-4-) Formation of gate terminal: the nmos and pmos gates are formed by depositing photoresist, using mask, exposing UV, applying wash out, removing the mask, doping with Boron to modify the doping concentration in the P-well. Similar steps are repeated for P-well to control the threshold voltage or doping concentration in the N-well. Extra oxide is diluted then re-grown again to give high quality oxide. A polisilicon layer is then deposited to form the gate, then N-type material is doped on the gate to make it low resistance. Then photoresist is dumped, mask is used, unprotected material is washed out, mask is removed, and the remaining areas of polisilicon are etched away.
+ ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/d8c372ae-80b4-4f29-b44f-e71759c64e5b)
+
+4-) Formation of gate terminal: Doping Concentration and Oxide Capacitance are important term in gate formation as they control threshold voltage Vt. The nmos and pmos gates are formed by depositing photoresist, using mask4, exposing UV, applying wash out, removing the mask, doping with Boron to modify the doping concentration in the P-well. Similar steps are repeated for P-well to control the threshold voltage or doping concentration in the N-well. Extra oxide is diluted then re-grown again to give high quality oxide. A polisilicon layer is then deposited to form the gate, then N-type material is doped on the gate to make it low resistance. Then photoresist is dumped, mask6 is used, unprotected material is washed out, mask is removed, and the remaining areas of polisilicon are etched away.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/0da6abab-c9b2-4442-8038-f294f75ebe35)
 
 5-) Lightly Doped Drain (LDD) formation: LDD is formed to prevent hot electron effect and short channel effect: P+, P-, P doping profile is needed for pmos and N+, N-, N profile is needed for nmos. Photolithography is applied, Phosphorous is doped to create N- implants on P-well side. The lithography is repeated for N-well side and we get P- implant after doping Boron. A thick Si3N4 or SiO2 is deposited on whole material and plasma anisotropic etching takes place to create the side-wall spacers where source and drain will be later affected in next step.
 
