@@ -1343,7 +1343,7 @@ Global Placement is a coarse placement of cells which will consider initial timi
 
 In detailed placement, the tool changes the position of cells post global placement so as to legalise them. Legalisation occurs in Detailed Placement. This will give rise to new timing violations as the postions of cells will be minutely changed and hence the wire lengths (capacitances) will also change. This will have to be optimised to progress forward. 
 
-The first step in placement and routing is binding the netlist with physical cells. This means taking every component in the netlist and giving them a proper width and height. These widths and heights are taken from the library. The library has various options of widths and heights for the same cell (bigger is faster). 
+The first step in placement and routing is binding the netlist with physical cells. This means taking every component in the netlist and giving them a proper width and height. These widths and heights are taken from the library. Library will have following infrmation: height and widhth, delay information of of each and every cell and required conditions of particular cell Ex. at what condition F/F sends output i.e. When condition?, various flavours of cells available based on timing condition and based on sapce available on floorplan. The library has various options of widths and heights for the same cell (bigger is faster). 
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8a4f5870-4bb1-4dd9-9b6d-b182262b6585)
 
@@ -1352,6 +1352,19 @@ These cells are placed onto the core space in the following manner.
 The second step in placement and routing is placement. 
 In this step, the netlist is placed on the floor plan (which already has the preplaced cells by now). The placement is important as it affects the delays. 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/72facaf9-f9c3-4041-b2eb-a4e27ed5e6f2)
 
-The third step is optimized placement To ensure that the timing is maintained. The respective cells are placed as close as possible to the related derivatives. The wire capacitances are estimated and the placement is optimized by adding buffers (repeaters that replicate the original signal) where needed to maintain the integrity of the signal. The distances for signals are calculated according to slew values and transition delay. Criss cross can occur when placing, and should be avoided. In case signal intergrity fails due to large distance between the cells, repeaters (buffers) are placed in the path to reproduce the signal and drive it to the respective cell. Hence Area is compromised for better timing and performance.
+The third step is optimized placement to ensure that the timing is maintained. The respective cells are placed as close as possible to the related derivatives. The wire capacitances are estimated and the placement is optimized by adding buffers (repeaters that replicate the original signal) where needed to maintain the integrity of the signal. The distances for signals are calculated according to slew values and transition delay. Criss cross can occur when placing, and should be avoided. In case signal intergrity fails due to large distance between the cells, repeaters (buffers) are placed in the path to reproduce the signal and drive it to the respective cell. Hence Area is compromised for better timing and performance.
+
+**Need for Libraries and Characterization**
+
+All stages of floorplanning and place and route need library characterization. Standard cells are placed inside libraries, which defines their functionalities and their different versions: different sizes and threshold voltages
+Library file contains information about the gate functionality, dimensions, capacitance rating, timing and delay values and much more. We build, characterise and model these cells so that the tool can understand it.
+
+
+
+
+
+
+
 
