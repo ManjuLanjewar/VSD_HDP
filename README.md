@@ -1402,6 +1402,8 @@ It consists of 3 parts:-
     
 **Typical Characterization flow**
 
+Characterization Flow (GUNA)
+
     1. Read the SPICE Model file     
     2. Read extracted SPICE netlist
     3. Recognise the behavior of the circuit design*
@@ -1411,6 +1413,23 @@ It consists of 3 parts:-
     7. Provide the load capacitance (NLDM --> range of capacitances)
     8. Provide simultion constraints
 
-These 8 steps are fed via a configuration file to the characterization software called "GUNA". And the software will generate timing, noise, power .libs, function (part of 3-) above). There are hence three characterization types: timing characterization, power characterization, and noise characterization.
+These 8 steps are fed via a configuration file to the characterization software called "GUNA". And the software will generate timing, noise, power models,.libs function.
+
+There are hence three characterization types: timing characterization, power characterization, and noise characterization.
+
+##### General Timing and Characterization Parameters
+
+**Timimg Threshold Definations**
+
+Timing Characterisation --> Delays between input and output wave from (Propagation Delay), Rise time; Fall time delays (Transition delay).
+Timing threshold definitions are points whose definitions help us calculate slew from the waveforms (definitions are for slew_low_rise_thr, slew_high_rise_thr, slew_low_fall_thr, and slew_high_fall_thr), and the delay of the cell between input and output plots (definitions are for in_rise_thr, in_fall_thr, out_rise_thr, and out_fall_thr).
+
+Solution --> Choosing the correct threshold points, Having proper circuit designs to reduce the wire delays. Negative delays are intolerable. 
+
+
+
+
+
+The choice of the threshold definitions is important to get correct propagation delay and transition time. Propagation delay = time(out_thr) - time(inthr). Fall/Rise Transition time = time(slew_highthr) - time(slew_low_thr). Typical values: slew_low_rise_thr=20%, slew_high_rise_thr=80%, slew_low_fall_thr=20%, slew_high_fall_thr=80%, in_rise_thr=50%, in_fall_thr=50%, out_rise_thr=50%, and out_fall_thr=50%.
 
 
