@@ -1368,7 +1368,8 @@ We build, characterise and model these cells so that the tool can understand it.
 <h2 id="C7">Day 7</h2>
 
 <details>
-#### Cell Design and Characteriztion Flow
+
+   <summary>Cell Design and Characteriztion Flow</summary>
 
 **Inputs for Cell Design Flow**
 
