@@ -1380,20 +1380,19 @@ It consists of 3 parts:-
    - pdks comes from foundary: consist of DRC and LVS rules, SPICE models, library and user-defined specs
    - PDKs --> files which contain information about the technology being used for your design.
    - DRC & LVS --> Physical design rules that need to be met so that the foundry can fabricate the cell.
-   - SPICE Models --> contains characteristics of the transistors that will be used to build the cell (threshold voltage, aspect ratio, capacitances, etc).
-   - library and user-defined spec --> cell height (space between Vcc and Gnd rails), cell width (delay constraints, drive strength), supply voltage (noise margin), metal layer specs (specific metal layer to be used), pin location (close to Vcc or Gnd).
+   - SPICE Models --> contains characteristics of the transistors that will be used to build the cell (threshold voltage, aspect ratio, capacitances,
+     etc).
+   - library and user-defined spec --> cell height (space between Vcc and Gnd rails), cell width (delay constraints, drive strength), supply voltage
+     (noise margin), metal layer specs (specific metal layer to be used), pin location (close to Vcc or Gnd).
 
-2) Design steps: circuit design where sizing takes place, layout design (where the function is implemented via pmos and nmos connections, then the pmos and nmos network graphs are derived, then the Euler's path is determined, then a stick diagram is drawn, then stick diagram is converted to layout by sticking to the DRC rules defined by the foundary), and characterization
-
-Design steps
-
-    Circuit design --> The circuit is designed by making use of the industry parameters and inputs. For instance, to model the aspect ratio of 2.5, the PMOS = 2.5 NMOS dimensions while keeping height constant based of the technology file. Similarly, Switching threshold is also model based off the requirement.
-    Layout design --> build the circuit with transistors to meet the required functionality, apply Euler's Path (unidirectional traverse only) and create the respective network graphs, implement the stick diagram of the circuit topology. Finally, it should pass all the DRC & LVS checks set by the foundry.
+2) Design steps: 
+    - Circuit design --> The circuit is designed by making use of the industry parameters and inputs. For instance, to model the aspect ratio of 2.5,         the PMOS = 2.5 NMOS dimensions while keeping height constant based of the technology file. Similarly, Switching threshold is also model based on        the requirement.
+    - Layout design --> build the circuit with transistors to meet the required functionality, apply Euler's Path (unidirectional traverse only) and          create the respective network graphs, implement the stick diagram of the circuit topology. Finally, it should pass all the DRC & LVS checks set     by the foundry.
     Characterization --> specific flow; Gives information on Timing, Power and Noise in the form of .libs files along with functionality.
 
 
 
-
+circuit design where sizing takes place, layout design (where the function is implemented via pmos and nmos connections, then the pmos and nmos network graphs are derived, then the Euler's path is determined, then a stick diagram is drawn, then stick diagram is converted to layout by sticking to the DRC rules defined by the foundary), and characterization
 
 
 
