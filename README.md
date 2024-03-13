@@ -1471,9 +1471,10 @@ Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr).
 
 16-mask CMOS process steps:
 
-1-) Selecting a substrate: selecting body/substrate material (P-substrate)
+1-) Selecting a substrate: selecting body/substrate material (P-type substrate)
+    High resistivity(5 ~ 50ohms),doping level(10 to power 15 / cm cube ), orientation(100)
 
-2-) Creating active region for transistors: first create isolation between active region pockets by SiO2, then perform Si3N4 deposition, then photoresist deposition, and then apply photolithography (part of photoresist is covered by mask to protect it against UV light). Areas that are not protected against UV light are then washed out using developing solution and etching is done, then photoresist is chemically removed. Then we place CMOS in oxidation furnace,and field oxide is grown (process is called LOCOS or Local Oxidation of Silicon). After that, Si3N4 is stripped using hot phospheric acid.
+2-) Creating active region for transistors: First create isolation between active region pockets by SiO2, then perform ~40nm SiO2 on P-type substare and then ~80 nm Si3N4 deposition, then ~1nm photoresist deposition, and then apply photolithography (part of photoresist is covered by mask to protect it against UV light). Areas that are not protected against UV light are then washed out using developing solution and etching is done, then photoresist is chemically removed. Then we place CMOS in oxidation furnace,and field oxide is grown (process is called LOCOS or Local Oxidation of Silicon). After that, Si3N4 is stripped using hot phospheric acid.
 
 3-) N-well and P-well formation: Photoresist is deposited and mask is used to define the protected area. UV light reacts with exposed area, and then we wash the area which is unprotected. After that, the mask is removed (this is lithography). Ion implemention by Boron for P-well is then done, followed by ion implementation of Phosphorous for N-well formation (after photoresist, mask application, and wash out). Then the CMOS is put in a high temperature furnace for a high temperature for a long time, which will diffuse the N-well and P-well (the pockets). In N-well the pmos will be created and in P-well the nmos will be created.
 
