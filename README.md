@@ -962,6 +962,13 @@ Consider a chip on an arduino board, it would contain the following components:-
 - IP is intellectual property (needs intelligence to be built blocks of core).
 - SPI and CPU SoC are macros. Macros are pure digital logic.
 
+**Introduction To RISC-V**
+- RISC-V is a new ISA that's available under open, free and non-restrictive licences. RISC-V ISA delivers a new level of free, extensible software and hardware freedom on architecture.
+- It is far simpler and smaller than other commercial ISAs available.
+- It avoids micro-architecture or technology dependent features.
+- It has small standard base ISA and multiple standard extensions.
+- It supports variable-length instruction encoding. 
+
 **From Software Application to Hardware** 
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/fe55f1d8-006f-45e0-9476-7c0f52b560cf)
@@ -1220,6 +1227,16 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
     
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
+
+**OpenLane Directory Structure**
+
+Openlane is automated RTL to GDSII flow that consists of multiple tools (obviously opensource) such as OpenROAD, Yosys, Magic, Netgen, and a number of custom scripts for design exploration and optimization. 
+It has two modes to promote "No human in flow", that is, autonomous and interactive. For understanding the process of the flow, I will be using the "interactive" method.
+
+All the Process Design Kit(PDK) are listed under the pdks/ directory. Along with the Sky130A we are using some other open-source PDKs and other related files are also available in the directory. 
+The location of the PDK directory is given of $PDK_ROOT variable.
+
+
 </details>
 
 <h2 id="C6">Day 6</h2>
