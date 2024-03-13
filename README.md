@@ -1358,8 +1358,19 @@ The third step is optimized placement to ensure that the timing is maintained. T
 
 **Need for Libraries and Characterization**
 
-All stages of floorplanning and place and route need library characterization. Standard cells are placed inside libraries, which defines their functionalities and their different versions: different sizes and threshold voltages
-Library file contains information about the gate functionality, dimensions, capacitance rating, timing and delay values and much more. We build, characterise and model these cells so that the tool can understand it.
+All stages of Logic Synthesis, floorplanning, placement, Clock Tree Synthesis and Routing need library characterization. 
+Standard cells are placed inside libraries, which defines their functionalities and their different versions: different sizes and threshold voltages
+Library file contains information about the gate functionality, dimensions, capacitance rating, timing and delay values and much more.
+We build, characterise and model these cells so that the tool can understand it.
+
+</details>
+
+<h2 id="C7">Day 7</h2>
+
+<details>
+#### Cell Design and Characteriztion Flow
+
+**Inputs for Cell Design Flow**
 
 
 
