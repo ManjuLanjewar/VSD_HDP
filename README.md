@@ -1374,6 +1374,9 @@ We build, characterise and model these cells so that the tool can understand it.
 **Inputs for Cell Design Flow**
 
 For one standard cell, the cell design flow defined in the library consists of:
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/45a93fcd-60ad-4c67-bb5d-f9262f27ccfe)
+
 It consists of 3 parts:-
 1) Inputs
    - Inputs to cells from Process Design Kits.
@@ -1392,13 +1395,22 @@ It consists of 3 parts:-
     - Layout design --> build the circuit with transistors to meet the required functionality, apply Euler's Path (unidirectional traverse only) and          create the respective network graphs, implement the stick diagram of the circuit topology. Then stick diagram is converted to layout by sticking        to the DRC rules and LVS checks defined by the foundary.
     - Characterization --> specific flow; Gives information on Timing, Power and Noise in the form of .libs files along with functionality.
 
+3-) Outputs: 
+    - Circuit Description Language (CDL)
+    - GSDII, LEF, extracted SPICE netlists (.cir) which includes the parasitics (resistand and capacitance of each cell)
+    - Timing, noise, power .libs, function
+    
+**Typical Characterization flow**
 
-3-) Outputs: circuit description language, GDSII, LEF, extracted spice netlist (.cir) which includes the parasitics, timing, noise, power .libs, function
+    1. Read the SPICE Model file     
+    2. Read extracted SPICE netlist
+    3. Recognise the behavior of the circuit design*
+    4. Read sub-circuit of the design
+    5. Set the Power supply
+    6. Apply stimulus
+    7. Provide the load capacitance (NLDM --> range of capacitances)
+    8. Provide simultion constraints
 
-
-
-
-
-
+These 8 steps are fed via a configuration file to the characterization software called "GUNA". And the software will generate timing, noise, power .libs, function (part of 3-) above). There are hence three characterization types: timing characterization, power characterization, and noise characterization.
 
 
