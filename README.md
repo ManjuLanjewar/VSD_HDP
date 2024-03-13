@@ -1178,7 +1178,6 @@ OpenLANE design stages
         o Netgen - Performs LVS Checks
         o CVC - Performs Circuit Validity Checks
         
-
 OpenLANE Files: 
 The openLANE file structure looks something like this:
 
@@ -1236,6 +1235,7 @@ It has two modes to promote "No human in flow", that is, autonomous and interact
 All the Process Design Kit(PDK) are listed under the pdks/ directory. Along with the Sky130A we are using some other open-source PDKs and other related files are also available in the directory. 
 The location of the PDK directory is given of $PDK_ROOT variable.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/288c6fe6-6af3-4c47-b9bb-aedf7edbde05)
 
 </details>
 
