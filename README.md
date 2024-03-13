@@ -1426,10 +1426,13 @@ Timing threshold definitions are points whose definitions help us calculate slew
 
 Solution --> Choosing the correct threshold points, Having proper circuit designs to reduce the wire delays. Negative delays are intolerable. 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/82b7371a-846f-4d38-8cdb-d01395f86d4d)
 
+**propagation delay and transition time**
 
+The choice of the threshold definitions is important to get correct propagation delay and transition time. 
+Propagation delay = time(out_thr) - time(in_thr). 
+Fall/Rise Transition time = time(slew_high_thr) - time(slew_low_thr). 
 
-
-The choice of the threshold definitions is important to get correct propagation delay and transition time. Propagation delay = time(out_thr) - time(inthr). Fall/Rise Transition time = time(slew_highthr) - time(slew_low_thr). Typical values: slew_low_rise_thr=20%, slew_high_rise_thr=80%, slew_low_fall_thr=20%, slew_high_fall_thr=80%, in_rise_thr=50%, in_fall_thr=50%, out_rise_thr=50%, and out_fall_thr=50%.
 
 
