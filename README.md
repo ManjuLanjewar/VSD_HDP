@@ -1493,9 +1493,13 @@ Photolithography is applied, Phosphorous is doped to create N- implants on P-wel
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/efa07cff-941f-4a29-8d38-241a97faf3ba)
 
-6-) Source and drain formation: think layer of screen oxide is added to avoid channelling during implantation. Then after photolithography, Aresenic implantation/doping takes place above P-well (below side-wall spacers). Then after photolithography, Boron implantation/doping takes place above N-well (below side-wall spacers). The material is put in high temperature furnace (called high temperature annealing).
+6-) Source and drain formation: Thin layer of screen oxide is added to avoid channelling during implantation. Then after photolithography, Aresenic implantation/doping takes place above P-well (below side-wall spacers). Then after photolithography, Boron implantation/doping takes place above N-well (below side-wall spacers). The material is put in high temperature furnace (called high temperature annealing).
 
-7-) Contacts and local interconnect formation: Etching/removal of screen oxide by HF solution. Then Ti is deposited on material for low resistant contacts using sputtering (hitting Ti by Ar+ and the then Ti will be deposited on the substrate with heating). Then lithograpphy is used, and RCA cleaning is used to etch TiN. Result = TiN used only for local communication.
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/8a2ecec0-1aa5-4a6a-8c6d-da65712dec66)
+
+7-) Contacts and local interconnect formation: Etching/removal of screen oxide by HF solution. Then Ti (Titinum) is deposited on material for low resistant contacts using sputtering (hitting Ti by Ar+ and the then Ti will be deposited on the substrate with heating). Then lithograpphy is used, and RCA cleaning is used to etch TiN. Result = TiN used only for local communication.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e4c04c01-1771-4783-9c01-1467a81fbc5f)
 
 8-) Higher level metal formation: A thick layer of SiO2 doped with phosphorous or boron is deposited on the material. CMP is used for planarizing the wafer (polishing it), then photolithograpphy is used in areas where we want the metal to be formed, then TiN is deposited. Tungsten is then deposited, followed by CMP again. Al is then deposited on the material, and photolithography is used. Result is we get the first layer of metal. To get higher layers, SiO2 is deposited again, CMP is used, lithography is used, TiN is deposited, Tungsten is deposited, followed by CMP again. Al is then deposited on the material, and photolithography is used. The result is a metal layer which is higher and thicker (thicker Al). Si3N4 is deposited on top to protect the whole chip. Finally, mask16 is used to open contact holes on this top layer and connect the highest metal layer to the top.
 
