@@ -1373,7 +1373,15 @@ We build, characterise and model these cells so that the tool can understand it.
 
 **Inputs for Cell Design Flow**
 
-
+For one standard cell, the cell design flow defined in the library consists of:
+It consists of 3 parts:-
+1) Inputs
+   - Inputs to cells from Process Design Kits.
+   - pdks comes from foundary: consist of DRC and LVS rules, SPICE models, library and user-defined specs
+   - PDKs --> files which contain information about the technology being used for your design.
+   - DRC & LVS --> Physical design rules that need to be met so that the foundry can fabricate the cell.
+   - SPICE Models --> contains characteristics of the transistors that will be used to build the cell (threshold voltage, aspect ratio, capacitances, etc).
+   - library and user-defined spec --> cell height (space between Vcc and Gnd rails), cell width (delay constraints, drive strength), supply voltage (noise margin), metal layer specs (specific metal layer to be used), pin location (close to Vcc or Gnd).
 
 
 
