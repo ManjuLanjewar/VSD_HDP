@@ -1333,7 +1333,15 @@ To run the synthesis of the picorv32a design, I used the following command (Duri
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c5b2754e-40f1-4c54-861d-972a87b3262e)
 
 % run_synthesis
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4621a3db-1b8b-4f3c-81c9-32879c976494)
+The obtained logs and reports are found in runs/<RUN_today_date>/logs/synthesis and runs/<RUN_today_date>/reports/synthesis respectively.
 
+To calculate the flop ratio, I used the following formula, and the numbers are extracted from the report whose screenshot is included above:
+
+<pre>Flop ratio = # of D Flipflops / Total # of cells
+dfxtp_2 = 1613,
+Number of cells = 14876,
+Flop ratio = 1613/14876 = 0.1084 = 10.84% </pre>
 
 </details>
 
