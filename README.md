@@ -1236,18 +1236,20 @@ All the Process Design Kit(PDK) are listed under the pdks/ directory.  Along wit
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/288c6fe6-6af3-4c47-b9bb-aedf7edbde05)
 
-sky130A is a pdk variant is made compatible to work with opensource enviornment. Under the variant, we have libs.tech--> contains the library files related to the tools used in the flow and libs.ref--> contains process specific files timimg, cell lib. I will be using sky130_fd_sc_hd for my design. 
+sky130A is a pdk variant is made compatible to work with opensource enviornment. Under the variant, we have libs.tech and libs.ref 
+I will be using sky130_fd_sc_hd for my design. 
 sky130 is process name sky130nm, fd abbreviate foundary name, sc stands std cell library file and hd stands for high density is variant of pdk. osu is okloma state university. 
 Openlane is compatible with pdks namely skywater130 and osu.
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/26f7b14d-aa3b-45c9-bcdc-67c54862c5ca)
-
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a800e527-96b8-425f-94ec-dd5f1d092142)
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b5e066c4-867e-46e1-b8c3-43cbe78562ff) ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e0135089-9463-4636-b29f-2882cdc77b9f)
+libs.tech--> contains the library files related to the tools used in the flow 
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b5e066c4-867e-46e1-b8c3-43cbe78562ff) 
 
+libs.ref--> contains process specific files timimg, cell lib.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e0135089-9463-4636-b29f-2882cdc77b9f)
 
 </details>
 
