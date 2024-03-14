@@ -1237,7 +1237,7 @@ All the Process Design Kit(PDK) are listed under the pdks/ directory.  Along wit
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/288c6fe6-6af3-4c47-b9bb-aedf7edbde05)
 
 sky130A is a pdk variant is made compatible to work with opensource enviornment. Under the variant, we have libs.tech and libs.ref 
-sky130 is process name sky130nm, fd abbreviate foundary name, sc stands std cell library file and hd stands for high density is variant of pdk. osu is okloma state university. 
+sky130 is process name sky130nm, fd abbreviate foundary name, sc stands for standard cell library file and hd stands for high density is variant of pdk. osu is okloma state university. 
 Openlane is compatible with pdks namely skywater130 and osu.
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a800e527-96b8-425f-94ec-dd5f1d092142)
@@ -1253,6 +1253,17 @@ libs.ref--> contains process specific files timimg, cell lib.
 I will be using sky130_fd_sc_hd for my design. all technology files like  teclef files contains layer information, lib file contains all process corner information.
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a5762896-ea00-4e9a-80f4-0cccb7add0da)
+
+Look into the different types of file types which are used to build a pdk.
+- verilog --> netlists
+- techlef --> metal layer data and design rules (technology files)
+- spice --> circuit netlists of analog devices
+- maglef --> used for displaying metal layers in the layout tool
+- mag --> used for displaying layout on the layout tool
+- lib --> contains the flavours of library files for different process corners. In short logical libraries.
+- lef --> contains physical info such as shape, size, direction, and symmetry, input and output pins direction for each cellin the design.
+- gds --> (GDSII) used to store IC layout information.
+- cdl --> similar to spice netlists; stores electronic circuit information.
 
 </details>
 
