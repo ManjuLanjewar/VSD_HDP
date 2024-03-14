@@ -1188,7 +1188,7 @@ The openLANE file structure looks something like this:
     * Openlane can be invoked using docker command followed by opening an interactive session.
       flow.tcl is a script that specifies details for openLANE flow.
 
-### Tools used for physical Design
+### Opensource EDA Tools used for physical Design
 
 #### Python Installation
 
@@ -1224,8 +1224,9 @@ $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING>
 
 $ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)</pre>
     
-
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5a770edf-71a2-4d5f-ad70-7bdec390a873)
+
+#### Opensource EDA Tools 
 
 **OpenLane Directory Structure**
 
@@ -1264,6 +1265,14 @@ Look into the different types of file types which are used to build a pdk.
 - lef --> contains physical info such as shape, size, direction, and symmetry, input and output pins direction for each cellin the design.
 - gds --> (GDSII) used to store IC layout information.
 - cdl --> similar to spice netlists; stores electronic circuit information.
+
+**Design Preparation Steps**
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/19fbaf48-36ed-4e66-84e1-9db77df097a5)
+
+OpenLANE Initialization
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/809325d2-12e0-46b0-8773-a514332b64be)
 
 </details>
 
