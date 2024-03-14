@@ -1487,7 +1487,7 @@ Change switches/variables ( info under configuration) in the design config.tcl t
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/9f5de4f3-4b80-49e0-9f1a-7bc96a78fdd0)
 
-These are all default values of floorplanning and placement switches. These switches can be set to floorplan .tcl and placement .tcl file.
+These are all default values of floorplanning and placement switches in floorplan .tcl and placement .tcl file.
 
 <pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/configuration$ less floorplan.tcl</pre>
 
@@ -1499,9 +1499,10 @@ These are default values which can be set.
 FP_IO_MODE: How you want your pin configuration to be around core? FP mode - 1 means pin position randomly but equidistant mode.
 When FP mode - 0 means pin position not equidistant. 
 These are system default values which have lowest priority. (settings in floorplan.tcl / placement.tcl)
-After that next priority to config.tcl and then highest priority to pdk variant.tcl, here sky130A_sky130_fd_sc_hd_config.tcl 
- (Note that these .tcl files are present in ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a)
+After that next priority to config.tcl of design (Note that these config.tcl files of designs are present in ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14_03_10_54) and then highest priority to pdk variant.tcl, here sky130A_sky130_fd_sc_hd_config.tcl 
 In openlane flow, in config.tcl, FP_IO_VMETAL and FP_IO_HMETAL layer are one more than what is specified.  
+
+**Floorplan Files and Steps to view floorplan**
 
 To run the floorplanning after synthesis of the picorv32a design, I used the following command (During this, the 6 steps mentioned are done, and a .def is created in the results/floorplan directory inside the chosen design directory. The results can be found in OpenLane/designs//RUN_*/runs):
 
@@ -1510,9 +1511,28 @@ To run the floorplanning after synthesis of the picorv32a design, I used the fol
 Note that some of the floorplan switches (can be included with the command above) are FP_CORE_UTIL (floorplan core utilization), FP_ASPECT_RATIO (floorplan aspect ratio), FP_CORE_MARGIN (Core to die margin area), FP_IO_MODE (defines pin configurations: 1 = equidistant and 0 = not equidistant), FP_CORE_VMETAL (vertical metal layer), and FP_CORE_HMETAL (horizontal metal layer). The default values of these are defined in OpenLane/configuration/floorplan.tcl. In order to overwite these, we can define those switches in OpenLane/designs//config.json. Note that in OpenLane, horizontal and vertical metal are one value added to the value we specify.
 Successful floorplanning gives a .def file as output which contains the die area and placement of standard cells.
 
-**Floorplan Files and Steps to view floorplan**
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/163208ab-b6c8-4cda-8742-039d9bda247e)
 
+Here, .def file is created in floorplan directory.
+vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54/logs/floorplan$ less 4-ioPlacer.log
+Here we can see design.tcl file has overriden system defaults.
+<pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/configuration$ less README.md
+vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/configuration$ less floorplan.tcl
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a130eba7-b5ef-403e-88fe-5793fe730752)
 
+Here, design config.tcl file have default values. Ex: FP_CORE_UTIL = "50" 
+    
+vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54$ less config.tcl
+    
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4101dc76-1fd3-4836-8bee-c0c78c8dbc37)
+Here, switch values are overrideen. set ::env(FP_CORE_UTIL) "35"
+    
+This is issue as design config.tcl should overwrite system defaults. But one fact is that sky130A_sky130_fd_sc_hd_config.tcl has highest priority. so, CORE_UTIL ="50" of sytem default was overridden by 65 of config.tcl which was overridden by 50 of config.tcl of pdk file.
+    
+vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a$ less sky130A_sky130_fd_sc_hd_config.tcl
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/fcb79c53-2743-43ea-8c12-1fcaf7e92bc0)
+Here set ::env(FP_CORE_UTIL) "35"
+</pre>    
 #### Library Binding and Placement
 
 **Netlist Binding and initial place design**
