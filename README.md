@@ -1287,10 +1287,33 @@ All designs run in OpenLane are extract from "designs" folder.
 <pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane$ cd designs/</pre>
 Here we are using picorv32a. It contains following files
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2aaf2103-8021-4e26-adaa-af3666e9d13a)
-src file stands for source file which contain verilog file for RTL present as well as .sdc information
-pdk specific configuration file.
-config.tcl 
+- src file stands for source file which contain verilog file for RTL present as well as .sdc information
+- pdk specific configuration file.
+- config.tcl that has configurations for the design that will overwrite the default OpenLane settings. 
+Note: For a custom design. You will need to create a config.tcl. The sky130_fd_sc_hd_config.tcl is not compulsory as it will not affect flow.
+How OpenLane takes value? first it takes default values set in OpenLane. Then config.tcl and then sky130A_sky130_fd_sc_hd_config.tcl
+Config.tcl overwrites default parameters.
+sky130A_sky130_fd_sc_hd_config.tcl has higher priority which overwrites values in config.tcl.
+So the question that arises is what is in the config.tcl file?
+<pre>
+# Design
+set ::env(DESIGN_NAME) "picorv32a"
 
+set ::env(VERILOG_FILES) "./designs/picorv32a/src/picorv32a.v"
+set ::env(SDC_FILE) "./designs/picorv32a/src/picorv32a.sdc"
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1} {
+        source $filename
+}
+config.tcl (END)
+</pre>
+Config.tcl is used to set the files and parameters in the flow environment. As shown in the snippet above.
 
 The next step is to prepare our design for the OpenLANE flow. This is done using following command:
 % prep -design <design-name>
@@ -1299,6 +1322,10 @@ Some additional flags that can be used while preparation are:
 -overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
 
 
+
+When the design is prepared, the LEF files are merged, and a "runs" directory is created inside the picorv32a directory, and inside it a directory with the current date is created. Inside that directory, all folder structures required by OpenLanes are present empty, except for temp folder. temp folder has the merged LEF files. Note that when synthesis is performed for example a file will be created inside the results/synthesis directory. Inside the runs/<RUN_today_date> directory there is a config.tcl file which contains the default OpenLane configuration settings, and it is important to check whether our modifications are reflected in it):
+
+During the design preparation the technology LEF and cell LEF files are merged together to obtain a merged.lef file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route.
 </details>
 
 <h2 id="C6">Day 6</h2>
