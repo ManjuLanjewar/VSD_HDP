@@ -1281,8 +1281,8 @@ To start with OpenLane:
   
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/809325d2-12e0-46b0-8773-a514332b64be)
 Now prompt change to %
-The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
-% package require openlane 0.9
+1. The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
+<pre>% package require openlane 0.9</pre>
 All designs run in OpenLane are extract from "designs" folder.
 <pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane$ cd designs/</pre>
 Here we are using picorv32a. It contains following files
@@ -1315,13 +1315,13 @@ config.tcl (END)
 </pre>
 Config.tcl is used to set the files and parameters in the flow environment. As shown in the snippet above.
 
-The next step is to prepare our design for the OpenLANE flow. This is done using following command:
-% prep -design <design-name>
+2. Design setup stage: The next step is to prepare our design for the OpenLANE flow. Means need to setup file system specific to flow like each and every step of flow will be fetching files property to location that location need to be created. That is design setup done using following command:
+<pre>% prep -design <design-name></pre>
 Some additional flags that can be used while preparation are:
 <pre>-tag <name-for-current-run></pre> - All the files generated during the flow will be stored in a directory named <name-for-current-run>
 -overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
-
-
+% prep -design picorv32a
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a6bc3395-a5e8-4ad4-b548-9e85c5b3467e)
 
 When the design is prepared, the LEF files are merged, and a "runs" directory is created inside the picorv32a directory, and inside it a directory with the current date is created. Inside that directory, all folder structures required by OpenLanes are present empty, except for temp folder. temp folder has the merged LEF files. Note that when synthesis is performed for example a file will be created inside the results/synthesis directory. Inside the runs/<RUN_today_date> directory there is a config.tcl file which contains the default OpenLane configuration settings, and it is important to check whether our modifications are reflected in it):
 
