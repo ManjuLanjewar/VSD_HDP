@@ -1527,13 +1527,18 @@ Here, design config.tcl file have default values. Ex: FP_CORE_UTIL = "50"
 <pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54$ less config.tcl</pre>
     
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4101dc76-1fd3-4836-8bee-c0c78c8dbc37)
+
 Here, switch values are overrideen. set ::env(FP_CORE_UTIL) "35"
     
  <pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a$ less sky130A_sky130_fd_sc_hd_config.tcl</pre>
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/fcb79c53-2743-43ea-8c12-1fcaf7e92bc0)
+
 Here set ::env(FP_CORE_UTIL) "35"
+
 Note :  design config.tcl should overwrite system defaults. But one fact is that sky130A_sky130_fd_sc_hd_config.tcl has highest priority. so, it happens like that design config.tcl     switch value remains same due to pdk config.tcl. 
 Ex: CORE_UTIL ="50" of sytem default should be overridden by 65 of design config.tcl. But  CORE_UTIL = 50 of config.tcl of pdk file doesnot allow to change switch CORE_UTIL = 65 of design config.tcl
+
 #### Library Binding and Placement
 
 **Netlist Binding and initial place design**
