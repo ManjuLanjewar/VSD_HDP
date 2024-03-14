@@ -1348,7 +1348,8 @@ To calculate the flop ratio, I used the following formula, and the numbers are e
 <pre>Flop ratio = Number of D Flipflops / Total Number of cells
 dfxtp_2 = 1613,
 Number of cells = 14876,
-Flop ratio = 1613/14876 = 0.1084 = 10.84% </pre>
+Flop ratio = 1613/14876 = 0.1084 = 10.84%
+ Chip area for module '\picorv32a': 147712.918400</pre>
 
 </details>
 
