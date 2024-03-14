@@ -1499,9 +1499,19 @@ These are default values which can be set.
 FP_IO_MODE: How you want your pin configuration to be around core? FP mode - 1 means pin position randomly but equidistant mode.
 When FP mode - 0 means pin position not equidistant. 
 These are system default values which have lowest priority. (settings in floorplan.tcl / placement.tcl)
- After that next priority to config.tcl and then highest priority to pdk variant.tcl, here sky130A_sky130_fd_sc_hd_config.tcl 
+After that next priority to config.tcl and then highest priority to pdk variant.tcl, here sky130A_sky130_fd_sc_hd_config.tcl 
  (Note that these .tcl files are present in ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a)
-In openlane flow, in config.tcl, FP_IO_VMETAL and FP_IO_HMETAL are one more than what is specified.  
+In openlane flow, in config.tcl, FP_IO_VMETAL and FP_IO_HMETAL layer are one more than what is specified.  
+
+To run the floorplanning after synthesis of the picorv32a design, I used the following command (During this, the 6 steps mentioned are done, and a .def is created in the results/floorplan directory inside the chosen design directory. The results can be found in OpenLane/designs//RUN_*/runs):
+
+% run_floorplan
+
+Note that some of the floorplan switches (can be included with the command above) are FP_CORE_UTIL (floorplan core utilization), FP_ASPECT_RATIO (floorplan aspect ratio), FP_CORE_MARGIN (Core to die margin area), FP_IO_MODE (defines pin configurations: 1 = equidistant and 0 = not equidistant), FP_CORE_VMETAL (vertical metal layer), and FP_CORE_HMETAL (horizontal metal layer). The default values of these are defined in OpenLane/configuration/floorplan.tcl. In order to overwite these, we can define those switches in OpenLane/designs//config.json. Note that in OpenLane, horizontal and vertical metal are one value added to the value we specify.
+Successful floorplanning gives a .def file as output which contains the die area and placement of standard cells.
+
+**Floorplan Files and Steps to view floorplan**
+
 
 #### Library Binding and Placement
 
