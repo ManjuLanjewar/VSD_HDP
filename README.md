@@ -1561,6 +1561,14 @@ To view the layout of the floorplan in magic, I used the command below in the re
 
 <pre>~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54/results/floorplan$ magic -T /home/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &</pre>
 
+A screenshot of the obtained layout is below:
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1a1e08d7-2ef4-44ad-9c81-e3f1d52fab43)
+
+
+After zooming in (left click, right click, z), below is the obtained screenshots (note that when we highlight (s after positioning the cursor), we can type "what" in the tkcon window and it will provide the layer of the highlighted object. The standard cells can be found on left bottom corner of the layout, as floorplan does not place those):
+
+
+
 #### Library Binding and Placement
 
 **Netlist Binding and initial place design**
