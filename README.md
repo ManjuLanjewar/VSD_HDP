@@ -1498,9 +1498,10 @@ These are default values which can be set.
  <pre>set ::env(FP_IO_MODE) 1; # 0 matching mode - 1 random equidistant mode</pre>
 FP_IO_MODE: How you want your pin configuration to be around core? FP mode - 1 means pin position randomly but equidistant mode.
 When FP mode - 0 means pin position not equidistant. 
-
-
-
+These are system default values which have lowest priority. (settings in floorplan.tcl / placement.tcl)
+ After that next priority to config.tcl and then highest priority to pdk variant.tcl, here sky130A_sky130_fd_sc_hd_config.tcl 
+ (Note that these .tcl files are present in ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a)
+In openlane flow, in config.tcl, FP_IO_VMETAL and FP_IO_HMETAL are one more than what is specified.  
 
 #### Library Binding and Placement
 
