@@ -1331,7 +1331,8 @@ Some additional flags that can be used while preparation are:
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a6bc3395-a5e8-4ad4-b548-9e85c5b3467e)
 
 During the design preparation the technology LEF and cell LEF files are merged together to obtain a merged.lef file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route.
-Also, a "runs" directory is created inside the picorv32a directory, and inside it a directory with the current date is created. Inside that directory, all folder structures required by OpenLanes are present empty, except for temp folder. temp folder has the merged LEF files. Note that when synthesis is performed for example a file will be created inside the results/synthesis directory. Inside the runs/<RUN_today_date> directory there is a config.tcl file which contains the default OpenLane configuration settings, and it is important to check whether our modifications are reflected in it.
+Also, a "runs" directory is created inside the picorv32a directory, and inside it a directory with the current date is created. Inside that directory, all folder structures required by OpenLanes are present empty, except for temp folder. temp folder has the merged LEF files. 
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/47f2adcf-2ac0-408d-85b9-20387cc92b3a)
 
 **Design Synthesis and Results**
@@ -1471,6 +1472,14 @@ The pins are optimized by fanout from a common point and are placed in a random 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/12041dfd-ecdc-402a-8cc5-09ae0b6fc80a)
 
 The sixth step is logical cell placement blockage where a blockage is placed in die area outside core to present tools from placing cells in that area.
+
+**Floorplan using OpenLANE**
+
+Note that when synthesis is performed for example a file will be created inside the results/synthesis directory. 
+Inside the runs/<RUN_today_date> directory there is a config.tcl file which contains the default OpenLane configuration settings, and it is important to check whether our modifications are reflected in it.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/f4a17a60-3d57-4b35-8cd5-a6a268d6cb3d)
+
 
 #### Library Binding and Placement
 
