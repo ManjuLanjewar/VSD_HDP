@@ -1268,11 +1268,36 @@ Look into the different types of file types which are used to build a pdk.
 
 **Design Preparation Steps**
 
+To start with OpenLane: 
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/19fbaf48-36ed-4e66-84e1-9db77df097a5)
 
-OpenLANE Initialization
-
+* OpenLANE Initialization
+    For invoking OpenLANE in Linux Ubuntu, we should first run the docker everytime we use OpenLANE. 
+    A custom shell script or commands can be generated to make the task simpler.
+    - To invoke OpenLANE run the ./flow.tcl script.(as the name flow.tcl means using the script the flow has to go)
+    - OpenLANE supports two modes of operation: interactive and autonomous(note that without interactive switch, OpenLane will run in automatic mode)
+    - To use interactive mode use -interactive flag with ./flow.tcl (Interactive means step by steps)
+  
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/809325d2-12e0-46b0-8773-a514332b64be)
+Now prompt change to %
+The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
+% package require openlane 0.9
+All designs run in OpenLane are extract from "designs" folder.
+<pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane$ cd designs/</pre>
+Here we are using picorv32a. It contains following files
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/2aaf2103-8021-4e26-adaa-af3666e9d13a)
+src file stands for source file which contain verilog file for RTL present as well as .sdc information
+pdk specific configuration file.
+config.tcl 
+
+
+The next step is to prepare our design for the OpenLANE flow. This is done using following command:
+% prep -design <design-name>
+Some additional flags that can be used while preparation are:
+<pre>-tag <name-for-current-run></pre> - All the files generated during the flow will be stored in a directory named <name-for-current-run>
+-overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
+
 
 </details>
 
