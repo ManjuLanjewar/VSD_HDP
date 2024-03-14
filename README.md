@@ -1316,11 +1316,18 @@ config.tcl (END)
 Config.tcl is used to set the files and parameters in the flow environment. As shown in the snippet above.
 
 2. Design setup stage: The next step is to prepare our design for the OpenLANE flow. Means need to setup file system specific to flow like each and every step of flow will be fetching files property to location that location need to be created. That is design setup done using following command:
-<pre>% prep -design <design-name></pre>
+<pre>
+    % prep -design <design-name>
+    </pre>
+
 Some additional flags that can be used while preparation are:
-<pre>-tag <name-for-current-run></pre> - All the files generated during the flow will be stored in a directory named <name-for-current-run>
--overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
-% prep -design picorv32a
+    -tag <name-for-current-run>
+
+    * All the files generated during the flow will be stored in a directory named <name-for-current-run>
+    * -overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
+    
+<pre>% prep -design picorv32a</pre> 
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a6bc3395-a5e8-4ad4-b548-9e85c5b3467e)
 
 During the design preparation the technology LEF and cell LEF files are merged together to obtain a merged.lef file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route.
@@ -1349,7 +1356,7 @@ To calculate the flop ratio, I used the following formula, and the numbers are e
 dfxtp_2 = 1613,
 Number of cells = 14876,
 Flop ratio = 1613/14876 = 0.1084 = 10.84%
- Chip area for module '\picorv32a': 147712.918400</pre>
+Chip area for module '\picorv32a': 147712.918400</pre>
 
 </details>
 
