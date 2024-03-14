@@ -1477,8 +1477,29 @@ The sixth step is logical cell placement blockage where a blockage is placed in 
 
 Note that when synthesis is performed for example a file will be created inside the results/synthesis directory. 
 Inside the runs/<RUN_today_date> directory there is a config.tcl file which contains the default OpenLane configuration settings, and it is important to check whether our modifications are reflected in it.
-
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/f4a17a60-3d57-4b35-8cd5-a6a268d6cb3d)
+
+Change switches/variables ( info under configuration) in the design config.tcl to suit your needs. It is not necesaary to set all switches. You can set any depends on where you are on floor. 
+
+<pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/configuration$ less README.md</pre>
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b4d03e37-5cce-4a3b-9ee9-6bbe77e5b9e3)
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/9f5de4f3-4b80-49e0-9f1a-7bc96a78fdd0)
+
+These are all default values of floorplanning and placement switches. These switches can be set to floorplan .tcl and placement .tcl file.
+
+<pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/configuration$ less floorplan.tcl</pre>
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/dd4dcbe8-77c7-409d-9fac-950d4cac1bdf)
+
+These are default values which can be set. 
+
+ <pre>set ::env(FP_IO_MODE) 1; # 0 matching mode - 1 random equidistant mode</pre>
+FP_IO_MODE: How you want your pin configuration to be around core? FP mode - 1 means pin position randomly but equidistant mode.
+When FP mode - 0 means pin position not equidistant. 
+
+
 
 
 #### Library Binding and Placement
