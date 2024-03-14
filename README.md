@@ -1232,8 +1232,7 @@ $ sudo docker run hello-world (If the docker is successfully installed u will ge
 Openlane is automated RTL to GDSII flow that consists of multiple tools (obviously opensource) such as OpenROAD, Yosys, Magic, Netgen, and a number of custom scripts for design exploration and optimization. 
 It has two modes to promote "No human in flow", that is, autonomous and interactive. For understanding the process of the flow, I will be using the "interactive" method.
 
-All the Process Design Kit(PDK) are listed under the pdks/ directory. Along with the Sky130A we are using some other open-source PDKs and other related files are also available in the directory. 
-The location of the PDK directory is given of $PDK_ROOT variable.
+All the Process Design Kit(PDK) are listed under the pdks/ directory.  Along with the Sky130A we are using some other open-source PDKs and other related files are also available in the directory. skywater-pdk has pdk related files means tech libs, cell lib etc. open_pdk any of silicon foundar files are compatible with commercial EDA tool and not for opensource tools. openpdk plans to mitigate that issue and they are set of scripts, files  converts foundary level pdks to be compatible with opensource EDA tools like Magic,Netgen etc.. The location of the PDK directory is given of $PDK_ROOT variable. sky130A pdk is made compatible to work with opensource tools
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/288c6fe6-6af3-4c47-b9bb-aedf7edbde05)
 
