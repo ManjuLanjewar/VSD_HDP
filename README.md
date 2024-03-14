@@ -192,7 +192,7 @@ Dependance of Id on Vds in pinch-off region
 
    - The chanel voltage is denoted with Vgs-Vds
    - Pinch-off condition is when Vgs-Vds=Vt
-   - When the Pinch-off phenomenon is started, the channel begins to disappea. Basically, the channel starts to disappear only from the Drain side           acquiring a triangular shape.
+   - When the Pinch-off phenomenon is started, the channel begins to disappea. Basically, the channel starts to disappear only from the Drain side acquiring a triangular shape.
    - When Vgs-Vds<=Vt, there is no channel present near the Drain terminal
      
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/49b9df56-f87d-4a38-9215-27a9e7721216)
