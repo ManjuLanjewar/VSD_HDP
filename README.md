@@ -1280,6 +1280,7 @@ To start with OpenLane:
     - To use interactive mode use -interactive flag with ./flow.tcl (Interactive means step by steps)
   
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/809325d2-12e0-46b0-8773-a514332b64be)
+
 Now prompt change to %
 1. The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
 <pre>% package require openlane 0.9</pre>
@@ -1317,12 +1318,11 @@ Config.tcl is used to set the files and parameters in the flow environment. As s
 
 2. Design setup stage: The next step is to prepare our design for the OpenLANE flow. Means need to setup file system specific to flow like each and every step of flow will be fetching files property to location that location need to be created. That is design setup done using following command:
 
-  * % prep -design <design-name>
+  <pre>% prep -design design-name</pre>
 
 Some additional flags that can be used while preparation are:
   
     * -tag <name-for-current-run>
-
     * All the files generated during the flow will be stored in a directory named <name-for-current-run>
     * -overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
     
