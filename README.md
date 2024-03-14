@@ -1510,10 +1510,16 @@ To run the floorplanning after synthesis of the picorv32a design, I used the fol
 
 Note that some of the floorplan switches (can be included with the command above) are FP_CORE_UTIL (floorplan core utilization), FP_ASPECT_RATIO (floorplan aspect ratio), FP_CORE_MARGIN (Core to die margin area), FP_IO_MODE (defines pin configurations: 1 = equidistant and 0 = not equidistant), FP_CORE_VMETAL (vertical metal layer), and FP_CORE_HMETAL (horizontal metal layer). The default values of these are defined in OpenLane/configuration/floorplan.tcl. In order to overwite these, we can define those switches in OpenLane/designs//config.json. Note that in OpenLane, horizontal and vertical metal are one value added to the value we specify.
 Successful floorplanning gives a .def file as output which contains the die area and placement of standard cells.
+Here, .def (Design Exchange Format) file is created in floorplan directory.
+<pre>vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54/results/floorplan$ less picorv32a.floorplan.def</pre>
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/163208ab-b6c8-4cda-8742-039d9bda247e)
+ 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/f40ad91c-26ff-451e-a11b-370f8c7ea055)
+Here, DIEAREA ( 0 0 ) ( 660685 671405 ) ; This is area of complete die. 
+1st '0' is lower left X; 2nd '0' lower left Y; '660685' is upper right X and '671405' is upper right Y. Using this calculate area of Die.
+Unit is set by UNITS DISTANCE MICRONS 1000; databites units per micron i.e 1 micron is equal to 1000 databits units. So, ( 660685 671405 ) these numbers when divided by 1000, we get dimensions of chip in micrometer.
 
-Here, .def file is created in floorplan directory.
 vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-03_10-54/logs/floorplan$ less 4-ioPlacer.log
 Here we can see design.tcl file has overriden system defaults.
 
@@ -1538,6 +1544,15 @@ Here set ::env(FP_CORE_UTIL) "35"
 
 Note :  design config.tcl should overwrite system defaults. But one fact is that sky130A_sky130_fd_sc_hd_config.tcl has highest priority. so, it happens like that design config.tcl     switch value remains same due to pdk config.tcl. 
 Ex: CORE_UTIL ="50" of sytem default should be overridden by 65 of design config.tcl. But  CORE_UTIL = 50 of config.tcl of pdk file doesnot allow to change switch CORE_UTIL = 65 of design config.tcl
+
+**Review Floorplan Layout in Magic** 
+Looking at .def file (floorplan result) doen't make sense . Don't know where what place? So, to see actual layout after floorplan, first done in Magic. 
+
+Magic Layout Tool is used for visualizing the layout after floorplan. In order to view floorplan in Magic, following three files are required: 1. Technology File (sky130A.tech) 2. Merged LEF file (merged.lef) 3. DEF File
+To view the layout of the floorplan in magic, I used the command below in the results/floorplan directory (note that in my case the pdk was previously downloaded on my desktop in the open_pdks directory):
+
+magic read -T /home/mariam/Desktop/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.min.lef def read picorv32.def &
+
 
 #### Library Binding and Placement
 
