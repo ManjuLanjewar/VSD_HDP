@@ -1316,12 +1316,12 @@ config.tcl (END)
 Config.tcl is used to set the files and parameters in the flow environment. As shown in the snippet above.
 
 2. Design setup stage: The next step is to prepare our design for the OpenLANE flow. Means need to setup file system specific to flow like each and every step of flow will be fetching files property to location that location need to be created. That is design setup done using following command:
-<pre>
-    % prep -design <design-name>
-    </pre>
+
+  * % prep -design <design-name>
 
 Some additional flags that can be used while preparation are:
-    -tag <name-for-current-run>
+  
+    * -tag <name-for-current-run>
 
     * All the files generated during the flow will be stored in a directory named <name-for-current-run>
     * -overwrite - If a directory name mentioned in -tag already exists, it will be overwritten.
