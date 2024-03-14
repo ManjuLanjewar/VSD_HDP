@@ -1240,6 +1240,11 @@ sky130A is a pdk variant is made compatible to work with opensource enviornment.
 sky130 is process name sky130nm, fd abbreviate foundary name, sc stands std cell library file and hd stands for high density is variant of pdk. osu is okloma state university. 
 Openlane is compatible with pdks namely skywater130 and osu.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/26f7b14d-aa3b-45c9-bcdc-67c54862c5ca)
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/a800e527-96b8-425f-94ec-dd5f1d092142)
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b5e066c4-867e-46e1-b8c3-43cbe78562ff) ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/e0135089-9463-4636-b29f-2882cdc77b9f)
 
 
 
