@@ -1564,8 +1564,6 @@ To view the layout of the floorplan in magic, I used the command below in the re
 A screenshot of the obtained layout is below:
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1a1e08d7-2ef4-44ad-9c81-e3f1d52fab43)
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/4d692249-90c2-411b-9a69-4b735f346ce8)
-
 After zooming in (left click, right click, z), below is the obtained screenshots (note that when we highlight (s after positioning the cursor), we can type "what" in the tkcon window and it will provide the layer of the highlighted object. The standard cells can be found on left bottom corner of the layout, as floorplan does not place those):
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/cd2f66da-f78f-4684-a901-6c2d1d38bd6c)
