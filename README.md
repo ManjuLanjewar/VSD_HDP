@@ -1745,7 +1745,8 @@ CMOS after finishing the fabrication process
 
 #### Timing Modelling using Delay Tables
 
- **Delay Tables**
+1. **Delay Tables**
+ 
     - In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.  
     - To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. 
     - If two paths have the same buffer as load in turn driving the same load, then the signal comming out of those two buffers will have a skew of 0 (ensuring this will not lead to     
@@ -1754,7 +1755,7 @@ CMOS after finishing the fabrication process
 
 #### Timing analysis with ideal clocks using OpenSTA
 
-**Setup timing analysis and Introduction to F/F Setup Time, Clock Jitter and Uncertainty**
+2. **Setup timing analysis and Introduction to F/F Setup Time, Clock Jitter and Uncertainty**
 
 Setup timing analysis (single clock, ideal scenario where clk is not built yet): 
             The internal delay (finite time) in the capture flop which has to be subtracted from period, and the variation of time that a clock edge can undergo when it arrives to the launch flop and capture clock (called uncertainty) which has to be also subtracted from period, so D (combinational delay)< T (period) - S(Setup time)- SU (setup uncertainty). 
@@ -1764,7 +1765,8 @@ Using this analysis, the combinational delay should be considered when placing t
 
 #### Clock Tree Synthesis using TritonCTS and Signal Integrity
 
-**Clock Tree Routing and Buffering using H-Tree algorithm, Crosstalk and Clock Net Shielding**
+3. **Clock Tree Routing and Buffering using H-Tree algorithm, Crosstalk and Clock Net Shielding**
+
 Clock Tree Synthesis (CTS): 
 - goal is to make the clock reach all flipflops with minimum skew. H-tree calculates the path from all flops and connects the clock to the midpoint of the flops. 
 - Buffers (with equal rise and fall time) are added on the H-tree path. The CTS run adds clock buffers, so buffer delays are taken into consideration, and the analysis now deals with
