@@ -1768,7 +1768,9 @@ Using this analysis, the combinational delay should be considered when placing t
 3. **Clock Tree Routing and Buffering using H-Tree algorithm, Crosstalk and Clock Net Shielding**
 
 Clock Tree Synthesis (CTS): 
-- goal is to make the clock reach all flipflops with minimum skew. H-tree calculates the path from all flops and connects the clock to the midpoint of the flops. 
+- Clock Tree Synthesis(CTS) is a process which makes sure that the clock gets distributed evenly to all sequential elements in a design.
+- The goal of CTS is to minimize the clock latency and skew.
+- H-tree calculates the path from all flops and connects the clock to the midpoint of the flops. 
 - Buffers (with equal rise and fall time) are added on the H-tree path. The CTS run adds clock buffers, so buffer delays are taken into consideration, and the analysis now deals with
   real clocks. 
 - Setup and hold time slacks can be then analyzed in the post-CTS STA analysis using OpenROAD.
@@ -1776,7 +1778,24 @@ Clock Tree Synthesis (CTS):
 - A glitch is a serious problem as it can reset memory system and can lead to incorrect functionality in the whole system activity. 
 - Crosstalk leads to exponential delta skew, and this is another reason shielding nets is important.
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/96ce0c5e-1ada-47bf-802e-8890163a797f)
 
+#### Timing analysis with real clocks using OpenSTA
+
+4. **Setup timing analysis**
+     Setup timing analysis (single clock, real clock scenario):
+        Network clk goes through real wires and buffers, which cause delays.
+   D (combinational delay)+ del1 (time for clk to reach launch flop) < T (period) + del2 (time for clk to reach capture flop) - SUT (setup: D to clk delay in capture flop) - U (uncertainty).
+   del1-del2 is known as skew (difference in time the clk reaches the two flops).
+   D+del1=data required time, T+del2-SUT-U is data arrival time, and slack= data required time - data arrival time => slack should be +ve.
+
+
+- There are several CTS techniques like:
+  1. H - Tree
+  2. X - Tree
+  3. Fish bone
+In OpenLANE, clock tree synthesis is carried out using TritonCTS tool.
+CTS should always be done after the floorplanning and placement as the CTS is carried out on a placement.def file that is created during placement stage.
 
 If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
     - Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
