@@ -1759,11 +1759,15 @@ CMOS after finishing the fabrication process
 
 Setup timing analysis (single clock, ideal scenario where clk is not built yet): the internal delay (finite time) in the capture flop which has to be subtracted from period, and the variation of time that a clock edge can can undergo when it arrives to the launch flop and capture clock (called uncertainty) which has to be also subtracted from period, so D (combinational delay)< T (period) - SUT (setup) - U (uncertainty). Using this analysis, the combinational delay should be considered when placing the cells.
 
+![Screenshot from 2024-03-18 00-42-49](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c7421fc5-ee8c-41a7-9c67-762d95d0cf46)
+
+
+
 If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
 
-Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
-Scaling the buffers (Causes increase in design area)
-Restricting the maximum fan-out of an element.
+    - Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
+    - Scaling the buffers (Causes increase in design area)
+    - Restricting the maximum fan-out of an element.
 
 </details>
 
