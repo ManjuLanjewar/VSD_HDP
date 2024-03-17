@@ -1743,7 +1743,9 @@ CMOS after finishing the fabrication process
 
 <summary>Pre-layout timing analysis and importance of good clock tree</summary>
 
-##### Delay Table
+##### Timing Modelling using Delay Tables
+
+ **Delay Tables**
 
     - In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.  
     - To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. 
@@ -1751,9 +1753,17 @@ CMOS after finishing the fabrication process
       problems). 
     - For power-aware CTS, one of paths would be activated at a time.
 
-##### Setup timing analysis
+##### Timing analysis with ideal clocks using OpenSTA
 
+**Setup timing analysis**
 
+Setup timing analysis (single clock, ideal scenario where clk is not built yet): the internal delay (finite time) in the capture flop which has to be subtracted from period, and the variation of time that a clock edge can can undergo when it arrives to the launch flop and capture clock (called uncertainty) which has to be also subtracted from period, so D (combinational delay)< T (period) - SUT (setup) - U (uncertainty). Using this analysis, the combinational delay should be considered when placing the cells.
+
+If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
+
+Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
+Scaling the buffers (Causes increase in design area)
+Restricting the maximum fan-out of an element.
 
 </details>
 
