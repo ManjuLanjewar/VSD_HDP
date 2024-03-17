@@ -1743,31 +1743,44 @@ CMOS after finishing the fabrication process
 
 <summary>Pre-layout timing analysis and importance of good clock tree</summary>
 
-##### Timing Modelling using Delay Tables
+#### Timing Modelling using Delay Tables
 
  **Delay Tables**
-
     - In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.  
     - To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. 
     - If two paths have the same buffer as load in turn driving the same load, then the signal comming out of those two buffers will have a skew of 0 (ensuring this will not lead to     
       problems). 
     - For power-aware CTS, one of paths would be activated at a time.
 
-##### Timing analysis with ideal clocks using OpenSTA
+#### Timing analysis with ideal clocks using OpenSTA
 
-**Setup timing analysis**
+**Setup timing analysis and Introduction to F/F Setup Time, Clock Jitter and Uncertainty**
 
-Setup timing analysis (single clock, ideal scenario where clk is not built yet): the internal delay (finite time) in the capture flop which has to be subtracted from period, and the variation of time that a clock edge can can undergo when it arrives to the launch flop and capture clock (called uncertainty) which has to be also subtracted from period, so D (combinational delay)< T (period) - SUT (setup) - U (uncertainty). Using this analysis, the combinational delay should be considered when placing the cells.
+Setup timing analysis (single clock, ideal scenario where clk is not built yet): 
+            The internal delay (finite time) in the capture flop which has to be subtracted from period, and the variation of time that a clock edge can undergo when it arrives to the launch flop and capture clock (called uncertainty) which has to be also subtracted from period, so D (combinational delay)< T (period) - S(Setup time)- SU (setup uncertainty). 
+Using this analysis, the combinational delay should be considered when placing the cells.
 
 ![Screenshot from 2024-03-18 00-42-49](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/c7421fc5-ee8c-41a7-9c67-762d95d0cf46)
+
+#### Clock Tree Synthesis using TritonCTS and Signal Integrity
+
+**Clock Tree Routing and Buffering using H-Tree algorithm, Crosstalk and Clock Net Shielding**
+Clock Tree Synthesis (CTS): 
+- goal is to make the clock reach all flipflops with minimum skew. H-tree calculates the path from all flops and connects the clock to the midpoint of the flops. 
+- Buffers (with equal rise and fall time) are added on the H-tree path. The CTS run adds clock buffers, so buffer delays are taken into consideration, and the analysis now deals with
+  real clocks. 
+- Setup and hold time slacks can be then analyzed in the post-CTS STA analysis using OpenROAD.
+- All critical (as shielding all is sometimes not possible) clock nets are shielded to prevent coupling with other components, and hence reducing potential of a glitch. 
+- A glitch is a serious problem as it can reset memory system and can lead to incorrect functionality in the whole system activity. 
+- Crosstalk leads to exponential delta skew, and this is another reason shielding nets is important.
 
 
 
 If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
-
     - Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
     - Scaling the buffers (Causes increase in design area)
     - Restricting the maximum fan-out of an element.
+
 
 </details>
 
