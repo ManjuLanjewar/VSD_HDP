@@ -1866,13 +1866,20 @@ If the design produces any setup timing violaions in the analysis, it can be eli
 
    - But in this case two new rules are created and need to be checked: 1-) via width (inner square width) and 2-) via spacing (from inner close sides).
 
-![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1d39c508-a7ef-48a4-9328-78db1a257303)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5c52376e-ea1a-44c1-933e-a17e51ef24b6)
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1d39c508-a7ef-48a4-9328-78db1a257303) ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5c52376e-ea1a-44c1-933e-a17e51ef24b6) 
 
+<summary>Power Distribution Network and Routing</summary>
 
-There are 2 stages of routing: global (routing region is divided into rectangle grids which are represented as course 3D routes via FastRoute tool) and detailed (finer grids and routing guides are used to implement physical wiring via TritonRoute tool). OpenLane uses the TritonRoute tool (an inter-layer sequential, intra-layer parallel routing framework that honours pre-processed route guides, assumes that each net satisfies inter-guide connectivity, and uses MILP based panel routing scheme) for detailed routing. The preprocessed route guides and inter-guide connectivity are found below.
+3. **Global and Detailed Routing and Configure TritonRoute**
 
+There are 2 stages of routing: global (routing region is divided into rectangle grids which are represented as course 3D routes via FastRoute tool) and detailed (finer grids and routing guides are used to implement physical wiring via TritonRoute tool). 
+OpenLane uses the TritonRoute tool (an inter-layer sequential, intra-layer parallel routing framework that honours pre-processed route guides, assumes that each net satisfies inter-guide connectivity, and uses MILP based panel routing scheme) for detailed routing. The preprocessed route guides and inter-guide connectivity are found below.
 
+<summary>TriTonRoute Features</summary>
 
+OpenLANE uses TritonRoute, an open source router for modern industrial designs. The router consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine. The routing process is implemented in two stages:
 
+Global Routing - Routing guides are generated for interconnects
+Detailed Routing - Tracks are generated interatively. TritonRoute 14 ensures there are no DRC violations after routing.
 
 
