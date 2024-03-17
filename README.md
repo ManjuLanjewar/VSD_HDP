@@ -1858,10 +1858,15 @@ If the design produces any setup timing violaions in the analysis, it can be eli
 
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/39e91af6-8834-4a0a-9fa3-49cf4ffcd348)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b64b0edf-3117-461a-aef8-fc45d5e04ade)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5ade4e8c-79a6-4fd4-9fad-127ecbd0bd36)
 
+   - One violation is signal short when two wires meet: to solve it, one wire is put on another metal layer
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/97fc7ac5-563c-4781-8249-376f20916a60)
 
-   - One violation is signal short when two wires meet: to solve it, one wire is put on another metal layer,
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/0d86706c-4271-40d2-8832-60ad3b92321b)
+
    - But in this case two new rules are created and need to be checked: 1-) via width (inner square width) and 2-) via spacing (from inner close sides).
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/1d39c508-a7ef-48a4-9328-78db1a257303)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5c52376e-ea1a-44c1-933e-a17e51ef24b6)
 
 
 There are 2 stages of routing: global (routing region is divided into rectangle grids which are represented as course 3D routes via FastRoute tool) and detailed (finer grids and routing guides are used to implement physical wiring via TritonRoute tool). OpenLane uses the TritonRoute tool (an inter-layer sequential, intra-layer parallel routing framework that honours pre-processed route guides, assumes that each net satisfies inter-guide connectivity, and uses MILP based panel routing scheme) for detailed routing. The preprocessed route guides and inter-guide connectivity are found below.
