@@ -1735,6 +1735,7 @@ Photolithography is applied, Phosphorous is doped to create N- implants on P-wel
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/01e2d91c-dc52-42ec-9092-f0bbe06e1054)
 
 CMOS after finishing the fabrication process
+</details>
 
 <h2 id="C9">Day 9</h2>
 
@@ -1748,5 +1749,8 @@ CMOS after finishing the fabrication process
 
 
 
+
+
+</details>
 
 
