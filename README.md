@@ -1745,9 +1745,13 @@ CMOS after finishing the fabrication process
 
 ##### Delay Table
 
-    In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.   To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. If two paths have the same buffer as load in turn driving the same load, then the signal comming out of those two buffers will have a skew of 0 (ensuring this will not lead to problems). For power-aware CTS, one of paths would be activated at a time.
+    - In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.  
+    - To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. 
+    - If two paths have the same buffer as load in turn driving the same load, then the signal comming out of those two buffers will have a skew of 0 (ensuring this will not lead to     
+      problems). 
+    - For power-aware CTS, one of paths would be activated at a time.
 
-
+##### Setup timing analysis
 
 
 
