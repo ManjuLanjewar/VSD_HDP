@@ -1818,15 +1818,55 @@ Clock Tree Synthesis (CTS):
   1. H - Tree
   2. X - Tree
   3. Fish bone
+     
 In OpenLANE, clock tree synthesis is carried out using TritonCTS tool.
 CTS should always be done after the floorplanning and placement as the CTS is carried out on a placement.def file that is created during placement stage.
 
 If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
-    - Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
-    - Scaling the buffers (Causes increase in design area)
-    - Restricting the maximum fan-out of an element.
 
+- Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
+- Scaling the buffers (Causes increase in design area)
+- Restricting the maximum fan-out of an element.
 
 </details>
+
+<h2 id="C10">Day 10</h2>
+
+#### Final steps for RTL2GDS using TritonRoute and OpenSTA
+<details>
+        <summary>Routing and Design Rule Check(DRC)</summary>
+
+1. **Introduction to Maze Routing and Lees Algorithm**
+
+   - In an ASIC flow, PDN generation is part of floorplan. In OpenLane, however, this is not the case and PDN must be generated after CTS and post-CTS STA analysis.
+   - During routing, algorithm tries to find the best possible connection between points. One such algorithm is maze routing also known as Lee's algorithm.
+   - This algorithm, find the minimum distance between points by
+     a. creating a routing grid,
+     b. labels source and target points,
+     c. labels edge grids of source point as 1 (horizontal and vertical), then labels unlabeled edge grids of those grids as 2 and so on and so forth until we hit the target grid,
+     d. Now all enumarated pathes in order that take from source to target grid are identified as options,
+     e. L shaped routes (if found) would be chosen, otherwise any other identified option is chosen (the lower the number of pins found the better).
+
+ Lee's algorithm is shown below.
+
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/881d99aa-86b2-4797-8f83-7ec312dcadb3)
+
+2. **Design rule check (drc)**
+   
+   - DRC are rules that need to be followed when routing.
+   - Some rules define: minimum wire width, minimum wire pitch (distance between two wires from midpoints), and minimum wire spacing (distance between two wires from inner points).
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/39e91af6-8834-4a0a-9fa3-49cf4ffcd348)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b64b0edf-3117-461a-aef8-fc45d5e04ade)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5ade4e8c-79a6-4fd4-9fad-127ecbd0bd36)
+
+
+
+   - One violation is signal short when two wires meet: to solve it, one wire is put on another metal layer,
+   - But in this case two new rules are created and need to be checked: 1-) via width (inner square width) and 2-) via spacing (from inner close sides).
+
+
+There are 2 stages of routing: global (routing region is divided into rectangle grids which are represented as course 3D routes via FastRoute tool) and detailed (finer grids and routing guides are used to implement physical wiring via TritonRoute tool). OpenLane uses the TritonRoute tool (an inter-layer sequential, intra-layer parallel routing framework that honours pre-processed route guides, assumes that each net satisfies inter-guide connectivity, and uses MILP based panel routing scheme) for detailed routing. The preprocessed route guides and inter-guide connectivity are found below.
+
+
+
+
 
 
