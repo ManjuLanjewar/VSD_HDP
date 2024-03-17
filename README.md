@@ -1855,6 +1855,7 @@ If the design produces any setup timing violaions in the analysis, it can be eli
    
    - DRC are rules that need to be followed when routing.
    - Some rules define: minimum wire width, minimum wire pitch (distance between two wires from midpoints), and minimum wire spacing (distance between two wires from inner points).
+
 ![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/39e91af6-8834-4a0a-9fa3-49cf4ffcd348)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/b64b0edf-3117-461a-aef8-fc45d5e04ade)![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/5ade4e8c-79a6-4fd4-9fad-127ecbd0bd36)
 
 
