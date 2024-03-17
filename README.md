@@ -1796,10 +1796,21 @@ Clock Tree Synthesis (CTS):
 
 5. **Hold Timing Analysis using Real Clocks**
 
-Hold timing analysis (single clock, ideal scenario): D > H (hold time: clk to Q in capture flop) + HU (hold uncertainty).
+    a) Hold timing analysis (single clock, ideal scenario):
+   
+     - D > H (hold time: clk to Q in capture flop) + HU (hold uncertainty).
 
-Hold timing analysis (single clock, real clock scenario): D + del1 > H (hold time: clk to Q in capture flop) + del2. The keft hand side is called data arrival time while right hand side is called data required time. In this case, slack = data arrival time - data required time, and slack here should be +ve too.
+    b) Hold timing analysis (single clock, real clock scenario):
 
+   - D + del1 > H (hold time: clk to Q in capture flop) + del2 + HU
+   - The left hand side is called data arrival time while right hand side is called data required time.
+   - In this case, slack = data arrival time - data required time, and slack here should be +ve too.
+ 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/3c690827-54f0-43e6-add4-41fdd392dc11)
+
+   - Del1 and del2 need to be identified for both setup and hold time analysis.   
+   - Del1/del2 = sum of RC wire delays on path + sum of buffer delays on the path.
+   - The difference is that del1 goes to launch flop, while del2 goes to capture flop (see picture below to understand the difference).
 
 
 - There are several CTS techniques like:
