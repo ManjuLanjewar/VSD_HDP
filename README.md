@@ -12,14 +12,6 @@
 <p><a href="#C9">Day 9</a></p>
 <p><a href="#C10">Day 10</a></p>
 
-
-
-
-<h2 id="C7">Day 7</h2>
-<h2 id="C8">Day 8</h2>
-<h2 id="C9">Day 9</h2>
-<h2 id="C10">Day 10</h2>
-
 </body>
 </html>
 
@@ -1748,7 +1740,11 @@ CMOS after finishing the fabrication process
 
 <details>
 
-Pre-layout timing analysis and importance of good clock tree
+<summary>Pre-layout timing analysis and importance of good clock tree</summary>
+
+##### Delay Table
+
+    In delay tables, there are delay values for varying input transition and output load. For CTS: Delay tables for all buffers with their different sizes compose the timing models.   To find a delay of a certain path, the delay tables of buffers on that path are used to find individual delays then those delays are added up. If two paths have the same buffer as load in turn driving the same load, then the signal comming out of those two buffers will have a skew of 0 (ensuring this will not lead to problems). For power-aware CTS, one of paths would be activated at a time.
 
 
 
