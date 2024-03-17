@@ -1782,12 +1782,24 @@ Clock Tree Synthesis (CTS):
 
 #### Timing analysis with real clocks using OpenSTA
 
-4. **Setup timing analysis**
-     Setup timing analysis (single clock, real clock scenario):
-        Network clk goes through real wires and buffers, which cause delays.
-   D (combinational delay)+ del1 (time for clk to reach launch flop) < T (period) + del2 (time for clk to reach capture flop) - SUT (setup: D to clk delay in capture flop) - U (uncertainty).
-   del1-del2 is known as skew (difference in time the clk reaches the two flops).
-   D+del1=data required time, T+del2-SUT-U is data arrival time, and slack= data required time - data arrival time => slack should be +ve.
+4. **Setup timing analysis using Real Clocks**
+
+   Setup timing analysis (single clock, real clock scenario):
+     - Network clk goes through real wires and buffers, which cause delays.
+        D (combinational delay)+ del1 (time for clk to reach launch flop) < [T (period) + del2 (time for clk to reach capture flop)]- S (setup: D to clk delay in capture flop) - SU             (Setup uncertainty).
+     - del1-del2 is known as skew (difference in time the clk reaches the two flops).
+     - D+del1 = data arrival time,
+     - T+del2-S-SU = data required time
+     - Slack= data required time - data arrival time => slack should be +ve.
+       
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/3ef1b66c-6d33-4de5-bd85-e30c7b8a4568)
+
+5. **Hold Timing Analysis using Real Clocks**
+
+Hold timing analysis (single clock, ideal scenario): D > H (hold time: clk to Q in capture flop) + HU (hold uncertainty).
+
+Hold timing analysis (single clock, real clock scenario): D + del1 > H (hold time: clk to Q in capture flop) + del2. The keft hand side is called data arrival time while right hand side is called data required time. In this case, slack = data arrival time - data required time, and slack here should be +ve too.
+
 
 
 - There are several CTS techniques like:
