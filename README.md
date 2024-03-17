@@ -1812,6 +1812,7 @@ Clock Tree Synthesis (CTS):
    - Del1/del2 = sum of RC wire delays on path + sum of buffer delays on the path.
    - The difference is that del1 goes to launch flop, while del2 goes to capture flop (see picture below to understand the difference).
 
+![image](https://github.com/ManjuLanjewar/VSD_HDP/assets/157192602/7cee6862-3a1e-4887-9d75-8b5824ccf5bf)
 
 - There are several CTS techniques like:
   1. H - Tree
